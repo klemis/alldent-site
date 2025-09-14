@@ -1,0 +1,10 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer gray triangle -->
+  <path d="M16 2L28 14C28 20, 24 26, 16 30C8 26, 4 20, 4 14L16 2Z" fill="#999999"/>
+
+  <!-- White middle triangle -->
+  <path d="M16 6L24 16C24 20, 21 23, 16 26C11 23, 8 20, 8 16L16 6Z" fill="white"/>
+
+  <!-- Red inner triangle -->
+  <path d="M16 10L20 16C20 18, 18 20, 16 22C14 20, 12 18, 12 16L16 10Z" fill="#FF0000"/>
+</svg>

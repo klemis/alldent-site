@@ -62,7 +62,7 @@ lib/                   # Utilities and data
 ### Data Models
 The project includes comprehensive TypeScript interfaces for:
 - `Service`: Dental services with pricing, duration, benefits
-- `TeamMember`: Staff profiles with qualifications and specialties  
+- `TeamMember`: Staff profiles with qualifications and specialties
 - `ContactInfo`: Business hours, location, contact details
 - `GalleryImage`: Image gallery with categories
 - `NavItem`: Navigation structure
@@ -88,7 +88,7 @@ Services are organized into categories:
 
 ### Primary User Personas
 - **Anxious Anna** (28-45): Busy professional seeking trustworthy routine dental care, mobile-first user with time constraints
-- **Emergency Erik** (25-55): Needs immediate help for dental pain, stressed user requiring quick contact access  
+- **Emergency Erik** (25-55): Needs immediate help for dental pain, stressed user requiring quick contact access
 - **Family-Focused Filip** (30-50): Parent looking for a family dentist, values gentle approach with children, needs family scheduling options
 
 ### Design Requirements
@@ -104,7 +104,7 @@ Services are organized into categories:
 ```
 /
 ├── Home (hero, services overview, contact)
-├── Services (detailed service descriptions) 
+├── Services (detailed service descriptions)
 ├── Team (dentist and staff profiles)
 ├── Gallery (before/after photos, office images)
 ├── Contact (location, hours, embedded map)
@@ -152,7 +152,7 @@ Services are organized into categories:
 - Utility functions in `/lib` directory
 - Types and interfaces in dedicated `.ts` files
 
-### Content Guidelines  
+### Content Guidelines
 - Patient-friendly language avoiding medical jargon
 - Focus on benefits over features
 - Scannable content with short sentences and bullet points
@@ -163,3 +163,42 @@ Services are organized into categories:
 - Extends Next.js core web vitals and TypeScript configs
 - Uses FlatCompat for configuration compatibility
 - Ignores build directories and generated files
+
+## Git Workflow & Commit Standards
+
+### Conventional Commits
+This project follows [Conventional Commits](https://www.conventionalcommits.org/) specification for consistent commit messages:
+
+**Format**: `<type>(<scope>): <description>`
+
+**Types**:
+- `feat`: New features or enhancements
+- `fix`: Bug fixes
+- `docs`: Documentation changes
+- `style`: Code style changes (formatting, missing semicolons, etc.)
+- `refactor`: Code changes that neither fix bugs nor add features
+- `test`: Adding or updating tests
+- `build`: Changes to build system or dependencies
+- `ci`: Changes to CI configuration
+- `chore`: Other changes that don't modify src or test files
+- `assets`: Adding or updating static assets (images, fonts, etc.)
+
+**Examples**:
+```bash
+feat: add responsive navigation component
+fix: resolve mobile menu closing issue
+build: update dependencies and add shadcn/ui components
+assets: add dental practice images and media
+docs: update API documentation
+```
+
+### Commit Organization Strategy
+When dealing with multiple uncommitted changes, organize them into logical commits:
+
+1. **Dependencies first**: Package.json, lock files, configuration
+2. **Core functionality**: Data models, utilities, types
+3. **Components**: New UI components and shared elements
+4. **Layout changes**: Root layout, metadata, global styles
+5. **Page implementations**: Individual page components
+6. **Page structure**: New routes and page organization
+7. **Assets last**: Images, media files, static resources
