@@ -111,13 +111,13 @@ export function Navigation() {
                 <SheetHeader>
                   <SheetTitle>Menu nawigacyjne</SheetTitle>
                 </SheetHeader>
-                <div className="flex flex-col space-y-4">
+                <div className="flex flex-col space-y-4 px-4 py-2 text-center">
                   {navItems.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className="text-lg font-medium hover:text-primary transition-colors focus:text-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-md px-2 py-1"
+                      className="text-lg font-medium hover:text-primary transition-colors focus:text-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-md px-2 py-3 text-center"
                     >
                       {item.title}
                     </Link>
