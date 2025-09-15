@@ -68,30 +68,12 @@ export default function BookAppointmentPage() {
                       </div>
                     </div>
 
-                    <div className="bg-slate-100 p-8 rounded-lg border-2 border-dashed border-slate-300">
-                      <div className="text-center space-y-4">
-                        <Calendar className="w-12 h-12 mx-auto text-slate-400" />
-                        <h3 className="text-lg font-semibold">
-                          Widget ZnanyLekarz
-                        </h3>
-                        <p className="text-sm text-slate-600">
-                          Tutaj zostanie umieszczony interaktywny widget
-                          ZnanyLekarz umożliwiający wybór daty, godziny i
-                          rodzaju wizyty.
-                        </p>
-                        <div className="pt-2">
-                          <Button asChild>
-                            <a
-                              href="https://www.znanylekarz.pl"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                            >
-                              Otwórz ZnanyLekarz
-                            </a>
-                          </Button>
-                        </div>
-                      </div>
+                    <div className="p-4 rounded-lg border bg-background">
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: `<a class="zl-facility-url" href="https://www.znanylekarz.pl/placowki/alldent-centrum-stomatologiczne-anna-lemisz" rel="nofollow" data-zlw-facility="alldent-centrum-stomatologiczne-anna-lemisz" data-zlw-type="facility-big-with-saas-only" data-zlw-saas-only="true" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Alldent Centrum Stomatologiczne Anna Lemisz</a><script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>`,
+                        }}
+                      />
                     </div>
 
                     <div className="grid gap-3 sm:grid-cols-2 text-sm">
