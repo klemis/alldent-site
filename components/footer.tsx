@@ -14,7 +14,7 @@ export function Footer() {
             <div className="space-y-4">
               <Link href="/" className="inline-block">
                 <Image
-                  src="/images/logo-cropped.png"
+                  src="/images/logo/logo-cropped.png"
                   alt="Logo AllDent"
                   width={120}
                   height={30}
