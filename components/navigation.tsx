@@ -5,13 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Menu, Phone, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetTitle,
-  SheetHeader,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -45,7 +39,7 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
             <Image
-              src="/images/logo.png"
+              src="/images/logo/logo.png"
               alt="Logo AllDent - nowoczesny napis gabinetu stomatologicznego z graficznym elementem zęba"
               width={160}
               height={40}
@@ -108,9 +102,6 @@ export function Navigation() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[min(80vw,320px)]">
-                <SheetHeader>
-                  <SheetTitle>Menu nawigacyjne</SheetTitle>
-                </SheetHeader>
                 <div className="flex flex-col space-y-4 px-4 py-2 text-center">
                   {navItems.map((item) => (
                     <Link
@@ -124,7 +115,7 @@ export function Navigation() {
                   ))}
 
                   <Button asChild className="w-full mt-6">
-                    <Link href="/umow-wizyte">
+                    <Link href="/umow-wizyte" onClick={() => setIsOpen(false)}>
                       <Calendar className="w-4 h-4 mr-2" />
                       Umów wizytę
                     </Link>
