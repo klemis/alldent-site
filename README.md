@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AllDent - Modern Dental Practice Website
 
-## Getting Started
+A modern, fast-loading dental practice website for a dental practice. Built with Next.js 15, TypeScript, and shadcn/ui components, designed to help patients browse services, view team information, and book appointments seamlessly.
 
-First, run the development server:
+## 🦷 Features
+
+- **Service Directory**: Browse comprehensive dental services organized by category
+- **Team Profiles**: Meet the dental professionals and staff
+- **Appointment Booking**: Integrated ZnanyLekarz widget for direct scheduling
+- **Mobile-First Design**: Optimized for dental patient personas and mobile users
+- **Performance Focused**: Static site generation for optimal SEO and loading speeds
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm, yarn, pnpm, or bun
+
+### Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server (with Turbopack)
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build & Deploy
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Production build (with Turbopack)
+npm run build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Start production server
+npm start
 
-## Learn More
+# Lint code
+npm run lint
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🏗️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework**: Next.js 15.5.3 with App Router
+- **Language**: TypeScript with strict mode
+- **Styling**: Tailwind CSS v4 with CSS variables
+- **Components**: shadcn/ui with "new-york" style
+- **Icons**: Lucide React
+- **Fonts**: Geist (sans & mono)
+- **UI Primitives**: Radix UI for accessibility
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structure
 
-## Deploy on Vercel
+```
+app/                    # Next.js App Router pages
+├── layout.tsx         # Root layout with fonts
+├── page.tsx           # Homepage
+└── globals.css        # Global styles
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+components/ui/          # shadcn/ui components
+├── button.tsx
+├── card.tsx
+├── navigation-menu.tsx
+└── ...
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+lib/                   # Utilities and data
+├── utils.ts          # Class merging utility
+├── types.ts          # TypeScript definitions
+└── data/
+    └── services.ts   # Dental services data
+```
+
+## 🎨 Design System
+
+- **Components**: shadcn/ui with Radix UI accessibility
+- **Typography**: Patient-friendly language avoiding medical jargon
+- **Interactions**: 44px+ touch targets for mobile users
+
+## 📝 Git Workflow
+
+This project follows [Conventional Commits](https://www.conventionalcommits.org/):
+
+```bash
+feat: add new feature
+fix: bug fixes
+docs: documentation changes
+style: formatting changes
+build: build system changes
+```
+
+## 🔧 Development Guidelines
+
+- Use shadcn/ui components from `@/components/ui/`
+- Import icons from `lucide-react`
+- Follow TypeScript strict patterns
+- Use `cn()` utility for conditional classes
+- Implement proper accessibility with Radix UI
+
+## 🏥 Appointment Booking
+
+Integrated ZnanyLekarz widget handles all booking functionality:
+- No API configuration required
+- Self-contained booking system
+- Multiple entry points throughout site
