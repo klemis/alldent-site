@@ -80,12 +80,12 @@ export default function TeamPage() {
 
         {/* Team Members */}
         <section className="py-12 md:py-20">
-          <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
+          <div className="w-full px-6 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="grid gap-8 lg:gap-12">
                 {teamMembers.map((member, index) => (
                   <Card key={index} className="overflow-hidden">
-                    <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+                    <div className="grid md:grid-cols-3 gap-6 md:gap-8 p-4 md:p-6">
                       {/* Photo */}
                       <div className="md:col-span-1">
                         <div className="aspect-[3/4] bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg flex items-center justify-center">
