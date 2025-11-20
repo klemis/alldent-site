@@ -12,6 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { PriceInfo } from "@/components/price-info";
 import { serviceCategories } from "@/lib/data/services";
 import { ArrowLeft, Calendar, Phone, Info } from "lucide-react";
 
@@ -142,65 +143,6 @@ export default function PricingPage() {
           </div>
         </section>
 
-        {/* Additional Info Section */}
-        <section className="py-12 md:py-16 bg-slate-50">
-          <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
-            <div className="max-w-7xl mx-auto">
-              <div className="max-w-4xl mx-auto">
-                <div className="text-center mb-8">
-                  <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl mb-2">
-                    Informacje dodatkowe
-                  </h2>
-                  <p className="text-muted-foreground">
-                    Dodatkowe usługi i badania diagnostyczne
-                  </p>
-                </div>
-
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 text-center">
-                  <div className="space-y-2 p-4 bg-white rounded-lg">
-                    <p className="font-semibold text-base">Zdjęcie RTG</p>
-                    <Badge variant="secondary" className="text-sm">
-                      50 zł
-                    </Badge>
-                    <p className="text-xs text-muted-foreground">
-                      Za pojedyncze zdjęcie
-                    </p>
-                  </div>
-                  <div className="space-y-2 p-4 bg-white rounded-lg">
-                    <p className="font-semibold text-base">
-                      Przegląd ortodontyczny
-                    </p>
-                    <Badge variant="secondary" className="text-sm">
-                      Bezpłatny
-                    </Badge>
-                    <p className="text-xs text-muted-foreground">
-                      Dla pacjentów ortodontycznych
-                    </p>
-                  </div>
-                  <div className="space-y-2 p-4 bg-white rounded-lg">
-                    <p className="font-semibold text-base">Konsultacja</p>
-                    <Badge variant="secondary" className="text-sm">
-                      Bezpłatna
-                    </Badge>
-                    <p className="text-xs text-muted-foreground">
-                      Pierwsza wizyta
-                    </p>
-                  </div>
-                  <div className="space-y-2 p-4 bg-white rounded-lg">
-                    <p className="font-semibold text-base">Kontrola</p>
-                    <Badge variant="secondary" className="text-sm">
-                      Bezpłatna
-                    </Badge>
-                    <p className="text-xs text-muted-foreground">
-                      Przez 6 miesięcy
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
         <section className="bg-primary text-primary-foreground py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
@@ -243,6 +185,9 @@ export default function PricingPage() {
             </div>
           </div>
         </section>
+
+        {/* Price Information */}
+        <PriceInfo />
       </main>
     </div>
   );

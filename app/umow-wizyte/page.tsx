@@ -124,18 +124,6 @@ export default function BookAppointmentPage() {
                           +48 663 333 787
                         </a>
                       </div>
-
-                      <div className="flex items-center gap-3 text-sm">
-                        <Clock className="w-4 h-4 text-primary" />
-                        <div>
-                          <p>
-                            <strong>Pon-Pt:</strong> 8:00 - 20:00
-                          </p>
-                          <p>
-                            <strong>Sobota:</strong> 9:00 - 15:00
-                          </p>
-                        </div>
-                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -188,7 +176,7 @@ export default function BookAppointmentPage() {
                     </CardHeader>
                     <CardContent className="space-y-2 text-sm">
                       <p>• Powiadom nas minimum 24h wcześniej</p>
-                      <p>• Skorzystaj z ZnanyLekarz lub zadzwoń</p>
+                      <p>• Skorzystaj ze ZnanyLekarz lub zadzwoń</p>
                       <p>• Pomożemy znaleźć nowy termin</p>
                       <p>• Szanujemy Twój czas - szanuj nasz</p>
                     </CardContent>
@@ -202,7 +190,7 @@ export default function BookAppointmentPage() {
                       <p>• Gotówka</p>
                       <p>• Karty płatnicze</p>
                       <p>• BLIK</p>
-                      <p>• Płatności ratalne (dla dużych zabiegów)</p>
+                      {/*<p>• Płatności ratalne (dla dużych zabiegów)</p>*/}
                     </CardContent>
                   </Card>
                 </div>
