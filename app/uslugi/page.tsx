@@ -101,7 +101,7 @@ export default function ServicesPage() {
                                     key={index}
                                     className="flex items-start gap-2 text-sm"
                                   >
-                                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                                    <CheckCircle className="w-4 h-4 text-accent-foreground flex-shrink-0 mt-0.5" />
                                     <span>{benefit}</span>
                                   </li>
                                 ))}

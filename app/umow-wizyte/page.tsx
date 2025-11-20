@@ -78,19 +78,19 @@ export default function BookAppointmentPage() {
 
                     <div className="grid gap-3 sm:grid-cols-2 text-sm">
                       <div className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-600" />
+                        <CheckCircle className="w-4 h-4 text-accent-foreground" />
                         <span>Dostępność 24/7</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-600" />
+                        <CheckCircle className="w-4 h-4 text-accent-foreground" />
                         <span>Natychmiastowe potwierdzenie</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-600" />
+                        <CheckCircle className="w-4 h-4 text-accent-foreground" />
                         <span>Przypomnienia SMS/email</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-600" />
+                        <CheckCircle className="w-4 h-4 text-accent-foreground" />
                         <span>Możliwość przełożenia wizyty</span>
                       </div>
                     </div>

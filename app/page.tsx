@@ -41,8 +41,8 @@ export default function Home() {
             />
           </div>
 
-          {/* Overlay - gradient for better text visibility */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/40 to-black/30"></div>
+          {/* Overlay - calming blue gradient for better text visibility */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-teal-800/50 to-blue-900/40"></div>
 
           {/* Content */}
           <div className="relative z-10 w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
@@ -66,7 +66,7 @@ export default function Home() {
                   <Button
                     size="lg"
                     asChild
-                    className="text-base bg-primary hover:bg-primary/90"
+                    className="text-base bg-white hover:bg-white/90 text-primary shadow-lg"
                   >
                     <Link href="/umow-wizyte">
                       <Calendar className="w-5 h-5 mr-2" />
@@ -77,7 +77,7 @@ export default function Home() {
                     variant="outline"
                     size="lg"
                     asChild
-                    className="text-base text-primary bg-white hover:bg-primary hover:text-white"
+                    className="text-base text-white bg-primary/20 backdrop-blur-sm hover:bg-primary hover:text-white border-white/50"
                   >
                     <a href="tel:+48663333787">
                       <Phone className="w-5 h-5 mr-2" />
@@ -88,21 +88,27 @@ export default function Home() {
 
                 {/* Trust indicators */}
                 <div className="flex flex-wrap gap-6 pt-6">
-                  <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm px-3 py-2 rounded-lg">
-                    <Shield className="w-5 h-5 text-green-400" />
-                    <span className="text-sm font-semibold [text-shadow:_1px_1px_4px_rgb(0_0_0_/_60%)]">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border-2 border-white/40 flex items-center justify-center shadow-lg">
+                      <Shield className="w-6 h-6 text-teal-200" />
+                    </div>
+                    <span className="text-sm font-semibold [text-shadow:_2px_2px_8px_rgb(0_0_0_/_80%)]">
                       Nowoczesny sprzęt
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm px-3 py-2 rounded-lg">
-                    <Award className="w-5 h-5 text-blue-400" />
-                    <span className="text-sm font-semibold [text-shadow:_1px_1px_4px_rgb(0_0_0_/_60%)]">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border-2 border-white/40 flex items-center justify-center shadow-lg">
+                      <Award className="w-6 h-6 text-blue-200" />
+                    </div>
+                    <span className="text-sm font-semibold [text-shadow:_2px_2px_8px_rgb(0_0_0_/_80%)]">
                       Doświadczenie 30+ lat
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm px-3 py-2 rounded-lg">
-                    <Users className="w-5 h-5 text-purple-400" />
-                    <span className="text-sm font-semibold [text-shadow:_1px_1px_4px_rgb(0_0_0_/_60%)]">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border-2 border-white/40 flex items-center justify-center shadow-lg">
+                      <Users className="w-6 h-6 text-cyan-200" />
+                    </div>
+                    <span className="text-sm font-semibold [text-shadow:_2px_2px_8px_rgb(0_0_0_/_80%)]">
                       Rodzinny gabinet
                     </span>
                   </div>
@@ -169,7 +175,7 @@ export default function Home() {
                             key={index}
                             className="flex items-center gap-2 text-sm"
                           >
-                            <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                            <CheckCircle className="w-4 h-4 text-accent-foreground flex-shrink-0" />
                             {benefit}
                           </li>
                         ))}
@@ -205,8 +211,8 @@ export default function Home() {
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                 <Card className="text-center">
                   <CardHeader>
-                    <div className="mx-auto w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                      <Shield className="w-8 h-8 text-blue-600" />
+                    <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                      <Shield className="w-8 h-8 text-primary" />
                     </div>
                     <CardTitle className="text-xl">
                       CBCT - Tomograf stomatologiczny
@@ -223,8 +229,8 @@ export default function Home() {
 
                 <Card className="text-center">
                   <CardHeader>
-                    <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                      <Award className="w-8 h-8 text-green-600" />
+                    <div className="mx-auto w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-4">
+                      <Award className="w-8 h-8 text-accent-foreground" />
                     </div>
                     <CardTitle className="text-xl">
                       Rentgen stomatologiczny
@@ -240,8 +246,8 @@ export default function Home() {
 
                 <Card className="text-center">
                   <CardHeader>
-                    <div className="mx-auto w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
-                      <Heart className="w-8 h-8 text-purple-600" />
+                    <div className="mx-auto w-16 h-16 bg-primary/15 rounded-full flex items-center justify-center mb-4">
+                      <Heart className="w-8 h-8 text-primary" />
                     </div>
                     <CardTitle className="text-xl">
                       Mikroskop stomatologiczny
@@ -257,8 +263,8 @@ export default function Home() {
 
                 <Card className="text-center">
                   <CardHeader>
-                    <div className="mx-auto w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                      <CheckCircle className="w-8 h-8 text-orange-600" />
+                    <div className="mx-auto w-16 h-16 bg-cta/10 rounded-full flex items-center justify-center mb-4">
+                      <CheckCircle className="w-8 h-8 text-cta" />
                     </div>
                     <CardTitle className="text-xl">Piaskarka GBT</CardTitle>
                   </CardHeader>
@@ -299,8 +305,8 @@ export default function Home() {
 
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                 <div className="text-center space-y-3">
-                  <div className="mx-auto w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-blue-600" />
+                  <div className="mx-auto w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <Shield className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="font-semibold">Bezpieczeństwo</h3>
                   <p className="text-sm text-muted-foreground">
@@ -309,8 +315,8 @@ export default function Home() {
                 </div>
 
                 <div className="text-center space-y-3">
-                  <div className="mx-auto w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <Heart className="w-6 h-6 text-green-600" />
+                  <div className="mx-auto w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                    <Heart className="w-6 h-6 text-accent-foreground" />
                   </div>
                   <h3 className="font-semibold">Łagodne podejście</h3>
                   <p className="text-sm text-muted-foreground">
@@ -319,8 +325,8 @@ export default function Home() {
                 </div>
 
                 <div className="text-center space-y-3">
-                  <div className="mx-auto w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                    <Users className="w-6 h-6 text-purple-600" />
+                  <div className="mx-auto w-12 h-12 bg-primary/15 rounded-full flex items-center justify-center">
+                    <Users className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="font-semibold">Dla całej rodziny</h3>
                   <p className="text-sm text-muted-foreground">
@@ -329,8 +335,8 @@ export default function Home() {
                 </div>
 
                 <div className="text-center space-y-3">
-                  <div className="mx-auto w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-orange-600" />
+                  <div className="mx-auto w-12 h-12 bg-cta/10 rounded-full flex items-center justify-center">
+                    <Clock className="w-6 h-6 text-cta" />
                   </div>
                   <h3 className="font-semibold">Punktualność</h3>
                   <p className="text-sm text-muted-foreground">

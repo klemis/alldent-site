@@ -55,19 +55,19 @@ export default function TeamPage() {
 
                 <div className="flex flex-wrap justify-center gap-6 pt-4">
                   <div className="flex items-center gap-2">
-                    <Award className="w-5 h-5 text-blue-600" />
+                    <Award className="w-5 h-5 text-primary" />
                     <span className="text-sm font-medium">
                       Certyfikowani specjaliści
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Heart className="w-5 h-5 text-red-600" />
+                    <Heart className="w-5 h-5 text-accent-foreground" />
                     <span className="text-sm font-medium">
                       Indywidualne podejście
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <GraduationCap className="w-5 h-5 text-green-600" />
+                    <GraduationCap className="w-5 h-5 text-primary" />
                     <span className="text-sm font-medium">
                       Ciągłe doskonalenie
                     </span>
@@ -114,7 +114,7 @@ export default function TeamPage() {
                         <CardContent className="p-0 space-y-6">
                           {/* Qualifications */}
                           <div className="flex items-start gap-3">
-                            <GraduationCap className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                            <GraduationCap className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                             <div>
                               <h3 className="font-semibold text-sm">
                                 Wykształcenie
@@ -152,7 +152,7 @@ export default function TeamPage() {
                           <div className="flex flex-wrap gap-6 pt-2">
                             {member.experience && (
                               <div className="flex items-center gap-2">
-                                <Award className="w-4 h-4 text-green-600" />
+                                <Award className="w-4 h-4 text-accent-foreground" />
                                 <span className="text-sm">
                                   <span className="font-medium">
                                     Doświadczenie:
@@ -165,7 +165,7 @@ export default function TeamPage() {
                             {member.languages &&
                               member.languages.length > 0 && (
                                 <div className="flex items-center gap-2">
-                                  <Languages className="w-4 h-4 text-purple-600" />
+                                  <Languages className="w-4 h-4 text-primary" />
                                   <span className="text-sm">
                                     <span className="font-medium">Języki:</span>{" "}
                                     {member.languages.join(", ")}
@@ -194,8 +194,8 @@ export default function TeamPage() {
 
                 <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                   <div className="space-y-3">
-                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
-                      <Heart className="w-6 h-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+                      <Heart className="w-6 h-6 text-primary" />
                     </div>
                     <h3 className="font-semibold">Empatia i zrozumienie</h3>
                     <p className="text-sm text-muted-foreground">
@@ -205,8 +205,8 @@ export default function TeamPage() {
                   </div>
 
                   <div className="space-y-3">
-                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto">
-                      <Award className="w-6 h-6 text-green-600" />
+                    <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto">
+                      <Award className="w-6 h-6 text-accent-foreground" />
                     </div>
                     <h3 className="font-semibold">Profesjonalizm</h3>
                     <p className="text-sm text-muted-foreground">
@@ -216,8 +216,8 @@ export default function TeamPage() {
                   </div>
 
                   <div className="space-y-3">
-                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto">
-                      <GraduationCap className="w-6 h-6 text-purple-600" />
+                    <div className="w-12 h-12 bg-primary/15 rounded-full flex items-center justify-center mx-auto">
+                      <GraduationCap className="w-6 h-6 text-primary" />
                     </div>
                     <h3 className="font-semibold">Rozwój i edukacja</h3>
                     <p className="text-sm text-muted-foreground">

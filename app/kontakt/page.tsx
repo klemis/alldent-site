@@ -227,7 +227,7 @@ export default function ContactPage() {
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div className="flex items-start gap-3">
-                        <Car className="w-5 h-5 text-blue-600 mt-0.5" />
+                        <Car className="w-5 h-5 text-primary mt-0.5" />
                         <div>
                           <p className="font-medium text-sm">Samochodem</p>
                           <p className="text-sm text-muted-foreground">
@@ -238,7 +238,7 @@ export default function ContactPage() {
                       </div>
 
                       <div className="flex items-start gap-3">
-                        <Bus className="w-5 h-5 text-green-600 mt-0.5" />
+                        <Bus className="w-5 h-5 text-accent-foreground mt-0.5" />
                         <div>
                           <p className="font-medium text-sm">
                             Komunikacją miejską
