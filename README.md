@@ -1,4 +1,4 @@
-# AllDent - Modern Dental Practice Website
+# Alldent - Modern Dental Practice Website
 
 A modern, fast-loading dental practice website for a dental practice. Built with Next.js 15, TypeScript, and shadcn/ui components, designed to help patients browse services, view team information, and book appointments seamlessly.
 

@@ -10,8 +10,6 @@ export interface Service {
   benefits: string[];
   icon: LucideIcon;
   featured: boolean;
-  duration?: string;
-  price?: string;
 }
 
 /**

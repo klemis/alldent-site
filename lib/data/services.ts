@@ -6,7 +6,9 @@ import {
   Heart,
   Crown,
   UserCheck,
-  Phone,
+  Smile,
+  Zap,
+  Syringe,
 } from "lucide-react";
 import { Service } from "@/lib/types";
 
@@ -24,47 +26,42 @@ export const services: Service[] = [
       "Porady dotyczące higieny",
     ],
     icon: Shield,
+    featured: false,
+  },
+  {
+    id: "orthodontics",
+    name: "Ortodoncja",
+    description:
+      "Cyfrowa ortodoncja dla dzieci i dorosłych - aparaty stałe, ruchome i nakładki ortodontyczne z wykorzystaniem skanera wewnątrzustnego i cyfrowej mapy okluzji",
+    benefits: [
+      "Cyfrowy wycisk zamiast tradycyjnych",
+      "Bezpłatny przegląd dla pacjentów ortodontycznych",
+      "Aparaty stałe, ruchome i nakładki",
+      "Leczenie dzieci i dorosłych",
+    ],
+    icon: Smile,
     featured: true,
-    duration: "30 min",
-    price: "120 zł",
   },
   {
     id: "cleaning",
     name: "Higiena stomatologiczna",
     description:
-      "Profesjonalne usuwanie kamienia nazębnego i płytki bakteryjnej",
+      "Profesjonalne czyszczenie zębów przy użyciu najnowocześniejszego sprzętu GBT (Guided Biofilm Therapy) - innowacyjnej metody usuwania biofilmu bakteryjnego i kamienia nazębnego",
     benefits: [
-      "Usunięcie kamienia i płytki",
+      "Najnowocześniejszy sprzęt GBT",
+      "Usunięcie kamienia i płytki bakteryjnej",
       "Polerowanie zębów",
-      "Fluoryzacja",
       "Instruktaż higieny",
     ],
     icon: Sparkles,
     featured: true,
-    duration: "45 min",
-    price: "180 zł",
-  },
-  {
-    id: "fluoride-treatment",
-    name: "Fluoryzacja",
-    description: "Wzmacnianie szkliwa zębowego preparatami fluoru",
-    benefits: [
-      "Wzmocnienie szkliwa",
-      "Ochrona przed próchnicą",
-      "Zmniejszenie wrażliwości",
-      "Długotrwały efekt ochronny",
-    ],
-    icon: Shield,
-    featured: false,
-    duration: "15 min",
-    price: "80 zł",
   },
 
   // Cosmetic Treatments
   {
     id: "teeth-whitening",
     name: "Wybielanie zębów",
-    description: "Profesjonalne wybielanie zębów metodą nakładkową lub lampową",
+    description: "Profesjonalne wybielanie zębów metodą nakładkową lub lampą",
     benefits: [
       "Zęby jaśniejsze o 2-8 tonów",
       "Bezpieczna metoda",
@@ -73,8 +70,6 @@ export const services: Service[] = [
     ],
     icon: Sparkles,
     featured: true,
-    duration: "90 min",
-    price: "800 zł",
   },
   {
     id: "veneers",
@@ -88,12 +83,10 @@ export const services: Service[] = [
     ],
     icon: Crown,
     featured: true,
-    duration: "120 min",
-    price: "1200 zł/ząb",
   },
   {
     id: "bonding",
-    name: "Rekonstrukcja kompozytowa",
+    name: "Rekonstrukcja kompozytowa (Bonding)",
     description: "Odbudowa ubytków zębów materiałem kompozytowym",
     benefits: [
       "Przywrócenie kształtu",
@@ -103,8 +96,6 @@ export const services: Service[] = [
     ],
     icon: Wrench,
     featured: false,
-    duration: "60 min",
-    price: "300 zł",
   },
 
   // Restorative Care
@@ -120,46 +111,42 @@ export const services: Service[] = [
     ],
     icon: Wrench,
     featured: true,
-    duration: "90 min",
-    price: "3500 zł",
   },
   {
     id: "root-canal",
     name: "Leczenie kanałowe",
     description:
-      "Usuwanie martwej miazgi i leczenie zakażonych kanałów korzeniowych",
+      "Endodoncja pod mikroskopem - precyzyjne leczenie zakażonych kanałów korzeniowych i zmian okołowierzchołkowych",
     benefits: [
+      "Leczenie pod mikroskopem",
+      "Leczenie zmian okołowierzchołkowych",
       "Zachowanie zęba",
       "Eliminacja bólu",
-      "Trwałe rozwiązanie",
-      "Nowoczesne techniki",
     ],
     icon: Heart,
     featured: false,
-    duration: "90 min",
-    price: "600 zł",
   },
   {
     id: "crowns",
-    name: "Korony protetyczne",
-    description: "Odbudowa mocno uszkodzonych zębów koronami ceramicznymi",
+    name: "Protetyka",
+    description:
+      "Kompleksowa odbudowa protetyczna: korony, mosty, uzupełnienia protetyczne i protezy dostosowane do indywidualnych potrzeb",
     benefits: [
-      "Przywrócenie funkcji",
-      "Estetyczny wygląd",
-      "Długotrwałość",
-      "Wzmocnienie zęba",
+      "Korony i mosty ceramiczne",
+      "Uzupełnienia protetyczne",
+      "Protezy dopasowane indywidualnie",
+      "Przywrócenie funkcji i estetyki",
     ],
     icon: Crown,
     featured: false,
-    duration: "120 min",
-    price: "1000 zł",
   },
 
   // Specialized Care
   {
     id: "pediatric",
     name: "Stomatologia dziecięca",
-    description: "Specialized dental care dla dzieci w przyjaznej atmosferze",
+    description:
+      "Specjalistyczna opieka stomatologiczna dla dzieci w przyjaznej atmosferze",
     benefits: [
       "Łagodne podejście",
       "Nauka higieny",
@@ -168,47 +155,85 @@ export const services: Service[] = [
     ],
     icon: UserCheck,
     featured: true,
-    duration: "45 min",
-    price: "150 zł",
-  },
-  {
-    id: "emergency",
-    name: "Stomatologia pilne przypadki",
-    description: "Natychmiastowa pomoc w nagłych przypadkach bólowych",
-    benefits: [
-      "Dostępność 24/7",
-      "Szybkie uśmierzenie bólu",
-      "Profesjonalna diagnoza",
-      "Pilne interwencje",
-    ],
-    icon: Phone,
-    featured: false,
-    duration: "30 min",
-    price: "200 zł",
   },
   {
     id: "oral-surgery",
     name: "Chirurgia stomatologiczna",
-    description: "Zabiegi chirurgiczne w obrębie jamy ustnej",
+    description:
+      "Nowoczesne zabiegi chirurgiczne w obrębie jamy ustnej z zastosowaniem najnowszych metod",
     benefits: [
       "Usuwanie zębów",
+      "Podcinanie wędzidełek",
       "Zabiegi periodontologiczne",
-      "Nowoczesny sprzęt",
       "Minimalna inwazyjność",
     ],
     icon: Stethoscope,
     featured: false,
-    duration: "60 min",
-    price: "400 zł",
+  },
+  {
+    id: "laser-therapy",
+    name: "Laseroterapia",
+    description:
+      "Nowoczesna terapia laserowa: laser diodowy i biostymulacyjny w leczeniu i wspomaganiu gojenia",
+    benefits: [
+      "Laser diodowy",
+      "Laser biostymulacyjny",
+      "Przyspieszenie gojenia",
+      "Minimalna inwazyjność",
+    ],
+    icon: Zap,
+    featured: false,
+  },
+  {
+    id: "flow-injection",
+    name: "Flow injection",
+    description:
+      "Innowacyjna metoda odbudowy zębów przy użyciu płynnego materiału kompozytowego zapewniającego doskonałą adaptację i estetykę",
+    benefits: [
+      "Doskonała adaptacja materiału",
+      "Wysoka estetyka wypełnień",
+      "Minimalna inwazyjność",
+      "Długotrwały rezultat",
+    ],
+    icon: Syringe,
+    featured: false,
+  },
+  {
+    id: "implant-prosthetics",
+    name: "Implantoprotetyka",
+    description:
+      "Kompleksowa odbudowa protetyczna na implantach - od pojedynczych koron po pełne uzupełnienia wspomagane implantami",
+    benefits: [
+      "Korony na implantach",
+      "Mosty wspomagane implantami",
+      "Protezy na implantach",
+      "Trwałe i stabilne rozwiązanie",
+    ],
+    icon: Wrench,
+    featured: false,
+  },
+  {
+    id: "conservative-dentistry",
+    name: "Stomatologia zachowawcza",
+    description:
+      "Kompleksowa opieka zachowawcza - leczenie próchnicy, odbudowy zębów i profilaktyka chorób jamy ustnej",
+    benefits: [
+      "Leczenie próchnicy",
+      "Wypełnienia kompozytowe",
+      "Profilaktyka chorób jamy ustnej",
+      "Zachowanie naturalnych zębów",
+    ],
+    icon: Shield,
+    featured: false,
   },
 ];
 
 export const serviceCategories = {
   preventive: {
     name: "Stomatologia zachowawcza",
-    description: "Profilaktyka i podstawowa opieka stomatologiczana",
+    description: "Profilaktyka i podstawowa opieka stomatologiczna",
     services: services.filter((s) =>
-      ["general-checkup", "cleaning", "fluoride-treatment"].includes(s.id),
+      ["general-checkup", "cleaning"].includes(s.id),
     ),
   },
   cosmetic: {
@@ -229,7 +254,9 @@ export const serviceCategories = {
     name: "Stomatologia specjalistyczna",
     description: "Specjalistyczna opieka dla różnych grup pacjentów",
     services: services.filter((s) =>
-      ["pediatric", "emergency", "oral-surgery"].includes(s.id),
+      ["orthodontics", "pediatric", "oral-surgery", "laser-therapy"].includes(
+        s.id,
+      ),
     ),
   },
 };
