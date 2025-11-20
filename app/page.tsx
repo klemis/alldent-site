@@ -10,7 +10,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { featuredServices } from "@/lib/data/services";
 import {
   Calendar,
@@ -34,7 +33,7 @@ export default function Home() {
           <div className="absolute inset-0">
             <Image
               src="/images/office/dental-office.png"
-              alt="Nowoczesny gabinet stomatologiczny AllDent"
+              alt="Nowoczesny gabinet stomatologiczny Alldent"
               fill
               className="object-cover object-bottom"
               priority
@@ -42,19 +41,21 @@ export default function Home() {
             />
           </div>
 
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/20"></div>
+          {/* Overlay - gradient for better text visibility */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/40 to-black/30"></div>
 
           {/* Content */}
           <div className="relative z-10 w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="max-w-2xl space-y-6 text-white">
                 <div className="space-y-2">
-                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl [text-shadow:_2px_2px_12px_rgb(0_0_0_/_80%)]">
                     Twój uśmiech w{" "}
-                    <span className="text-yellow-400">dobrych rękach</span>
+                    <span className="text-yellow-400 [text-shadow:_2px_2px_12px_rgb(0_0_0_/_90%)]">
+                      dobrych rękach
+                    </span>
                   </h1>
-                  <p className="text-lg md:text-xl lg:text-2xl opacity-90">
+                  <p className="text-lg md:text-xl lg:text-2xl font-medium [text-shadow:_1px_1px_8px_rgb(0_0_0_/_70%)]">
                     Nowoczesny gabinet stomatologiczny w sercu Częstochowy.
                     Oferujemy kompleksową opiekę dla całej rodziny w przyjaznej
                     atmosferze.
@@ -78,7 +79,7 @@ export default function Home() {
                     asChild
                     className="text-base text-primary bg-white hover:bg-primary hover:text-white"
                   >
-                    <a href="tel:+48123456789">
+                    <a href="tel:+48663333787">
                       <Phone className="w-5 h-5 mr-2" />
                       Zadzwoń teraz
                     </a>
@@ -87,21 +88,21 @@ export default function Home() {
 
                 {/* Trust indicators */}
                 <div className="flex flex-wrap gap-6 pt-6">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm px-3 py-2 rounded-lg">
                     <Shield className="w-5 h-5 text-green-400" />
-                    <span className="text-sm font-medium">
+                    <span className="text-sm font-semibold [text-shadow:_1px_1px_4px_rgb(0_0_0_/_60%)]">
                       Nowoczesny sprzęt
                     </span>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm px-3 py-2 rounded-lg">
                     <Award className="w-5 h-5 text-blue-400" />
-                    <span className="text-sm font-medium">
-                      Doświadczenie 15+ lat
+                    <span className="text-sm font-semibold [text-shadow:_1px_1px_4px_rgb(0_0_0_/_60%)]">
+                      Doświadczenie 30+ lat
                     </span>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm px-3 py-2 rounded-lg">
                     <Users className="w-5 h-5 text-purple-400" />
-                    <span className="text-sm font-medium">
+                    <span className="text-sm font-semibold [text-shadow:_1px_1px_4px_rgb(0_0_0_/_60%)]">
                       Rodzinny gabinet
                     </span>
                   </div>
@@ -155,11 +156,6 @@ export default function Home() {
                           <CardTitle className="text-lg">
                             {service.name}
                           </CardTitle>
-                          {service.price && (
-                            <Badge variant="secondary" className="mt-1">
-                              od {service.price}
-                            </Badge>
-                          )}
                         </div>
                       </div>
                     </CardHeader>
@@ -178,12 +174,6 @@ export default function Home() {
                           </li>
                         ))}
                       </ul>
-                      {service.duration && (
-                        <div className="flex items-center gap-1 mt-3 text-sm text-muted-foreground">
-                          <Clock className="w-4 h-4" />
-                          Czas zabiegu: {service.duration}
-                        </div>
-                      )}
                     </CardContent>
                   </Card>
                 ))}
@@ -193,6 +183,92 @@ export default function Home() {
                 <Button asChild variant="outline" size="lg">
                   <Link href="/uslugi">Zobacz wszystkie usługi</Link>
                 </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Equipment Section */}
+        <section className="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-teal-50">
+          <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center space-y-4 mb-12">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                  Najnowocześniejszy sprzęt
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  Inwestujemy w najnowsze technologie, aby zapewnić Ci najlepszą
+                  opiekę stomatologiczną
+                </p>
+              </div>
+
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                <Card className="text-center">
+                  <CardHeader>
+                    <div className="mx-auto w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                      <Shield className="w-8 h-8 text-blue-600" />
+                    </div>
+                    <CardTitle className="text-xl">
+                      CBCT - Tomograf stomatologiczny
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">
+                      Trójwymiarowa diagnostyka z przystawką cefalometryczną.
+                      Precyzyjne zdjęcia cefalometryczne dla ortodoncji i
+                      implantologii.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="text-center">
+                  <CardHeader>
+                    <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                      <Award className="w-8 h-8 text-green-600" />
+                    </div>
+                    <CardTitle className="text-xl">
+                      Rentgen stomatologiczny
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">
+                      Cyfrowy system rentgenowski zapewniający szybką i dokładną
+                      diagnostykę przy minimalnym promieniowaniu.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="text-center">
+                  <CardHeader>
+                    <div className="mx-auto w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                      <Heart className="w-8 h-8 text-purple-600" />
+                    </div>
+                    <CardTitle className="text-xl">
+                      Mikroskop stomatologiczny
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">
+                      Precyzja endodoncji pod mikroskopem - leczenie kanałowe na
+                      najwyższym poziomie z doskonałą wizualizacją.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="text-center">
+                  <CardHeader>
+                    <div className="mx-auto w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
+                      <CheckCircle className="w-8 h-8 text-orange-600" />
+                    </div>
+                    <CardTitle className="text-xl">Piaskarka GBT</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">
+                      Guided Biofilm Therapy - najnowocześniejsza metoda higieny
+                      stomatologicznej dla maksymalnego komfortu i efektywności.
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
@@ -284,10 +360,10 @@ export default function Home() {
                       <div>
                         <h3 className="font-semibold">Telefon</h3>
                         <a
-                          href="tel:+48123456789"
+                          href="tel:+48663333787"
                           className="text-muted-foreground hover:text-primary"
                         >
-                          +48 123 456 789
+                          +48 663 333 787
                         </a>
                       </div>
                     </div>
@@ -297,9 +373,11 @@ export default function Home() {
                       <div>
                         <h3 className="font-semibold">Godziny otwarcia</h3>
                         <div className="text-muted-foreground space-y-1">
-                          <p>Pon-Pt: 8:00 - 20:00</p>
-                          <p>Sobota: 9:00 - 15:00</p>
-                          <p>Niedziela: zamknięte</p>
+                          <p>Poniedziałek: 8:00 - 19:00</p>
+                          <p>Wtorek: 12:00 - 19:00</p>
+                          <p>Środa: 12:00 - 19:00</p>
+                          <p>Czwartek: 8:00 - 19:00</p>
+                          <p>Piątek: 8:00 - 15:00</p>
                         </div>
                       </div>
                     </div>
@@ -320,9 +398,9 @@ export default function Home() {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Interaktywna mapa pokazująca lokalizację gabinetu AllDent przy ulicy Sabinowskiej 8 w Częstochowie"
+                    title="Interaktywna mapa pokazująca lokalizację gabinetu Alldent przy ulicy Sabinowskiej 8 w Częstochowie"
                     className="w-full h-full rounded-lg"
-                    aria-label="Mapa z lokalizacją gabinetu stomatologicznego AllDent"
+                    aria-label="Mapa z lokalizacją gabinetu stomatologicznego Alldent"
                   ></iframe>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -13,7 +14,7 @@ import {
   Calendar,
 } from "lucide-react";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Kontakt - Alldent Gabinet Stomatologiczny Częstochowa",
   description:
     "Skontaktuj się z Alldent w Częstochowie. Adres, telefon, godziny otwarcia. Umów wizytę online lub telefonicznie.",
@@ -109,11 +110,11 @@ export default function ContactPage() {
                             Rejestracja i informacje:
                           </p>
                           <a
-                            href="tel:+48123456789"
-                            aria-label="Zadzwoń do gabinetu - +48 123 456 789"
+                            href="tel:+48663333787"
+                            aria-label="Zadzwoń do gabinetu - +48 663 333 787"
                             className="text-lg font-semibold text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-md"
                           >
-                            +48 123 456 789
+                            +48 663 333 787
                           </a>
                         </div>
                       </CardContent>
@@ -129,10 +130,10 @@ export default function ContactPage() {
                       </CardHeader>
                       <CardContent>
                         <a
-                          href="mailto:kontakt@Alldent-czestochowa.pl"
+                          href="mailto:alldent@onet.eu"
                           className="text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-md"
                         >
-                          kontakt@Alldent-czestochowa.pl
+                          alldent@onet.eu
                         </a>
                       </CardContent>
                     </Card>
@@ -148,15 +149,27 @@ export default function ContactPage() {
                       <CardContent>
                         <div className="space-y-2 text-sm">
                           <div className="flex justify-between">
-                            <span>Poniedziałek - Piątek:</span>
-                            <span className="font-medium">8:00 - 20:00</span>
+                            <span>Poniedziałek</span>
+                            <span className="font-medium">8:00 - 19:00</span>
                           </div>
                           <div className="flex justify-between">
-                            <span>Sobota:</span>
-                            <span className="font-medium">9:00 - 15:00</span>
+                            <span>Wtorek</span>
+                            <span className="font-medium">12:00 - 19:00</span>
                           </div>
                           <div className="flex justify-between">
-                            <span>Niedziela:</span>
+                            <span>Środa</span>
+                            <span className="font-medium">12:00 - 19:00</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>Czwartek</span>
+                            <span className="font-medium">8:00 - 19:00</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>Piątek</span>
+                            <span className="font-medium">8:00 - 15:00</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>Sobota - Niedziela</span>
                             <span className="text-muted-foreground">
                               zamknięte
                             </span>
@@ -185,8 +198,8 @@ export default function ContactPage() {
                           allowFullScreen
                           loading="lazy"
                           referrerPolicy="no-referrer-when-downgrade"
-                          title="Interaktywna mapa pokazująca lokalizację gabinetu AllDent przy ulicy Sabinowskiej 8 w Częstochowie"
-                          aria-label="Mapa z lokalizacją gabinetu stomatologicznego AllDent"
+                          title="Interaktywna mapa pokazująca lokalizację gabinetu Alldent przy ulicy Sabinowskiej 8 w Częstochowie"
+                          aria-label="Mapa z lokalizacją gabinetu stomatologicznego Alldent"
                         ></iframe>
                       </div>
                       <div className="p-4">
@@ -218,7 +231,7 @@ export default function ContactPage() {
                         <div>
                           <p className="font-medium text-sm">Samochodem</p>
                           <p className="text-sm text-muted-foreground">
-                            Darmowy parking dla pacjentów. Wjazd od ul.
+                            Bezpłatny parking dla pacjentów. Wjazd od ul.
                             Sabinowskiej.
                           </p>
                         </div>
@@ -231,8 +244,8 @@ export default function ContactPage() {
                             Komunikacją miejską
                           </p>
                           <p className="text-sm text-muted-foreground">
-                            Przystanek &ldquo;Przykładowa&rdquo; - linie
-                            autobusowe: 12, 15, 23
+                            Przystanek &ldquo;Piastowska&rdquo; - linie
+                            autobusowe: 14, 17, 19, 23, 32, 37
                           </p>
                         </div>
                       </div>
@@ -318,8 +331,8 @@ export default function ContactPage() {
                 <div className="grid gap-4 sm:grid-cols-2">
                   <Button size="lg" variant="outline" asChild>
                     <a
-                      href="tel:+48123456789"
-                      aria-label="Zadzwoń do gabinetu - +48 123 456 789"
+                      href="tel:+48663333787"
+                      aria-label="Zadzwoń do gabinetu - +48 663 333 787"
                       className="focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                     >
                       <Phone className="w-5 h-5 mr-2" />
@@ -329,7 +342,7 @@ export default function ContactPage() {
 
                   <Button size="lg" variant="outline" asChild>
                     <a
-                      href="mailto:kontakt@Alldent-czestochowa.pl"
+                      href="mailto:alldent@onet.eu"
                       className="focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                     >
                       <Mail className="w-5 h-5 mr-2" />

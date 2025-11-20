@@ -253,10 +253,10 @@ export default function TeamPage() {
                       Umów wizytę
                     </Link>
                   </Button>
-                  <Button size="lg" variant="outline" asChild>
+                  <Button size="lg" variant="secondary" asChild>
                     <a
-                      href="tel:+48123456789"
-                      aria-label="Zadzwoń do gabinetu - +48 123 456 789"
+                      href="tel:+48663333787"
+                      aria-label="Zadzwoń do gabinetu - +48 663 333 787"
                       className="focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                     >
                       <Phone className="w-5 h-5 mr-2" />

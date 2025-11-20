@@ -117,11 +117,11 @@ export default function BookAppointmentPage() {
                           Zadzwoń teraz
                         </p>
                         <a
-                          href="tel:+48123456789"
-                          aria-label="Zadzwoń do gabinetu - +48 123 456 789"
+                          href="tel:+48663333787"
+                          aria-label="Zadzwoń do gabinetu - +48 663 333 787"
                           className="text-2xl font-bold text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-md"
                         >
-                          +48 123 456 789
+                          +48 663 333 787
                         </a>
                       </div>
 

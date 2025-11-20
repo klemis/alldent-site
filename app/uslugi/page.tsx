@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -7,12 +8,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { serviceCategories } from "@/lib/data/services";
-import { Calendar, Clock, CheckCircle, ArrowLeft, Phone } from "lucide-react";
+import { Calendar, CheckCircle, ArrowLeft, Phone } from "lucide-react";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Usługi stomatologiczne - Alldent Częstochowa",
   description:
     "Kompleksowe usługi stomatologiczne w Częstochowie: profilaktyka, leczenie, implantologia, stomatologia estetyczna. Sprawdź nasze ceny i umów wizytę.",
@@ -81,24 +81,6 @@ export default function ServicesPage() {
                                 <CardTitle className="text-lg leading-tight">
                                   {service.name}
                                 </CardTitle>
-                                <div className="flex flex-wrap gap-2 mt-2">
-                                  {service.featured && (
-                                    <Badge
-                                      variant="default"
-                                      className="text-xs"
-                                    >
-                                      Popularne
-                                    </Badge>
-                                  )}
-                                  {service.price && (
-                                    <Badge
-                                      variant="secondary"
-                                      className="text-xs"
-                                    >
-                                      od {service.price}
-                                    </Badge>
-                                  )}
-                                </div>
                               </div>
                             </div>
                           </CardHeader>
@@ -124,13 +106,6 @@ export default function ServicesPage() {
                                 ))}
                               </ul>
                             </div>
-
-                            {service.duration && (
-                              <div className="flex items-center gap-2 text-sm text-muted-foreground pt-2 border-t">
-                                <Clock className="w-4 h-4" />
-                                <span>Czas trwania: {service.duration}</span>
-                              </div>
-                            )}
                           </CardContent>
                         </Card>
                       ))}
@@ -157,8 +132,8 @@ export default function ServicesPage() {
                   Gotowy na wizytę?
                 </h2>
                 <p className="text-lg opacity-90">
-                  Umów się na bezpłatną konsultację i poznaj plan leczenia
-                  dostosowany do Twoich potrzeb.
+                  Umów się na konsultację i poznaj plan leczenia dostosowany do
+                  Twoich potrzeb.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button size="lg" variant="secondary" asChild>
@@ -177,8 +152,8 @@ export default function ServicesPage() {
                     className="text-primary"
                   >
                     <a
-                      href="tel:+48123456789"
-                      aria-label="Zadzwoń do gabinetu - +48 123 456 789"
+                      href="tel:+48663333787"
+                      aria-label="Zadzwoń do gabinetu - +48 663 333 787"
                       className="focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                     >
                       <Phone className="w-5 h-5 mr-2" />
