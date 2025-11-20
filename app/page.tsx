@@ -278,13 +278,23 @@ export default function Home() {
         <section className="py-12 md:py-20 bg-slate-50">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
-              <div className="text-center space-y-4 mb-12">
+              <div className="text-center space-y-4 mb-10">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
                   Dlaczego Alldent?
                 </h2>
                 <p className="text-lg text-muted-foreground">
                   Zaufało nam już ponad 2000 pacjentów w Częstochowie
                 </p>
+              </div>
+
+              {/* ZnanyLekarz Reviews Widget */}
+              <div className="flex justify-center mb-16">
+                <div
+                  className="inline-block"
+                  dangerouslySetInnerHTML={{
+                    __html: `<a class="zl-facility-url" href="https://www.znanylekarz.pl/placowki/alldent-centrum-stomatologiczne-anna-lemisz" rel="nofollow" data-zlw-facility="alldent-centrum-stomatologiczne-anna-lemisz" data-zlw-type="certificate" data-zlw-saas-only="true" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Alldent Centrum Stomatologiczne Anna Lemisz</a><script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>`,
+                  }}
+                />
               </div>
 
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">

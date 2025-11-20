@@ -272,46 +272,14 @@ export default function ContactPage() {
                   </p>
                 </div>
 
-                {/* ZnanyLekarz Widget Placeholder */}
+                {/* ZnanyLekarz Widget */}
                 <Card className="bg-white">
-                  <CardContent className="p-8">
-                    <div className="text-center space-y-4">
-                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                        <Calendar className="w-8 h-8 text-primary" />
-                      </div>
-                      <h3 className="text-xl font-semibold">
-                        Widget rezerwacji ZnanyLekarz
-                      </h3>
-                      <p className="text-muted-foreground">
-                        Tutaj zostanie umieszczony widget ZnanyLekarz
-                        umożliwiający rezerwację wizyt online. Widget będzie
-                        zintegrowany z systemem zarządzania terminami gabinetu.
-                      </p>
-
-                      {/* Placeholder for actual widget implementation */}
-                      <div className="bg-slate-100 p-8 rounded-lg border-2 border-dashed border-slate-300">
-                        <p className="text-sm text-slate-600 italic">
-                          [Miejsce na widget ZnanyLekarz]
-                          <br />
-                          Integracja wymaga wstawienia kodu HTML z panelu
-                          ZnanyLekarz
-                        </p>
-                      </div>
-
-                      <div className="pt-4">
-                        <Button size="lg" asChild>
-                          <a
-                            href="https://www.znanylekarz.pl"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                          >
-                            <Calendar className="w-5 h-5 mr-2" />
-                            Przejdź do ZnanyLekarz
-                          </a>
-                        </Button>
-                      </div>
-                    </div>
+                  <CardContent className="p-4 md:p-6">
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: `<a href="https://www.znanylekarz.pl/placowki/alldent-centrum-stomatologiczne-anna-lemisz" data-zl-widget-facility="alldent-centrum-stomatologiczne-anna-lemisz" rel="nofollow" data-placement="inline" data-zlw-type="facility-calendar-listing-with-saas-only">Alldent Centrum Stomatologiczne Anna Lemisz</a><script id="zl-facility-widget" src="https://www.znanylekarz.pl/platform/js/widget.js"></script>`,
+                      }}
+                    />
                   </CardContent>
                 </Card>
               </div>
