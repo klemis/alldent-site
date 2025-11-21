@@ -47,54 +47,37 @@ export default function BookAppointmentPage() {
             <div className="max-w-7xl mx-auto">
               <div className="max-w-4xl mx-auto space-y-8">
                 {/* Online Booking */}
-                <Card className="border-primary">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-3 text-xl">
-                      <Calendar className="w-6 h-6 text-primary" />
-                      Rezerwacja online przez ZnanyLekarz
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-start gap-3 text-green-700 bg-green-50 p-3 rounded-lg">
-                      <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                <Card className="shadow-lg overflow-hidden">
+                  {/* Green header - builds trust */}
+                  <div className="bg-green-50 border-b border-green-100 px-6 py-3">
+                    <div className="flex items-center gap-2 text-green-700">
+                      <CheckCircle className="w-5 h-5 flex-shrink-0" />
                       <div>
-                        <p className="font-medium">
+                        <span className="font-medium text-sm">
                           Zalecany sposób rezerwacji
-                        </p>
-                        <p className="text-sm">
-                          Dostępny 24/7, natychmiastowe potwierdzenie, widok
-                          wolnych terminów
-                        </p>
+                        </span>
+                        <span className="hidden sm:inline text-sm">
+                          {" "}
+                          - Zarezerwuj termin w 30 sekund i otrzymaj
+                          natychmiastowe potwierdzenie SMS
+                        </span>
                       </div>
                     </div>
+                  </div>
 
-                    <div className="p-4 rounded-lg border bg-background">
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: `<a class="zl-facility-url" href="https://www.znanylekarz.pl/placowki/alldent-centrum-stomatologiczne-anna-lemisz" rel="nofollow" data-zlw-facility="alldent-centrum-stomatologiczne-anna-lemisz" data-zlw-type="facility-big-with-saas-only" data-zlw-saas-only="true" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Alldent Centrum Stomatologiczne Anna Lemisz</a><script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>`,
-                        }}
-                      />
-                    </div>
+                  {/* White body with instructional text */}
+                  <div className="p-6 space-y-6">
+                    <p className="text-center text-muted-foreground">
+                      Wybierz specjalizację poniżej, aby odsłonić wolne terminy
+                    </p>
 
-                    <div className="grid gap-3 sm:grid-cols-2 text-sm">
-                      <div className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-accent-foreground" />
-                        <span>Dostępność 24/7</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-accent-foreground" />
-                        <span>Natychmiastowe potwierdzenie</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-accent-foreground" />
-                        <span>Przypomnienia SMS/email</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-accent-foreground" />
-                        <span>Możliwość przełożenia wizyty</span>
-                      </div>
-                    </div>
-                  </CardContent>
+                    {/* ZnanyLekarz Widget - seamless integration */}
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: `<a href="https://www.znanylekarz.pl/placowki/alldent-centrum-stomatologiczne-anna-lemisz" data-zl-widget-facility="alldent-centrum-stomatologiczne-anna-lemisz" rel="nofollow" data-placement="inline" data-zlw-type="facility-calendar-listing-with-saas-only">Alldent Centrum Stomatologiczne Anna Lemisz</a><script id="zl-facility-widget" src="https://www.znanylekarz.pl/platform/js/widget.js"></script>`,
+                      }}
+                    />
+                  </div>
                 </Card>
 
                 {/* Phone Booking */}

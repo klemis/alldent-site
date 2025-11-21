@@ -258,30 +258,36 @@ export default function ContactPage() {
         </section>
 
         {/* Online Booking Section */}
-        <section className="py-12 md:py-16 bg-slate-50">
+        <section className="py-12 md:py-16 bg-gradient-to-br from-blue-50 to-teal-50">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
-              <div className="max-w-4xl mx-auto">
-                <div className="text-center space-y-4 mb-8">
-                  <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
-                    Umów wizytę online
-                  </h2>
-                  <p className="text-lg text-muted-foreground">
-                    Skorzystaj z wygodnego systemu rezerwacji online dostępnego
-                    24/7
+              <div className="max-w-5xl mx-auto">
+                <div className="text-center space-y-3 mb-6">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10">
+                    <Calendar className="w-7 h-7 text-primary" />
+                  </div>
+                  <p className="text-base text-foreground font-medium max-w-2xl mx-auto">
+                    Wybierz specjalizację poniżej, aby odsłonić wolne terminy
                   </p>
                 </div>
 
-                {/* ZnanyLekarz Widget */}
-                <Card className="bg-white">
-                  <CardContent className="p-4 md:p-6">
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: `<a href="https://www.znanylekarz.pl/placowki/alldent-centrum-stomatologiczne-anna-lemisz" data-zl-widget-facility="alldent-centrum-stomatologiczne-anna-lemisz" rel="nofollow" data-placement="inline" data-zlw-type="facility-calendar-listing-with-saas-only">Alldent Centrum Stomatologiczne Anna Lemisz</a><script id="zl-facility-widget" src="https://www.znanylekarz.pl/platform/js/widget.js"></script>`,
-                      }}
-                    />
-                  </CardContent>
-                </Card>
+                {/* ZnanyLekarz Widget - seamless integration */}
+                <div
+                  className="rounded-xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)] overflow-hidden"
+                  dangerouslySetInnerHTML={{
+                    __html: `<a href="https://www.znanylekarz.pl/placowki/alldent-centrum-stomatologiczne-anna-lemisz" data-zl-widget-facility="alldent-centrum-stomatologiczne-anna-lemisz" rel="nofollow" data-placement="inline" data-zlw-type="facility-calendar-listing-with-saas-only">Alldent Centrum Stomatologiczne Anna Lemisz</a><script id="zl-facility-widget" src="https://www.znanylekarz.pl/platform/js/widget.js"></script>`,
+                  }}
+                />
+
+                {/* Trust indicator below widget */}
+                <div className="mt-6 text-center">
+                  <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
+                    <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-green-100">
+                      <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                    </span>
+                    Rezerwacja natychmiastowa - potwierdzenie SMS
+                  </p>
+                </div>
               </div>
             </div>
           </div>
