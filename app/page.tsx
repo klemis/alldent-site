@@ -32,7 +32,7 @@ export default function Home() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image
-              src="/images/office/dental-office.png"
+              src="/images/office/zabki4.png"
               alt="Nowoczesny gabinet stomatologiczny Alldent"
               fill
               className="object-cover object-bottom"
@@ -284,64 +284,92 @@ export default function Home() {
         <section className="py-12 md:py-20 bg-slate-50">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
-              <div className="text-center space-y-4 mb-10">
+              <div className="text-center space-y-4 mb-12">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
                   Dlaczego Alldent?
                 </h2>
-                <p className="text-lg text-muted-foreground">
-                  Zaufało nam już ponad 2000 pacjentów w Częstochowie
-                </p>
               </div>
 
-              {/* ZnanyLekarz Reviews Widget */}
-              <div className="flex justify-center mb-16">
-                <div
-                  className="inline-block"
-                  dangerouslySetInnerHTML={{
-                    __html: `<a class="zl-facility-url" href="https://www.znanylekarz.pl/placowki/alldent-centrum-stomatologiczne-anna-lemisz" rel="nofollow" data-zlw-facility="alldent-centrum-stomatologiczne-anna-lemisz" data-zlw-type="certificate" data-zlw-saas-only="true" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Alldent Centrum Stomatologiczne Anna Lemisz</a><script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>`,
-                  }}
-                />
-              </div>
-
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-12">
                 <div className="text-center space-y-3">
-                  <div className="mx-auto w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-primary" />
+                  <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                    <Shield className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="font-semibold">Bezpieczeństwo</h3>
+                  <h3 className="font-semibold text-lg">
+                    Pełne bezpieczeństwo
+                  </h3>
                   <p className="text-sm text-muted-foreground">
                     Najwyższe standardy sterylizacji i nowoczesny sprzęt
                   </p>
                 </div>
 
                 <div className="text-center space-y-3">
-                  <div className="mx-auto w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
-                    <Heart className="w-6 h-6 text-accent-foreground" />
+                  <div className="mx-auto w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center">
+                    <Heart className="w-8 h-8 text-accent-foreground" />
                   </div>
-                  <h3 className="font-semibold">Łagodne podejście</h3>
+                  <h3 className="font-semibold text-lg">Leczenie bez bólu</h3>
                   <p className="text-sm text-muted-foreground">
                     Szczególnie dbamy o komfort i spokój naszych pacjentów
                   </p>
                 </div>
 
                 <div className="text-center space-y-3">
-                  <div className="mx-auto w-12 h-12 bg-primary/15 rounded-full flex items-center justify-center">
-                    <Users className="w-6 h-6 text-primary" />
+                  <div className="mx-auto w-16 h-16 bg-primary/15 rounded-full flex items-center justify-center">
+                    <Users className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="font-semibold">Dla całej rodziny</h3>
+                  <h3 className="font-semibold text-lg">Dla małych i dużych</h3>
                   <p className="text-sm text-muted-foreground">
                     Specjalizujemy się w opiece nad dziećmi i dorosłymi
                   </p>
                 </div>
 
                 <div className="text-center space-y-3">
-                  <div className="mx-auto w-12 h-12 bg-cta/10 rounded-full flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-cta" />
+                  <div className="mx-auto w-16 h-16 bg-cta/10 rounded-full flex items-center justify-center">
+                    <Clock className="w-8 h-8 text-cta" />
                   </div>
-                  <h3 className="font-semibold">Punktualność</h3>
+                  <h3 className="font-semibold text-lg">Szanujemy Twój czas</h3>
                   <p className="text-sm text-muted-foreground">
-                    Szanujemy Twój czas - wizyty zgodnie z umówionymi godzinami
+                    Wizyty zgodnie z umówionymi godzinami - bez oczekiwania
                   </p>
+                </div>
+              </div>
+
+              {/* Trust Signal Bar with Widget */}
+              <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl shadow-md border border-primary/10 p-6 md:p-8">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+                  {/* Trust Signal with prominent number */}
+                  <div className="flex items-center gap-6">
+                    <div className="relative">
+                      <div className="w-20 h-20 md:w-24 md:h-24 bg-primary/10 rounded-full flex items-center justify-center">
+                        <Users className="w-10 h-10 md:w-12 md:h-12 text-primary" />
+                      </div>
+                      <div className="absolute -top-2 -right-2 w-10 h-10 bg-cta rounded-full flex items-center justify-center shadow-lg">
+                        <CheckCircle className="w-6 h-6 text-white" />
+                      </div>
+                    </div>
+                    <div className="text-left">
+                      <div className="text-4xl md:text-5xl font-bold text-primary">
+                        2000+
+                      </div>
+                      <p className="text-base md:text-lg text-muted-foreground mt-1">
+                        zadowolonych pacjentów
+                        <br />
+                        <span className="text-sm">
+                          zaufało nam w Częstochowie
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* ZnanyLekarz Widget with styling */}
+                  <div className="flex-shrink-0">
+                    <div
+                      className="inline-block bg-white rounded-xl shadow-lg p-4 border border-primary/10"
+                      dangerouslySetInnerHTML={{
+                        __html: `<a class="zl-facility-url" href="https://www.znanylekarz.pl/placowki/alldent-centrum-stomatologiczne-anna-lemisz" rel="nofollow" data-zlw-facility="alldent-centrum-stomatologiczne-anna-lemisz" data-zlw-type="certificate" data-zlw-saas-only="true" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Alldent Centrum Stomatologiczne Anna Lemisz</a><script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>`,
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
