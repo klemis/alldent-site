@@ -4,6 +4,8 @@ import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { PageTransition } from "@/components/motion";
+import CookieConsent from "@/components/cookie-consent";
+import FloatingContact from "@/components/floating-contact";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,6 +49,8 @@ export default function RootLayout({
         <Navigation />
         <PageTransition>{children}</PageTransition>
         <Footer />
+        <FloatingContact />
+        <CookieConsent />
       </body>
     </html>
   );
