@@ -158,7 +158,6 @@ Kalendarz RTG:
 title: "Tytuł artykułu"
 description: "Krótki opis (max 160 znaków, używany w meta description)"
 date: "2026-03-10"
-author: "Dr Anna Kowalska"
 image: "/images/blog/nazwa-obrazka.jpg"  # opcjonalne
 tags: ["higiena", "profilaktyka"]        # opcjonalne
 ```
