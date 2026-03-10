@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
     <div className="flex flex-col min-h-screen">
       <main id="main-content">
         {/* Header */}
-        <section className="bg-gradient-to-br from-blue-50 to-teal-50 py-12 md:py-16">
+        <section className="bg-gradient-to-br from-amber-50/40 to-teal-50/60 py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="max-w-3xl mx-auto text-center space-y-4">
@@ -61,7 +61,7 @@ export default function PrivacyPolicyPage() {
                     Administratorem danych osobowych jest gabinet
                     stomatologiczny Alldent:
                   </p>
-                  <div className="bg-slate-50 p-4 rounded-lg text-sm">
+                  <div className="bg-stone-50 p-4 rounded-lg text-sm">
                     <p>
                       <strong>Alldent</strong>
                     </p>

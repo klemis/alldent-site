@@ -195,7 +195,7 @@ export default function Home() {
         </section>
 
         {/* Equipment Section */}
-        <section className="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-teal-50">
+        <section className="py-12 md:py-20 bg-gradient-to-br from-amber-50/40 to-teal-50/60">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="text-center space-y-4 mb-12">
@@ -281,7 +281,7 @@ export default function Home() {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-12 md:py-20 bg-slate-50">
+        <section className="py-12 md:py-20 bg-stone-50">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="text-center space-y-4 mb-12">

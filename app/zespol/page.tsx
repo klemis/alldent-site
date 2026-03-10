@@ -31,7 +31,7 @@ export default function TeamPage() {
     <div className="flex flex-col min-h-screen">
       <main id="main-content">
         {/* Header */}
-        <section className="bg-gradient-to-br from-blue-50 to-teal-50 py-12 md:py-16">
+        <section className="bg-gradient-to-br from-amber-50/40 to-teal-50/60 py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="max-w-3xl mx-auto text-center space-y-4">
@@ -184,7 +184,7 @@ export default function TeamPage() {
         </section>
 
         {/* Values Section */}
-        <section className="py-12 md:py-16 bg-slate-50">
+        <section className="py-12 md:py-16 bg-stone-50">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="max-w-4xl mx-auto text-center space-y-8">

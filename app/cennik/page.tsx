@@ -46,7 +46,7 @@ export default function PricingPage() {
     <div className="flex flex-col min-h-screen">
       <main id="main-content">
         {/* Header */}
-        <section className="bg-gradient-to-br from-blue-50 to-teal-50 py-12 md:py-16">
+        <section className="bg-gradient-to-br from-amber-50/40 to-teal-50/60 py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="max-w-3xl mx-auto text-center space-y-4">
