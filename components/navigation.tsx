@@ -18,6 +18,7 @@ const navItems = [
   { title: "Usługi", href: "/uslugi" },
   { title: "Cennik", href: "/cennik" },
   { title: "Zespół", href: "/zespol" },
+  { title: "Blog", href: "/blog" },
   { title: "Kontakt", href: "/kontakt" },
 ];
 
