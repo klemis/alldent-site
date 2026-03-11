@@ -16,6 +16,7 @@ import { PriceInfo } from "@/components/price-info";
 import { FadeInOnScroll } from "@/components/motion";
 import { serviceCategories } from "@/lib/data/services";
 import { ArrowLeft, Calendar, Phone, Info } from "lucide-react";
+import { JsonLd, breadcrumbSchema } from "@/components/structured-data";
 
 export const metadata: Metadata = {
   title: "Cennik - Alldent Częstochowa",
@@ -46,6 +47,10 @@ export default function PricingPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main id="main-content">
+        <JsonLd data={breadcrumbSchema([
+          { name: "Strona główna", href: "/" },
+          { name: "Cennik", href: "/cennik" },
+        ])} />
         {/* Header */}
         <section className="bg-gradient-to-br from-amber-50/40 to-teal-50/60 py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">

@@ -25,11 +25,32 @@ import {
 import { FadeInOnScroll, HoverScale } from "@/components/motion";
 import { ZnanyLekarzWidget } from "@/components/znanylekarz-widget";
 import { ConditionalGoogleMap } from "@/components/conditional-google-map";
+import { JsonLd, SITE_URL } from "@/components/structured-data";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <main id="main-content">
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "@id": `${SITE_URL}/#business`,
+            name: "Alldent - Centrum Stomatologiczne",
+            image: `${SITE_URL}/images/office/zabki4.png`,
+            telephone: "+48663333787",
+            email: "alldent@onet.eu",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "ul. Sabinowska 8",
+              addressLocality: "Częstochowa",
+              postalCode: "42-200",
+              addressCountry: "PL",
+            },
+            url: SITE_URL,
+            priceRange: "$$",
+          }}
+        />
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center">
           {/* Background Image */}

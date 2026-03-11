@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Phone, CheckCircle } from "lucide-react";
 import { FadeInOnScroll } from "@/components/motion";
 import { ZnanyLekarzWidget } from "@/components/znanylekarz-widget";
+import { JsonLd, breadcrumbSchema } from "@/components/structured-data";
 
 export const metadata = {
   title: "Umów wizytę online - Alldent Częstochowa",
@@ -15,6 +16,10 @@ export default function BookAppointmentPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main id="main-content">
+        <JsonLd data={breadcrumbSchema([
+          { name: "Strona główna", href: "/" },
+          { name: "Umów wizytę", href: "/umow-wizyte" },
+        ])} />
         {/* Header */}
         <section className="bg-gradient-to-br from-amber-50/40 to-teal-50/60 py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">

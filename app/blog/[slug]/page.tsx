@@ -5,6 +5,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, CalendarDays } from "lucide-react";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { JsonLd, SITE_URL, breadcrumbSchema } from "@/components/structured-data";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -50,6 +51,35 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <div className="flex flex-col min-h-screen">
       <main id="main-content">
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: post.description,
+            datePublished: post.date,
+            author: {
+              "@type": "Organization",
+              name: "Alldent Częstochowa",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Alldent Częstochowa",
+              logo: {
+                "@type": "ImageObject",
+                url: `${SITE_URL}/images/logo/logo.png`,
+              },
+            },
+            mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
+          }}
+        />
+        <JsonLd
+          data={breadcrumbSchema([
+            { name: "Strona główna", href: "/" },
+            { name: "Blog", href: "/blog" },
+            { name: post.title, href: `/blog/${post.slug}` },
+          ])}
+        />
         {/* Header */}
         <section className="bg-gradient-to-br from-amber-50/40 to-teal-50/60 py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">

@@ -20,6 +20,7 @@ import {
   Heart,
 } from "lucide-react";
 import { FadeInOnScroll } from "@/components/motion";
+import { JsonLd, breadcrumbSchema } from "@/components/structured-data";
 
 export const metadata = {
   title: "Nasz zespół - Alldent Częstochowa",
@@ -31,6 +32,10 @@ export default function TeamPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main id="main-content">
+        <JsonLd data={breadcrumbSchema([
+          { name: "Strona główna", href: "/" },
+          { name: "Zespół", href: "/zespol" },
+        ])} />
         {/* Header */}
         <section className="bg-gradient-to-br from-amber-50/40 to-teal-50/60 py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">

@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { PageTransition } from "@/components/motion";
 import CookieConsent from "@/components/cookie-consent";
 import FloatingContact from "@/components/floating-contact";
+import { JsonLd, organizationSchema } from "@/components/structured-data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +19,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alldent - Gabinet Stomatologiczny w Częstochowie",
+  metadataBase: new URL("https://alldent-stomatologia.pl"),
+  title: {
+    default: "Alldent - Gabinet Stomatologiczny w Częstochowie",
+    template: "%s | Alldent Częstochowa",
+  },
   description:
     "Nowoczesny gabinet stomatologiczny w Częstochowie. Oferujemy kompleksową opiekę stomatologiczną: profilaktykę, leczenie, implantologię i stomatologię estetyczną.",
   keywords: [
@@ -27,12 +32,21 @@ export const metadata: Metadata = {
     "implantologia",
     "wybielanie zębów",
     "stomatologia estetyczna",
+    "ortodoncja Częstochowa",
+    "stomatolog dziecięcy Częstochowa",
   ],
   openGraph: {
     title: "Alldent - Gabinet Stomatologiczny w Częstochowie",
     description: "Profesjonalna opieka stomatologiczna w sercu Częstochowy",
     type: "website",
     locale: "pl_PL",
+    siteName: "Alldent Częstochowa",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 
@@ -43,6 +57,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
+      <head>
+        <JsonLd data={organizationSchema} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

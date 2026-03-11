@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, CalendarDays } from "lucide-react";
 import { FadeInOnScroll, HoverScale } from "@/components/motion";
 import { getAllPosts } from "@/lib/blog";
+import { JsonLd, breadcrumbSchema } from "@/components/structured-data";
 
 export const metadata: Metadata = {
   title: "Blog - Alldent Gabinet Stomatologiczny Częstochowa",
@@ -32,6 +33,10 @@ export default function BlogPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main id="main-content">
+        <JsonLd data={breadcrumbSchema([
+          { name: "Strona główna", href: "/" },
+          { name: "Blog", href: "/blog" },
+        ])} />
         {/* Header */}
         <section className="bg-gradient-to-br from-amber-50/40 to-teal-50/60 py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">

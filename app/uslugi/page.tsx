@@ -13,6 +13,7 @@ import { PriceInfo } from "@/components/price-info";
 import { serviceCategories } from "@/lib/data/services";
 import { Calendar, CheckCircle, ArrowLeft, Phone } from "lucide-react";
 import { FadeInOnScroll, HoverScale } from "@/components/motion";
+import { JsonLd, breadcrumbSchema } from "@/components/structured-data";
 
 export const metadata: Metadata = {
   title: "Usługi stomatologiczne - Alldent Częstochowa",
@@ -24,6 +25,10 @@ export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main id="main-content">
+        <JsonLd data={breadcrumbSchema([
+          { name: "Strona główna", href: "/" },
+          { name: "Usługi", href: "/uslugi" },
+        ])} />
         {/* Header */}
         <section className="bg-gradient-to-br from-amber-50/40 to-teal-50/60 py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
