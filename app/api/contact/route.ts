@@ -1,17 +1,13 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import {
+  validateContactForm,
+  type ContactFormData,
+} from "@/lib/validation/contact";
 
 function getResend() {
   return new Resend(process.env.RESEND_API_KEY);
 }
-
-const SUBJECTS = [
-  "Rezerwacja wizyty",
-  "Pytanie o usługę",
-  "Pytanie o cennik",
-  "Zmiana/odwołanie wizyty",
-  "Inne",
-];
 
 const RATE_LIMIT_WINDOW = 60_000;
 const RATE_LIMIT_MAX = 5;
@@ -32,40 +28,7 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
-interface ContactPayload {
-  name: string;
-  email: string;
-  phone?: string;
-  subject: string;
-  message: string;
-  website?: string;
-}
-
-function validatePayload(
-  body: ContactPayload
-): string | null {
-  if (!body.name || body.name.length < 2 || body.name.length > 50) {
-    return "Imię musi mieć od 2 do 50 znaków.";
-  }
-  if (!body.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) {
-    return "Podaj prawidłowy adres email.";
-  }
-  if (
-    body.phone &&
-    !/^\d{9}$/.test(body.phone.replace(/\s/g, ""))
-  ) {
-    return "Numer telefonu musi składać się z 9 cyfr.";
-  }
-  if (!body.subject || !SUBJECTS.includes(body.subject)) {
-    return "Wybierz prawidłowy temat wiadomości.";
-  }
-  if (!body.message || body.message.length < 10 || body.message.length > 1000) {
-    return "Wiadomość musi mieć od 10 do 1000 znaków.";
-  }
-  return null;
-}
-
-function buildEmailHtml(body: ContactPayload): string {
+function buildEmailHtml(body: ContactFormData): string {
   return `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px;">
       <h2 style="color: #1a1a1a; border-bottom: 2px solid #0d9488; padding-bottom: 12px;">
@@ -122,15 +85,16 @@ export async function POST(request: Request) {
       );
     }
 
-    const body: ContactPayload = await request.json();
+    const body: ContactFormData = await request.json();
 
     if (body.website) {
       return NextResponse.json({ success: true });
     }
 
-    const validationError = validatePayload(body);
-    if (validationError) {
-      return NextResponse.json({ error: validationError }, { status: 400 });
+    const validationErrors = validateContactForm(body);
+    const firstError = Object.values(validationErrors).find(Boolean);
+    if (firstError) {
+      return NextResponse.json({ error: firstError }, { status: 400 });
     }
 
     await getResend().emails.send({

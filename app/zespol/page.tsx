@@ -20,7 +20,7 @@ import {
   Heart,
 } from "lucide-react";
 import { FadeInOnScroll } from "@/components/motion";
-import { JsonLd, breadcrumbSchema } from "@/components/structured-data";
+import { JsonLd, breadcrumbSchema, personSchema } from "@/components/structured-data";
 
 export const metadata = {
   title: "Nasz zespół - Alldent Częstochowa",
@@ -36,6 +36,9 @@ export default function TeamPage() {
           { name: "Strona główna", href: "/" },
           { name: "Zespół", href: "/zespol" },
         ])} />
+        {teamMembers.map((member, index) => (
+          <JsonLd key={index} data={personSchema(member)} />
+        ))}
         {/* Header */}
         <section className="bg-gradient-to-br from-amber-50/40 to-teal-50/60 py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
@@ -85,7 +88,7 @@ export default function TeamPage() {
         </section>
 
         {/* Team Members */}
-        <section className="py-12 md:py-20">
+        <section className="py-16 md:py-24">
           <div className="w-full px-6 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="grid gap-8 lg:gap-12">

@@ -158,7 +158,7 @@ export default function Home() {
         </section>
 
         {/* Featured Services */}
-        <section id="featured-services" className="py-12 md:py-20">
+        <section id="featured-services" className="py-16 md:py-24">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <FadeInOnScroll>
@@ -220,7 +220,7 @@ export default function Home() {
         </section>
 
         {/* Equipment Section */}
-        <section className="py-12 md:py-20 bg-gradient-to-br from-amber-50/40 to-teal-50/60">
+        <section className="py-16 md:py-24 bg-gradient-to-br from-amber-50/40 to-teal-50/60">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <FadeInOnScroll>
@@ -316,7 +316,7 @@ export default function Home() {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-12 md:py-20 bg-stone-50">
+        <section className="py-16 md:py-24 bg-stone-50">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <FadeInOnScroll>
@@ -411,7 +411,7 @@ export default function Home() {
         </section>
 
         {/* Contact & Location */}
-        <section className="py-12 md:py-20">
+        <section className="py-16 md:py-24">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="grid gap-8 lg:grid-cols-2 lg:gap-8">

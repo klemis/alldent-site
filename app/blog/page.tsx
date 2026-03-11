@@ -1,9 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, CalendarDays } from "lucide-react";
-import { FadeInOnScroll, HoverScale } from "@/components/motion";
+import { ArrowLeft } from "lucide-react";
+import { FadeInOnScroll } from "@/components/motion";
+import { BlogCard } from "@/components/blog-card";
 import { getAllPosts } from "@/lib/blog";
 import { JsonLd, breadcrumbSchema } from "@/components/structured-data";
 
@@ -18,14 +18,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
-function formatDate(dateString: string) {
-  return new Date(dateString).toLocaleDateString("pl-PL", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
 
 export default function BlogPage() {
   const posts = getAllPosts();
@@ -65,7 +57,7 @@ export default function BlogPage() {
         </section>
 
         {/* Posts */}
-        <section className="py-12 md:py-20">
+        <section className="py-16 md:py-24">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-4xl mx-auto">
               {posts.length === 0 ? (
@@ -76,28 +68,12 @@ export default function BlogPage() {
                 <div className="grid gap-8">
                   {posts.map((post, index) => (
                     <FadeInOnScroll key={post.slug} delay={index * 0.1}>
-                      <HoverScale>
-                        <Link href={`/blog/${post.slug}`} className="block">
-                          <Card className="hover:shadow-lg transition-shadow">
-                            <CardHeader>
-                              <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                                <CalendarDays className="w-4 h-4" />
-                                <time dateTime={post.date}>
-                                  {formatDate(post.date)}
-                                </time>
-                              </div>
-                              <CardTitle className="text-xl leading-tight">
-                                {post.title}
-                              </CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                              <p className="text-muted-foreground">
-                                {post.description}
-                              </p>
-                            </CardContent>
-                          </Card>
-                        </Link>
-                      </HoverScale>
+                      <BlogCard
+                        slug={post.slug}
+                        title={post.title}
+                        description={post.description}
+                        date={post.date}
+                      />
                     </FadeInOnScroll>
                   ))}
                 </div>

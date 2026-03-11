@@ -61,7 +61,7 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Information */}
-        <section className="py-12 md:py-20">
+        <section className="py-16 md:py-24">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <FadeInOnScroll>

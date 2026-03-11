@@ -13,7 +13,7 @@ import { PriceInfo } from "@/components/price-info";
 import { serviceCategories } from "@/lib/data/services";
 import { Calendar, CheckCircle, ArrowLeft, Phone } from "lucide-react";
 import { FadeInOnScroll, HoverScale } from "@/components/motion";
-import { JsonLd, breadcrumbSchema } from "@/components/structured-data";
+import { JsonLd, breadcrumbSchema, medicalServiceSchema } from "@/components/structured-data";
 
 export const metadata: Metadata = {
   title: "Usługi stomatologiczne - Alldent Częstochowa",
@@ -29,6 +29,9 @@ export default function ServicesPage() {
           { name: "Strona główna", href: "/" },
           { name: "Usługi", href: "/uslugi" },
         ])} />
+        {Object.values(serviceCategories).flatMap(cat => cat.services).map(service => (
+          <JsonLd key={service.id} data={medicalServiceSchema(service)} />
+        ))}
         {/* Header */}
         <section className="bg-gradient-to-br from-amber-50/40 to-teal-50/60 py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
@@ -58,7 +61,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Services by Category */}
-        <section className="py-12 md:py-20">
+        <section className="py-16 md:py-24">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto space-y-16">
               {Object.entries(serviceCategories).map(

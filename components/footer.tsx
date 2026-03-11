@@ -106,6 +106,14 @@ export function Footer() {
                     Kontakt
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/blog"
+                    className="text-slate-300 hover:text-white transition-colors text-sm"
+                  >
+                    Blog
+                  </Link>
+                </li>
               </ul>
             </div>
 

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
+import { ConsentAnalytics } from "@/components/consent-analytics";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
@@ -84,7 +84,7 @@ export default function RootLayout({
           <Footer />
           <FloatingContact />
           <CookieConsent />
-          <Analytics />
+          <ConsentAnalytics />
         </SerwistProvider>
       </body>
     </html>

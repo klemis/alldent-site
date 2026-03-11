@@ -86,6 +86,58 @@ export const organizationSchema = {
   ],
 };
 
+export function medicalServiceSchema(service: {
+  name: string;
+  description: string;
+  id: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    name: service.name,
+    description: service.description,
+    url: `${SITE_URL}/uslugi#${service.id}`,
+    procedureType: "http://schema.org/NoninvasiveProcedure",
+    howPerformed: service.description,
+    status: "http://schema.org/EventScheduled",
+    availableService: {
+      "@type": "MedicalTherapy",
+      name: service.name,
+    },
+    provider: {
+      "@type": "Dentist",
+      name: "Alldent - Centrum Stomatologiczne",
+      url: SITE_URL,
+    },
+  };
+}
+
+export function personSchema(member: {
+  name: string;
+  title: string;
+  qualifications: string;
+  bio: string;
+  specialties: string[];
+  image?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    name: member.name,
+    jobTitle: member.title,
+    description: member.bio,
+    image: member.image ? `${SITE_URL}${member.image}` : undefined,
+    alumniOf: member.qualifications,
+    knowsAbout: member.specialties,
+    worksFor: {
+      "@type": "Dentist",
+      name: "Alldent - Centrum Stomatologiczne",
+      url: SITE_URL,
+    },
+    medicalSpecialty: member.specialties,
+  };
+}
+
 export function breadcrumbSchema(
   items: { name: string; href: string }[],
 ) {

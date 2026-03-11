@@ -3,16 +3,27 @@
 import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
+type AnimationVariant = "fadeSlideUp" | "fadeIn" | "slideLeft" | "slideRight";
+
+const variants: Record<AnimationVariant, { initial: Record<string, number>; animate: Record<string, number> }> = {
+  fadeSlideUp: { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 } },
+  fadeIn: { initial: { opacity: 0 }, animate: { opacity: 1 } },
+  slideLeft: { initial: { opacity: 0, x: -30 }, animate: { opacity: 1, x: 0 } },
+  slideRight: { initial: { opacity: 0, x: 30 }, animate: { opacity: 1, x: 0 } },
+};
+
 interface FadeInOnScrollProps {
   children: ReactNode;
   className?: string;
   delay?: number;
+  variant?: AnimationVariant;
 }
 
 export function FadeInOnScroll({
   children,
   className,
   delay = 0,
+  variant = "fadeSlideUp",
 }: FadeInOnScrollProps) {
   const prefersReducedMotion = useReducedMotion();
 
@@ -20,10 +31,12 @@ export function FadeInOnScroll({
     return <div className={className}>{children}</div>;
   }
 
+  const v = variants[variant];
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={v.initial}
+      whileInView={v.animate}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, ease: "easeOut", delay }}
       className={className}

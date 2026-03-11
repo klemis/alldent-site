@@ -2,62 +2,17 @@
 
 import { useState, type FormEvent } from "react";
 import { CheckCircle, AlertCircle, Loader2 } from "lucide-react";
-
-const SUBJECTS = [
-  "Rezerwacja wizyty",
-  "Pytanie o usługę",
-  "Pytanie o cennik",
-  "Zmiana/odwołanie wizyty",
-  "Inne",
-] as const;
+import {
+  SUBJECTS,
+  validateContactForm,
+  type ContactFormData,
+  type ValidationErrors,
+} from "@/lib/validation/contact";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
-interface FormErrors {
-  name?: string;
-  email?: string;
-  phone?: string;
-  subject?: string;
-  message?: string;
-}
-
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  subject: string;
-  message: string;
-  website: string;
-}
-
-function validate(data: FormData): FormErrors {
-  const errors: FormErrors = {};
-
-  if (data.name.length < 2 || data.name.length > 50) {
-    errors.name = "Imię musi mieć od 2 do 50 znaków.";
-  }
-
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-    errors.email = "Podaj prawidłowy adres email.";
-  }
-
-  if (data.phone && !/^\d{9}$/.test(data.phone.replace(/\s/g, ""))) {
-    errors.phone = "Numer telefonu musi składać się z 9 cyfr.";
-  }
-
-  if (!SUBJECTS.includes(data.subject as (typeof SUBJECTS)[number])) {
-    errors.subject = "Wybierz temat wiadomości.";
-  }
-
-  if (data.message.length < 10 || data.message.length > 1000) {
-    errors.message = "Wiadomość musi mieć od 10 do 1000 znaków.";
-  }
-
-  return errors;
-}
-
 export function ContactForm() {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     phone: "",
@@ -65,7 +20,7 @@ export function ContactForm() {
     message: "",
     website: "",
   });
-  const [errors, setErrors] = useState<FormErrors>({});
+  const [errors, setErrors] = useState<ValidationErrors>({});
   const [status, setStatus] = useState<FormStatus>("idle");
 
   function handleChange(
@@ -75,7 +30,7 @@ export function ContactForm() {
   ) {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    if (errors[name as keyof FormErrors]) {
+    if (errors[name as keyof ValidationErrors]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
   }
@@ -83,7 +38,7 @@ export function ContactForm() {
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
-    const validationErrors = validate(formData);
+    const validationErrors = validateContactForm(formData);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
