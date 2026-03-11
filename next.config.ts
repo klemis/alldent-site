@@ -1,9 +1,6 @@
-import type { NextConfig } from "next";
+import { withSerwist } from "@serwist/turbopack";
 
-const nextConfig: NextConfig = {
-  assetPrefix: process.env.NODE_ENV === "production" ? "" : "",
+export default withSerwist({
   trailingSlash: false,
   turbopack: {},
-};
-
-export default nextConfig;
+});

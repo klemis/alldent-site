@@ -1,0 +1,25 @@
+{
+  "name": "Alldent - Centrum Stomatologiczne Częstochowa",
+  "short_name": "Alldent",
+  "description": "Nowoczesny gabinet stomatologiczny w Częstochowie. Kompleksowa opieka dla całej rodziny.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0d9488",
+  "background_color": "#fffdf9",
+  "categories": ["medical", "health"],
+  "lang": "pl",
+  "icons": [
+    {
+      "src": "/images/logo/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

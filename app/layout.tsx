@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
@@ -7,6 +8,7 @@ import { PageTransition } from "@/components/motion";
 import CookieConsent from "@/components/cookie-consent";
 import FloatingContact from "@/components/floating-contact";
 import { JsonLd, organizationSchema } from "@/components/structured-data";
+import { SerwistProvider } from "./serwist";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,6 +50,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  applicationName: "Alldent",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Alldent",
+  },
+  formatDetection: {
+    telephone: false,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0d9488",
 };
 
 export default function RootLayout({
@@ -63,11 +78,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navigation />
-        <PageTransition>{children}</PageTransition>
-        <Footer />
-        <FloatingContact />
-        <CookieConsent />
+        <SerwistProvider swUrl="/serwist/sw.js">
+          <Navigation />
+          <PageTransition>{children}</PageTransition>
+          <Footer />
+          <FloatingContact />
+          <CookieConsent />
+          <Analytics />
+        </SerwistProvider>
       </body>
     </html>
   );
