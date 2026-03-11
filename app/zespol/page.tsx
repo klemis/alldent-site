@@ -19,6 +19,7 @@ import {
   Languages,
   Heart,
 } from "lucide-react";
+import { FadeInOnScroll } from "@/components/motion";
 
 export const metadata = {
   title: "Nasz zespół - Alldent Częstochowa",
@@ -84,99 +85,101 @@ export default function TeamPage() {
             <div className="max-w-7xl mx-auto">
               <div className="grid gap-8 lg:gap-12">
                 {teamMembers.map((member, index) => (
-                  <Card key={index} className="overflow-hidden">
-                    <div className="grid md:grid-cols-3 gap-6 md:gap-8 p-4 md:p-6">
-                      {/* Photo */}
-                      <div className="md:col-span-1">
-                        <div className="aspect-[3/4] bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg flex items-center justify-center">
-                          <Avatar className="w-32 h-32">
-                            <AvatarFallback className="text-2xl font-semibold bg-primary text-primary-foreground">
-                              {member.name
-                                .split(" ")
-                                .map((n) => n[0])
-                                .join("")}
-                            </AvatarFallback>
-                          </Avatar>
+                  <FadeInOnScroll key={index} delay={index * 0.1}>
+                    <Card className="overflow-hidden">
+                      <div className="grid md:grid-cols-3 gap-6 md:gap-8 p-4 md:p-6">
+                        {/* Photo */}
+                        <div className="md:col-span-1">
+                          <div className="aspect-[3/4] bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg flex items-center justify-center">
+                            <Avatar className="w-32 h-32">
+                              <AvatarFallback className="text-2xl font-semibold bg-primary text-primary-foreground">
+                                {member.name
+                                  .split(" ")
+                                  .map((n) => n[0])
+                                  .join("")}
+                              </AvatarFallback>
+                            </Avatar>
+                          </div>
                         </div>
-                      </div>
 
-                      {/* Content */}
-                      <div className="md:col-span-2 space-y-4">
-                        <CardHeader className="p-0">
-                          <CardTitle className="text-2xl">
-                            {member.name}
-                          </CardTitle>
-                          <CardDescription className="text-lg font-medium text-primary">
-                            {member.title}
-                          </CardDescription>
-                        </CardHeader>
+                        {/* Content */}
+                        <div className="md:col-span-2 space-y-4">
+                          <CardHeader className="p-0">
+                            <CardTitle className="text-2xl">
+                              {member.name}
+                            </CardTitle>
+                            <CardDescription className="text-lg font-medium text-primary">
+                              {member.title}
+                            </CardDescription>
+                          </CardHeader>
 
-                        <CardContent className="p-0 space-y-6">
-                          {/* Qualifications */}
-                          <div className="flex items-start gap-3">
-                            <GraduationCap className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                            <div>
-                              <h3 className="font-semibold text-sm">
-                                Wykształcenie
-                              </h3>
-                              <p className="text-sm text-muted-foreground">
-                                {member.qualifications}
-                              </p>
-                            </div>
-                          </div>
-
-                          {/* Bio */}
-                          <p className="text-muted-foreground leading-relaxed">
-                            {member.bio}
-                          </p>
-
-                          {/* Specialties */}
-                          <div className="space-y-2">
-                            <h3 className="font-semibold text-sm">
-                              Specjalizacje
-                            </h3>
-                            <div className="flex flex-wrap gap-2">
-                              {member.specialties.map((specialty, idx) => (
-                                <Badge
-                                  key={idx}
-                                  variant="secondary"
-                                  className="text-xs"
-                                >
-                                  {specialty}
-                                </Badge>
-                              ))}
-                            </div>
-                          </div>
-
-                          {/* Experience & Languages */}
-                          <div className="flex flex-wrap gap-6 pt-2">
-                            {member.experience && (
-                              <div className="flex items-center gap-2">
-                                <Award className="w-4 h-4 text-accent-foreground" />
-                                <span className="text-sm">
-                                  <span className="font-medium">
-                                    Doświadczenie:
-                                  </span>{" "}
-                                  {member.experience}
-                                </span>
+                          <CardContent className="p-0 space-y-6">
+                            {/* Qualifications */}
+                            <div className="flex items-start gap-3">
+                              <GraduationCap className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                              <div>
+                                <h3 className="font-semibold text-sm">
+                                  Wykształcenie
+                                </h3>
+                                <p className="text-sm text-muted-foreground">
+                                  {member.qualifications}
+                                </p>
                               </div>
-                            )}
+                            </div>
 
-                            {member.languages &&
-                              member.languages.length > 0 && (
+                            {/* Bio */}
+                            <p className="text-muted-foreground leading-relaxed">
+                              {member.bio}
+                            </p>
+
+                            {/* Specialties */}
+                            <div className="space-y-2">
+                              <h3 className="font-semibold text-sm">
+                                Specjalizacje
+                              </h3>
+                              <div className="flex flex-wrap gap-2">
+                                {member.specialties.map((specialty, idx) => (
+                                  <Badge
+                                    key={idx}
+                                    variant="secondary"
+                                    className="text-xs"
+                                  >
+                                    {specialty}
+                                  </Badge>
+                                ))}
+                              </div>
+                            </div>
+
+                            {/* Experience & Languages */}
+                            <div className="flex flex-wrap gap-6 pt-2">
+                              {member.experience && (
                                 <div className="flex items-center gap-2">
-                                  <Languages className="w-4 h-4 text-primary" />
+                                  <Award className="w-4 h-4 text-accent-foreground" />
                                   <span className="text-sm">
-                                    <span className="font-medium">Języki:</span>{" "}
-                                    {member.languages.join(", ")}
+                                    <span className="font-medium">
+                                      Doświadczenie:
+                                    </span>{" "}
+                                    {member.experience}
                                   </span>
                                 </div>
                               )}
-                          </div>
-                        </CardContent>
+
+                              {member.languages &&
+                                member.languages.length > 0 && (
+                                  <div className="flex items-center gap-2">
+                                    <Languages className="w-4 h-4 text-primary" />
+                                    <span className="text-sm">
+                                      <span className="font-medium">Języki:</span>{" "}
+                                      {member.languages.join(", ")}
+                                    </span>
+                                  </div>
+                                )}
+                            </div>
+                          </CardContent>
+                        </div>
                       </div>
-                    </div>
-                  </Card>
+                    </Card>
+                  </FadeInOnScroll>
                 ))}
               </div>
             </div>
@@ -187,46 +190,48 @@ export default function TeamPage() {
         <section className="py-12 md:py-16 bg-stone-50">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
-              <div className="max-w-4xl mx-auto text-center space-y-8">
-                <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
-                  Nasze wartości
-                </h2>
+              <FadeInOnScroll>
+                <div className="max-w-4xl mx-auto text-center space-y-8">
+                  <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
+                    Nasze wartości
+                  </h2>
 
-                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                  <div className="space-y-3">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                      <Heart className="w-6 h-6 text-primary" />
+                  <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="space-y-3">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+                        <Heart className="w-6 h-6 text-primary" />
+                      </div>
+                      <h3 className="font-semibold">Empatia i zrozumienie</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Rozumiemy lęki pacjentów i zawsze podchodzimy z
+                        cierpliwością i zrozumieniem
+                      </p>
                     </div>
-                    <h3 className="font-semibold">Empatia i zrozumienie</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Rozumiemy lęki pacjentów i zawsze podchodzimy z
-                      cierpliwością i zrozumieniem
-                    </p>
-                  </div>
 
-                  <div className="space-y-3">
-                    <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto">
-                      <Award className="w-6 h-6 text-accent-foreground" />
+                    <div className="space-y-3">
+                      <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto">
+                        <Award className="w-6 h-6 text-accent-foreground" />
+                      </div>
+                      <h3 className="font-semibold">Profesjonalizm</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Najwyższa jakość usług dzięki ciągłemu dokształcaniu i
+                        nowoczesnym technologiom
+                      </p>
                     </div>
-                    <h3 className="font-semibold">Profesjonalizm</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Najwyższa jakość usług dzięki ciągłemu dokształcaniu i
-                      nowoczesnym technologiom
-                    </p>
-                  </div>
 
-                  <div className="space-y-3">
-                    <div className="w-12 h-12 bg-primary/15 rounded-full flex items-center justify-center mx-auto">
-                      <GraduationCap className="w-6 h-6 text-primary" />
+                    <div className="space-y-3">
+                      <div className="w-12 h-12 bg-primary/15 rounded-full flex items-center justify-center mx-auto">
+                        <GraduationCap className="w-6 h-6 text-primary" />
+                      </div>
+                      <h3 className="font-semibold">Rozwój i edukacja</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Regularnie uczestniczymy w kursach i szkoleniach, aby być
+                        na bieżąco z nowościami
+                      </p>
                     </div>
-                    <h3 className="font-semibold">Rozwój i edukacja</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Regularnie uczestniczymy w kursach i szkoleniach, aby być
-                      na bieżąco z nowościami
-                    </p>
                   </div>
                 </div>
-              </div>
+              </FadeInOnScroll>
             </div>
           </div>
         </section>

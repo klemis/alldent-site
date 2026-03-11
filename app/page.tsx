@@ -22,6 +22,9 @@ import {
   Users,
   Award,
 } from "lucide-react";
+import { FadeInOnScroll, HoverScale } from "@/components/motion";
+import { ZnanyLekarzWidget } from "@/components/znanylekarz-widget";
+import { ConditionalGoogleMap } from "@/components/conditional-google-map";
 
 export default function Home() {
   return (
@@ -137,51 +140,52 @@ export default function Home() {
         <section id="featured-services" className="py-12 md:py-20">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
-              <div className="text-center space-y-4 mb-12">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                  Nasze główne usługi
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Kompleksowa opieka stomatologiczna dla całej rodziny - od
-                  profilaktyki po zaawansowane zabiegi estetyczne
-                </p>
-              </div>
+              <FadeInOnScroll>
+                <div className="text-center space-y-4 mb-12">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                    Nasze główne usługi
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Kompleksowa opieka stomatologiczna dla całej rodziny - od
+                    profilaktyki po zaawansowane zabiegi estetyczne
+                  </p>
+                </div>
+              </FadeInOnScroll>
 
               <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3">
                 {featuredServices.map((service) => (
-                  <Card
-                    key={service.id}
-                    className="hover:shadow-lg transition-shadow"
-                  >
-                    <CardHeader>
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 bg-primary/10 rounded-lg">
-                          <service.icon className="w-6 h-6 text-primary" />
+                  <HoverScale key={service.id}>
+                    <Card className="hover:shadow-lg transition-shadow h-full">
+                      <CardHeader>
+                        <div className="flex items-center gap-3">
+                          <div className="p-2 bg-primary/10 rounded-lg">
+                            <service.icon className="w-6 h-6 text-primary" />
+                          </div>
+                          <div>
+                            <CardTitle className="text-lg">
+                              {service.name}
+                            </CardTitle>
+                          </div>
                         </div>
-                        <div>
-                          <CardTitle className="text-lg">
-                            {service.name}
-                          </CardTitle>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-base mb-4">
-                        {service.description}
-                      </CardDescription>
-                      <ul className="space-y-1">
-                        {service.benefits.slice(0, 3).map((benefit, index) => (
-                          <li
-                            key={index}
-                            className="flex items-center gap-2 text-sm"
-                          >
-                            <CheckCircle className="w-4 h-4 text-accent-foreground flex-shrink-0" />
-                            {benefit}
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription className="text-base mb-4">
+                          {service.description}
+                        </CardDescription>
+                        <ul className="space-y-1">
+                          {service.benefits.slice(0, 3).map((benefit, index) => (
+                            <li
+                              key={index}
+                              className="flex items-center gap-2 text-sm"
+                            >
+                              <CheckCircle className="w-4 h-4 text-accent-foreground flex-shrink-0" />
+                              {benefit}
+                            </li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </HoverScale>
                 ))}
               </div>
 
@@ -198,83 +202,93 @@ export default function Home() {
         <section className="py-12 md:py-20 bg-gradient-to-br from-amber-50/40 to-teal-50/60">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
-              <div className="text-center space-y-4 mb-12">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                  Najnowocześniejszy sprzęt
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Inwestujemy w najnowsze technologie, aby zapewnić Ci najlepszą
-                  opiekę stomatologiczną
-                </p>
-              </div>
+              <FadeInOnScroll>
+                <div className="text-center space-y-4 mb-12">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                    Najnowocześniejszy sprzęt
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Inwestujemy w najnowsze technologie, aby zapewnić Ci najlepszą
+                    opiekę stomatologiczną
+                  </p>
+                </div>
+              </FadeInOnScroll>
 
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                <Card className="text-center">
-                  <CardHeader>
-                    <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                      <Shield className="w-8 h-8 text-primary" />
-                    </div>
-                    <CardTitle className="text-xl">
-                      CBCT - Tomograf stomatologiczny
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      Trójwymiarowa diagnostyka z przystawką cefalometryczną.
-                      Precyzyjne zdjęcia cefalometryczne dla ortodoncji i
-                      implantologii.
-                    </p>
-                  </CardContent>
-                </Card>
+                <HoverScale>
+                  <Card className="text-center">
+                    <CardHeader>
+                      <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                        <Shield className="w-8 h-8 text-primary" />
+                      </div>
+                      <CardTitle className="text-xl">
+                        CBCT - Tomograf stomatologiczny
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-muted-foreground">
+                        Trójwymiarowa diagnostyka z przystawką cefalometryczną.
+                        Precyzyjne zdjęcia cefalometryczne dla ortodoncji i
+                        implantologii.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </HoverScale>
 
-                <Card className="text-center">
-                  <CardHeader>
-                    <div className="mx-auto w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-4">
-                      <Award className="w-8 h-8 text-accent-foreground" />
-                    </div>
-                    <CardTitle className="text-xl">
-                      Rentgen stomatologiczny
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      Cyfrowy system rentgenowski zapewniający szybką i dokładną
-                      diagnostykę przy minimalnym promieniowaniu.
-                    </p>
-                  </CardContent>
-                </Card>
+                <HoverScale>
+                  <Card className="text-center">
+                    <CardHeader>
+                      <div className="mx-auto w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-4">
+                        <Award className="w-8 h-8 text-accent-foreground" />
+                      </div>
+                      <CardTitle className="text-xl">
+                        Rentgen stomatologiczny
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-muted-foreground">
+                        Cyfrowy system rentgenowski zapewniający szybką i dokładną
+                        diagnostykę przy minimalnym promieniowaniu.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </HoverScale>
 
-                <Card className="text-center">
-                  <CardHeader>
-                    <div className="mx-auto w-16 h-16 bg-primary/15 rounded-full flex items-center justify-center mb-4">
-                      <Heart className="w-8 h-8 text-primary" />
-                    </div>
-                    <CardTitle className="text-xl">
-                      Mikroskop stomatologiczny
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      Precyzja endodoncji pod mikroskopem - leczenie kanałowe na
-                      najwyższym poziomie z doskonałą wizualizacją.
-                    </p>
-                  </CardContent>
-                </Card>
+                <HoverScale>
+                  <Card className="text-center">
+                    <CardHeader>
+                      <div className="mx-auto w-16 h-16 bg-primary/15 rounded-full flex items-center justify-center mb-4">
+                        <Heart className="w-8 h-8 text-primary" />
+                      </div>
+                      <CardTitle className="text-xl">
+                        Mikroskop stomatologiczny
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-muted-foreground">
+                        Precyzja endodoncji pod mikroskopem - leczenie kanałowe na
+                        najwyższym poziomie z doskonałą wizualizacją.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </HoverScale>
 
-                <Card className="text-center">
-                  <CardHeader>
-                    <div className="mx-auto w-16 h-16 bg-cta/10 rounded-full flex items-center justify-center mb-4">
-                      <CheckCircle className="w-8 h-8 text-cta" />
-                    </div>
-                    <CardTitle className="text-xl">Piaskarka GBT</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      Guided Biofilm Therapy - najnowocześniejsza metoda higieny
-                      stomatologicznej dla maksymalnego komfortu i efektywności.
-                    </p>
-                  </CardContent>
-                </Card>
+                <HoverScale>
+                  <Card className="text-center">
+                    <CardHeader>
+                      <div className="mx-auto w-16 h-16 bg-cta/10 rounded-full flex items-center justify-center mb-4">
+                        <CheckCircle className="w-8 h-8 text-cta" />
+                      </div>
+                      <CardTitle className="text-xl">Piaskarka GBT</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-muted-foreground">
+                        Guided Biofilm Therapy - najnowocześniejsza metoda higieny
+                        stomatologicznej dla maksymalnego komfortu i efektywności.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </HoverScale>
               </div>
             </div>
           </div>
@@ -284,11 +298,13 @@ export default function Home() {
         <section className="py-12 md:py-20 bg-stone-50">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
-              <div className="text-center space-y-4 mb-12">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                  Dlaczego Alldent?
-                </h2>
-              </div>
+              <FadeInOnScroll>
+                <div className="text-center space-y-4 mb-12">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                    Dlaczego Alldent?
+                  </h2>
+                </div>
+              </FadeInOnScroll>
 
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-12">
                 <div className="text-center space-y-3">
@@ -363,12 +379,9 @@ export default function Home() {
 
                   {/* ZnanyLekarz Widget with styling */}
                   <div className="flex-shrink-0">
-                    <div
-                      className="inline-block bg-white rounded-xl shadow-lg p-4 border border-primary/10"
-                      dangerouslySetInnerHTML={{
-                        __html: `<a class="zl-facility-url" href="https://www.znanylekarz.pl/placowki/alldent-centrum-stomatologiczne-anna-lemisz" rel="nofollow" data-zlw-facility="alldent-centrum-stomatologiczne-anna-lemisz" data-zlw-type="certificate" data-zlw-saas-only="true" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Alldent Centrum Stomatologiczne Anna Lemisz</a><script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>`,
-                      }}
-                    />
+                    <div className="inline-block bg-white rounded-xl shadow-lg p-4 border border-primary/10">
+                      <ZnanyLekarzWidget type="certificate" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -433,19 +446,8 @@ export default function Home() {
                 </div>
 
                 {/* Google Maps */}
-                <div className="aspect-[4/3] bg-slate-200 rounded-lg overflow-hidden">
-                  <iframe
-                    src="https://maps.google.com/maps?q=ul.+Sabinowska+8,+Częstochowa,+Poland&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Interaktywna mapa pokazująca lokalizację gabinetu Alldent przy ulicy Sabinowskiej 8 w Częstochowie"
-                    className="w-full h-full rounded-lg"
-                    aria-label="Mapa z lokalizacją gabinetu stomatologicznego Alldent"
-                  ></iframe>
+                <div className="aspect-[4/3] rounded-lg overflow-hidden">
+                  <ConditionalGoogleMap className="aspect-[4/3]" />
                 </div>
               </div>
             </div>

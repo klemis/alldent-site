@@ -13,6 +13,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { PriceInfo } from "@/components/price-info";
+import { FadeInOnScroll } from "@/components/motion";
 import { serviceCategories } from "@/lib/data/services";
 import { ArrowLeft, Calendar, Phone, Info } from "lucide-react";
 
@@ -85,60 +86,62 @@ export default function PricingPage() {
         <section className="py-12 md:py-20">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-5xl mx-auto">
-              <Card className="overflow-hidden">
-                <Table>
-                  <TableHeader>
-                    <TableRow className="bg-white border-b hover:bg-white">
-                      <TableHead className="h-12 px-6 text-base font-semibold">
-                        Usługa
-                      </TableHead>
-                      <TableHead className="text-right w-[180px] h-12 px-6 text-base font-semibold">
-                        Cena
-                      </TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {Object.entries(serviceCategories).map(
-                      ([categoryKey, category]) => (
-                        <React.Fragment key={categoryKey}>
-                          {/* Category Header Row */}
-                          <TableRow className="bg-gradient-to-r from-primary/10 to-primary/5 hover:from-primary/10 hover:to-primary/5">
-                            <TableCell
-                              colSpan={2}
-                              className="font-bold text-base py-4 px-6 text-primary"
-                            >
-                              {category.name}
-                            </TableCell>
-                          </TableRow>
-
-                          {/* Service Rows */}
-                          {category.services.map((service) => (
-                            <TableRow
-                              key={service.id}
-                              className="hover:bg-muted/50 transition-colors"
-                            >
-                              <TableCell className="py-4 px-6">
-                                <div className="font-medium text-base">
-                                  {service.name}
-                                </div>
-                              </TableCell>
-                              <TableCell className="text-right py-4 px-6">
-                                <Badge
-                                  variant="secondary"
-                                  className="text-sm font-semibold px-3 py-1.5"
-                                >
-                                  {servicePricing[service.id] ||
-                                    "Cena do ustalenia"}
-                                </Badge>
+              <FadeInOnScroll>
+                <Card className="overflow-hidden">
+                  <Table>
+                    <TableHeader>
+                      <TableRow className="bg-white border-b hover:bg-white">
+                        <TableHead className="h-12 px-6 text-base font-semibold">
+                          Usługa
+                        </TableHead>
+                        <TableHead className="text-right w-[180px] h-12 px-6 text-base font-semibold">
+                          Cena
+                        </TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {Object.entries(serviceCategories).map(
+                        ([categoryKey, category]) => (
+                          <React.Fragment key={categoryKey}>
+                            {/* Category Header Row */}
+                            <TableRow className="bg-gradient-to-r from-primary/10 to-primary/5 hover:from-primary/10 hover:to-primary/5">
+                              <TableCell
+                                colSpan={2}
+                                className="font-bold text-base py-4 px-6 text-primary"
+                              >
+                                {category.name}
                               </TableCell>
                             </TableRow>
-                          ))}
-                        </React.Fragment>
-                      ),
-                    )}
-                  </TableBody>
-                </Table>
-              </Card>
+
+                            {/* Service Rows */}
+                            {category.services.map((service) => (
+                              <TableRow
+                                key={service.id}
+                                className="hover:bg-muted/50 transition-colors"
+                              >
+                                <TableCell className="py-4 px-6">
+                                  <div className="font-medium text-base">
+                                    {service.name}
+                                  </div>
+                                </TableCell>
+                                <TableCell className="text-right py-4 px-6">
+                                  <Badge
+                                    variant="secondary"
+                                    className="text-sm font-semibold px-3 py-1.5"
+                                  >
+                                    {servicePricing[service.id] ||
+                                      "Cena do ustalenia"}
+                                  </Badge>
+                                </TableCell>
+                              </TableRow>
+                            ))}
+                          </React.Fragment>
+                        ),
+                      )}
+                    </TableBody>
+                  </Table>
+                </Card>
+              </FadeInOnScroll>
             </div>
           </div>
         </section>

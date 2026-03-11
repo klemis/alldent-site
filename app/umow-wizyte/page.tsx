@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Calendar, Phone, Clock, CheckCircle } from "lucide-react";
+import { ArrowLeft, Phone, CheckCircle } from "lucide-react";
+import { FadeInOnScroll } from "@/components/motion";
+import { ZnanyLekarzWidget } from "@/components/znanylekarz-widget";
 
 export const metadata = {
   title: "Umów wizytę online - Alldent Częstochowa",
@@ -45,6 +47,7 @@ export default function BookAppointmentPage() {
         <section className="py-12 md:py-20">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
+              <FadeInOnScroll>
               <div className="max-w-4xl mx-auto space-y-8">
                 {/* Online Booking */}
                 <Card className="shadow-lg overflow-hidden">
@@ -72,11 +75,7 @@ export default function BookAppointmentPage() {
                     </p>
 
                     {/* ZnanyLekarz Widget - seamless integration */}
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: `<a href="https://www.znanylekarz.pl/placowki/alldent-centrum-stomatologiczne-anna-lemisz" data-zl-widget-facility="alldent-centrum-stomatologiczne-anna-lemisz" rel="nofollow" data-placement="inline" data-zlw-type="facility-calendar-listing-with-saas-only">Alldent Centrum Stomatologiczne Anna Lemisz</a><script id="zl-facility-widget" src="https://www.znanylekarz.pl/platform/js/widget.js"></script>`,
-                      }}
-                    />
+                    <ZnanyLekarzWidget type="facility-calendar" />
                   </div>
                 </Card>
 
@@ -110,7 +109,25 @@ export default function BookAppointmentPage() {
                     </div>
                   </CardContent>
                 </Card>
+
+                {/* RTG Booking */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-3 text-xl">
+                      <Phone className="w-6 h-6 text-primary" />
+                      Badanie RTG
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-muted-foreground">
+                      Umów się na badanie RTG online. Nasz gabinet wyposażony jest
+                      w tomograf CBCT z przystawką cefalometryczną.
+                    </p>
+                    <ZnanyLekarzWidget type="rtg-calendar" />
+                  </CardContent>
+                </Card>
               </div>
+              </FadeInOnScroll>
             </div>
           </div>
         </section>
@@ -119,6 +136,7 @@ export default function BookAppointmentPage() {
         <section className="py-12 md:py-16 bg-stone-50">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
+              <FadeInOnScroll>
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-2xl font-bold text-center mb-8">
                   Przydatne informacje przed wizytą
@@ -178,6 +196,7 @@ export default function BookAppointmentPage() {
                   </Card>
                 </div>
               </div>
+              </FadeInOnScroll>
             </div>
           </div>
         </section>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Facebook, Instagram, Phone, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { ZnanyLekarzWidget } from "@/components/znanylekarz-widget";
 
 export function Footer() {
   return (
@@ -157,6 +158,13 @@ export function Footer() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* ZnanyLekarz Certificate */}
+          <div className="flex justify-center pt-4">
+            <div className="bg-slate-800 rounded-xl p-4 border border-slate-700">
+              <ZnanyLekarzWidget type="certificate" className="min-h-[80px]" />
             </div>
           </div>
 
