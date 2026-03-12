@@ -170,11 +170,11 @@ export function Footer() {
           </div>
 
           {/* ZnanyLekarz Certificate */}
-          <div className="flex justify-center pt-4">
+          {/*<div className="flex justify-center pt-4">
             <div className="bg-slate-800 rounded-xl p-4 border border-slate-700">
               <ZnanyLekarzWidget type="certificate" className="min-h-[80px]" />
             </div>
-          </div>
+          </div>*/}
 
           <Separator className="my-8 bg-slate-700" />
 

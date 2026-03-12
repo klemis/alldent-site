@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Phone, CheckCircle, MonitorSmartphone } from "lucide-react";
+import { ArrowLeft, Phone, CheckCircle } from "lucide-react";
 import { FadeInOnScroll } from "@/components/motion";
 import { ZnanyLekarzWidget } from "@/components/znanylekarz-widget";
 import { JsonLd, breadcrumbSchema } from "@/components/structured-data";
@@ -16,10 +16,12 @@ export default function BookAppointmentPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main id="main-content">
-        <JsonLd data={breadcrumbSchema([
-          { name: "Strona główna", href: "/" },
-          { name: "Umów wizytę", href: "/umow-wizyte" },
-        ])} />
+        <JsonLd
+          data={breadcrumbSchema([
+            { name: "Strona główna", href: "/" },
+            { name: "Umów wizytę", href: "/umow-wizyte" },
+          ])}
+        />
         {/* Header */}
         <section className="bg-gradient-to-br from-amber-50/40 to-teal-50/60 py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
@@ -53,9 +55,9 @@ export default function BookAppointmentPage() {
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <FadeInOnScroll>
-              <div className="space-y-10">
-                {/* Trust banner */}
-                <div className="max-w-2xl mx-auto">
+                <div className="space-y-10">
+                  {/* Trust banner */}
+                  {/*<div className="max-w-2xl mx-auto">
                   <div className="bg-green-50 border border-green-100 rounded-lg px-5 py-3">
                     <div className="flex items-center gap-2 text-green-700">
                       <CheckCircle className="w-5 h-5 flex-shrink-0" />
@@ -68,54 +70,45 @@ export default function BookAppointmentPage() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </div>*/}
 
-                {/* Calendars side by side */}
-                <div className="grid gap-8 lg:grid-cols-2">
-                  {/* Main Calendar */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2">
-                      <MonitorSmartphone className="w-5 h-5 text-primary" />
+                  {/* Calendars side by side */}
+                  <div className="grid gap-8 lg:grid-cols-2 items-start">
+                    {/* Main Calendar */}
+                    <div className="space-y-3 text-center">
                       <h2 className="text-lg font-semibold">Umów wizytę</h2>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      Wybierz specjalizację, aby odsłonić wolne terminy
-                    </p>
-                    <div className="rounded-xl shadow-sm overflow-hidden">
+                      <p className="text-sm text-muted-foreground">
+                        Wybierz specjalizację, aby odsłonić wolne terminy
+                      </p>
                       <ZnanyLekarzWidget type="facility-calendar" />
                     </div>
-                  </div>
 
-                  {/* RTG Calendar */}
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2">
-                      <MonitorSmartphone className="w-5 h-5 text-primary" />
+                    {/* RTG Calendar */}
+                    <div className="space-y-3 text-center">
                       <h2 className="text-lg font-semibold">Badanie RTG</h2>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      Tomograf CBCT z przystawką cefalometryczną
-                    </p>
-                    <div className="rounded-xl shadow-sm overflow-hidden">
+                      <p className="text-sm text-muted-foreground">
+                        Tomograf CBCT z przystawką cefalometryczną
+                      </p>
                       <ZnanyLekarzWidget type="rtg-calendar" />
                     </div>
                   </div>
-                </div>
 
-                {/* Phone Booking - simplified */}
-                <div className="max-w-2xl mx-auto text-center space-y-3">
-                  <p className="text-muted-foreground">
-                    Preferujesz osobisty kontakt? Zadzwoń i umów wizytę z naszą recepcjonistką.
-                  </p>
-                  <a
-                    href="tel:+48663333787"
-                    aria-label="Zadzwoń do gabinetu - +48 663 333 787"
-                    className="inline-flex items-center gap-2 text-xl font-bold text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-md"
-                  >
-                    <Phone className="w-5 h-5" />
-                    +48 663 333 787
-                  </a>
+                  {/* Phone Booking - simplified */}
+                  <div className="max-w-2xl mx-auto text-center space-y-3">
+                    <p className="text-muted-foreground">
+                      Preferujesz osobisty kontakt? Zadzwoń i umów wizytę z
+                      naszą recepcjonistką.
+                    </p>
+                    <a
+                      href="tel:+48663333787"
+                      aria-label="Zadzwoń do gabinetu - +48 663 333 787"
+                      className="inline-flex items-center gap-2 text-xl font-bold text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-md"
+                    >
+                      <Phone className="w-5 h-5" />
+                      +48 663 333 787
+                    </a>
+                  </div>
                 </div>
-              </div>
               </FadeInOnScroll>
             </div>
           </div>
@@ -126,65 +119,69 @@ export default function BookAppointmentPage() {
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <FadeInOnScroll>
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-2xl font-bold text-center mb-8">
-                  Przydatne informacje przed wizytą
-                </h2>
+                <div className="max-w-4xl mx-auto">
+                  <h2 className="text-2xl font-bold text-center mb-8">
+                    Przydatne informacje przed wizytą
+                  </h2>
 
-                <div className="grid gap-6 md:grid-cols-2">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="text-lg">Pierwsza wizyta</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-2 text-sm">
-                      <p>• Przyjdź 10 minut wcześniej na rejestrację</p>
-                      <p>• Przynieś dowód tożsamości</p>
-                      <p>• Przygotuj listę przyjmowanych leków</p>
-                      <p>• Poinformuj o alergiach i schorzeniach</p>
-                    </CardContent>
-                  </Card>
+                  <div className="grid gap-6 md:grid-cols-2">
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="text-lg">
+                          Pierwsza wizyta
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="space-y-2 text-sm">
+                        <p>• Przyjdź 10 minut wcześniej na rejestrację</p>
+                        <p>• Przynieś dowód tożsamości</p>
+                        <p>• Przygotuj listę przyjmowanych leków</p>
+                        <p>• Poinformuj o alergiach i schorzeniach</p>
+                      </CardContent>
+                    </Card>
 
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="text-lg">
-                        Przygotowanie do zabiegu
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-2 text-sm">
-                      <p>• Zjedz lekki posiłek przed wizytą</p>
-                      <p>• Umyj zęby i użyj nici dentystycznej</p>
-                      <p>• Unikaj alkoholu 24h przed zabiegiem</p>
-                      <p>• W razie pytań - zadzwoń wcześniej</p>
-                    </CardContent>
-                  </Card>
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="text-lg">
+                          Przygotowanie do zabiegu
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="space-y-2 text-sm">
+                        <p>• Zjedz lekki posiłek przed wizytą</p>
+                        <p>• Umyj zęby i użyj nici dentystycznej</p>
+                        <p>• Unikaj alkoholu 24h przed zabiegiem</p>
+                        <p>• W razie pytań - zadzwoń wcześniej</p>
+                      </CardContent>
+                    </Card>
 
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="text-lg">
-                        Odwołanie wizyty
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-2 text-sm">
-                      <p>• Powiadom nas minimum 24h wcześniej</p>
-                      <p>• Skorzystaj ze ZnanyLekarz lub zadzwoń</p>
-                      <p>• Pomożemy znaleźć nowy termin</p>
-                      <p>• Szanujemy Twój czas - szanuj nasz</p>
-                    </CardContent>
-                  </Card>
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="text-lg">
+                          Odwołanie wizyty
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="space-y-2 text-sm">
+                        <p>• Powiadom nas minimum 24h wcześniej</p>
+                        <p>• Skorzystaj ze ZnanyLekarz lub zadzwoń</p>
+                        <p>• Pomożemy znaleźć nowy termin</p>
+                        <p>• Szanujemy Twój czas - szanuj nasz</p>
+                      </CardContent>
+                    </Card>
 
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="text-lg">Formy płatności</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-2 text-sm">
-                      <p>• Gotówka</p>
-                      <p>• Karty płatnicze</p>
-                      <p>• BLIK</p>
-                      {/*<p>• Płatności ratalne (dla dużych zabiegów)</p>*/}
-                    </CardContent>
-                  </Card>
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="text-lg">
+                          Formy płatności
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="space-y-2 text-sm">
+                        <p>• Gotówka</p>
+                        <p>• Karty płatnicze</p>
+                        <p>• BLIK</p>
+                        {/*<p>• Płatności ratalne (dla dużych zabiegów)</p>*/}
+                      </CardContent>
+                    </Card>
+                  </div>
                 </div>
-              </div>
               </FadeInOnScroll>
             </div>
           </div>

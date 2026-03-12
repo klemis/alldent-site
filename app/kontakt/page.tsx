@@ -260,9 +260,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* ZnanyLekarz Widget - seamless integration */}
-                <div className="rounded-xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)] overflow-hidden">
-                  <ZnanyLekarzWidget type="facility-calendar" />
-                </div>
+                <ZnanyLekarzWidget type="facility-calendar" />
 
                 {/* Trust indicator below widget */}
                 <div className="mt-6 text-center">
