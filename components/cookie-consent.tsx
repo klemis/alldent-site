@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback, useSyncExternalStore } from "react"
+import Link from "next/link"
 import { cn } from "@/lib/utils"
 
 type ConsentLevel = "all" | "essential"
@@ -68,8 +69,15 @@ export default function CookieConsent() {
         )}
       >
         <p className="mb-4 text-sm leading-relaxed">
-          Używamy plików cookie, aby zapewnić najlepszą jakość korzystania z
-          naszej strony.
+          Nasza strona korzysta z plików cookie i podobnych technologii.
+          Niezbędne cookies zapewniają poprawne działanie strony. Opcjonalne
+          (Vercel Analytics, Google Maps) wymagają Twojej zgody.{" "}
+          <Link
+            href="/polityka-prywatnosci"
+            className="text-primary hover:underline font-medium"
+          >
+            Polityka prywatności
+          </Link>
         </p>
         <div className="flex flex-col gap-2 sm:flex-row sm:justify-end sm:gap-3">
           <button
