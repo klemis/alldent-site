@@ -88,7 +88,7 @@ export default function TeamPage() {
         </section>
 
         {/* Team Members */}
-        <section className="py-16 md:py-24">
+        <section className="py-12 md:py-16">
           <div className="w-full px-6 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="grid gap-8 lg:gap-12">

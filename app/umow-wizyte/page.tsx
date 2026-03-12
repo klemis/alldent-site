@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Phone, CheckCircle } from "lucide-react";
+import { ArrowLeft, Phone, CheckCircle, MonitorSmartphone } from "lucide-react";
 import { FadeInOnScroll } from "@/components/motion";
 import { ZnanyLekarzWidget } from "@/components/znanylekarz-widget";
 import { JsonLd, breadcrumbSchema } from "@/components/structured-data";
@@ -49,88 +49,72 @@ export default function BookAppointmentPage() {
         </section>
 
         {/* Booking Options */}
-        <section className="py-16 md:py-24">
+        <section className="py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <FadeInOnScroll>
-              <div className="max-w-4xl mx-auto space-y-8">
-                {/* Online Booking */}
-                <Card className="shadow-lg overflow-hidden">
-                  {/* Green header - builds trust */}
-                  <div className="bg-green-50 border-b border-green-100 px-6 py-3">
+              <div className="space-y-10">
+                {/* Trust banner */}
+                <div className="max-w-2xl mx-auto">
+                  <div className="bg-green-50 border border-green-100 rounded-lg px-5 py-3">
                     <div className="flex items-center gap-2 text-green-700">
                       <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                      <div>
-                        <span className="font-medium text-sm">
-                          Zalecany sposób rezerwacji
-                        </span>
-                        <span className="hidden sm:inline text-sm">
-                          {" "}
-                          - Zarezerwuj termin w 30 sekund i otrzymaj
+                      <p className="text-sm">
+                        <span className="font-medium">Zalecany sposób rezerwacji</span>
+                        <span className="hidden sm:inline">
+                          {" "}- Zarezerwuj termin w 30 sekund i otrzymaj
                           natychmiastowe potwierdzenie SMS
                         </span>
-                      </div>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Calendars side by side */}
+                <div className="grid gap-8 lg:grid-cols-2">
+                  {/* Main Calendar */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <MonitorSmartphone className="w-5 h-5 text-primary" />
+                      <h2 className="text-lg font-semibold">Umów wizytę</h2>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Wybierz specjalizację, aby odsłonić wolne terminy
+                    </p>
+                    <div className="rounded-xl shadow-sm overflow-hidden">
+                      <ZnanyLekarzWidget type="facility-calendar" />
                     </div>
                   </div>
 
-                  {/* White body with instructional text */}
-                  <div className="p-6 space-y-6">
-                    <p className="text-center text-muted-foreground">
-                      Wybierz specjalizację poniżej, aby odsłonić wolne terminy
-                    </p>
-
-                    {/* ZnanyLekarz Widget - seamless integration */}
-                    <ZnanyLekarzWidget type="facility-calendar" />
-                  </div>
-                </Card>
-
-                {/* Phone Booking */}
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-3 text-xl">
-                      <Phone className="w-6 h-6 text-primary" />
-                      Rezerwacja telefoniczna
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-muted-foreground">
-                      Preferujesz osobisty kontakt? Zadzwoń do nas w godzinach
-                      pracy i umów wizytę bezpośrednio z naszą recepcjonistką.
-                    </p>
-
-                    <div className="space-y-3">
-                      <div className="text-center p-4 bg-primary/5 rounded-lg">
-                        <p className="text-sm text-muted-foreground mb-1">
-                          Zadzwoń teraz
-                        </p>
-                        <a
-                          href="tel:+48663333787"
-                          aria-label="Zadzwoń do gabinetu - +48 663 333 787"
-                          className="text-2xl font-bold text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-md"
-                        >
-                          +48 663 333 787
-                        </a>
-                      </div>
+                  {/* RTG Calendar */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <MonitorSmartphone className="w-5 h-5 text-primary" />
+                      <h2 className="text-lg font-semibold">Badanie RTG</h2>
                     </div>
-                  </CardContent>
-                </Card>
-
-                {/* RTG Booking */}
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-3 text-xl">
-                      <Phone className="w-6 h-6 text-primary" />
-                      Badanie RTG
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-muted-foreground">
-                      Umów się na badanie RTG online. Nasz gabinet wyposażony jest
-                      w tomograf CBCT z przystawką cefalometryczną.
+                    <p className="text-sm text-muted-foreground">
+                      Tomograf CBCT z przystawką cefalometryczną
                     </p>
-                    <ZnanyLekarzWidget type="rtg-calendar" />
-                  </CardContent>
-                </Card>
+                    <div className="rounded-xl shadow-sm overflow-hidden">
+                      <ZnanyLekarzWidget type="rtg-calendar" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Phone Booking - simplified */}
+                <div className="max-w-2xl mx-auto text-center space-y-3">
+                  <p className="text-muted-foreground">
+                    Preferujesz osobisty kontakt? Zadzwoń i umów wizytę z naszą recepcjonistką.
+                  </p>
+                  <a
+                    href="tel:+48663333787"
+                    aria-label="Zadzwoń do gabinetu - +48 663 333 787"
+                    className="inline-flex items-center gap-2 text-xl font-bold text-primary hover:underline focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-md"
+                  >
+                    <Phone className="w-5 h-5" />
+                    +48 663 333 787
+                  </a>
+                </div>
               </div>
               </FadeInOnScroll>
             </div>

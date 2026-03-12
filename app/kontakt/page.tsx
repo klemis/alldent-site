@@ -61,13 +61,13 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Information */}
-        <section className="py-16 md:py-24">
+        <section className="py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <FadeInOnScroll>
                 <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
                   {/* Contact Details */}
-                  <div className="space-y-8">
+                  <div className="space-y-6">
                     <h2 className="text-2xl font-bold tracking-tighter">
                       Informacje kontaktowe
                     </h2>
@@ -90,19 +90,6 @@ export default function ContactPage() {
                             <br />
                             42-200 Częstochowa
                           </p>
-                          <div className="pt-2">
-                            <Button variant="outline" size="sm" asChild>
-                              <a
-                                href="https://www.google.com/maps/search/?api=1&query=ul.+Sabinowska+8+Częstochowa"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                              >
-                                <Navigation className="w-4 h-4 mr-2" />
-                                Otwórz w mapach
-                              </a>
-                            </Button>
-                          </div>
                         </CardContent>
                       </Card>
 
@@ -191,7 +178,7 @@ export default function ContactPage() {
                   </div>
 
                   {/* Map and Transport */}
-                  <div className="space-y-8">
+                  <div className="space-y-6">
                     <h2 className="text-2xl font-bold tracking-tighter">
                       Lokalizacja
                     </h2>

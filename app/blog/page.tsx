@@ -57,7 +57,7 @@ export default function BlogPage() {
         </section>
 
         {/* Posts */}
-        <section className="py-16 md:py-24">
+        <section className="py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-4xl mx-auto">
               {posts.length === 0 ? (

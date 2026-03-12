@@ -108,7 +108,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </section>
 
         {/* Content */}
-        <section className="py-16 md:py-24">
+        <section className="py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <article className="max-w-3xl mx-auto prose prose-lg prose-stone prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
               <MDXRemote source={post.content} />
