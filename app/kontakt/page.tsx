@@ -11,7 +11,6 @@ import {
   Car,
   Bus,
   Navigation,
-  Calendar,
 } from "lucide-react";
 import { FadeInOnScroll } from "@/components/motion";
 import { ZnanyLekarzWidget } from "@/components/znanylekarz-widget";
@@ -249,27 +248,23 @@ export default function ContactPage() {
         <section className="py-12 md:py-16 bg-gradient-to-br from-amber-50/40 to-teal-50/60">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
-              <div className="max-w-5xl mx-auto">
-                <div className="text-center space-y-3 mb-6">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10">
-                    <Calendar className="w-7 h-7 text-primary" />
-                  </div>
-                  <p className="text-base text-foreground font-medium max-w-2xl mx-auto">
-                    Wybierz specjalizację poniżej, aby odsłonić wolne terminy
+              <div className="grid gap-8 lg:grid-cols-2 items-start">
+                {/* Main Calendar */}
+                <div className="space-y-3 text-center">
+                  <h2 className="text-lg font-semibold">Umów wizytę</h2>
+                  <p className="text-sm text-muted-foreground">
+                    Wybierz specjalizację, aby odsłonić wolne terminy
                   </p>
+                  <ZnanyLekarzWidget type="facility-calendar" />
                 </div>
 
-                {/* ZnanyLekarz Widget - seamless integration */}
-                <ZnanyLekarzWidget type="facility-calendar" />
-
-                {/* Trust indicator below widget */}
-                <div className="mt-6 text-center">
-                  <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
-                    <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-green-100">
-                      <span className="w-2 h-2 rounded-full bg-green-500"></span>
-                    </span>
-                    Rezerwacja natychmiastowa - potwierdzenie SMS
+                {/* RTG Calendar */}
+                <div className="space-y-3 text-center">
+                  <h2 className="text-lg font-semibold">Badanie RTG</h2>
+                  <p className="text-sm text-muted-foreground">
+                    Tomograf CBCT z przystawką cefalometryczną
                   </p>
+                  <ZnanyLekarzWidget type="rtg-calendar" />
                 </div>
               </div>
             </div>
