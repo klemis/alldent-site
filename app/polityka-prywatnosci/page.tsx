@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Shield, Lock, Eye, Database } from "lucide-react";
+import { ArrowLeft, Shield, Lock, Eye, Database, Monitor } from "lucide-react";
 
 export const metadata = {
   title: "Polityka Prywatności - Alldent Częstochowa",
@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
     <div className="flex flex-col min-h-screen">
       <main id="main-content">
         {/* Header */}
-        <section className="bg-gradient-to-br from-blue-50 to-teal-50 py-12 md:py-16">
+        <section className="bg-gradient-to-br from-amber-50/40 to-teal-50/60 py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="max-w-3xl mx-auto text-center space-y-4">
@@ -61,7 +61,7 @@ export default function PrivacyPolicyPage() {
                     Administratorem danych osobowych jest gabinet
                     stomatologiczny Alldent:
                   </p>
-                  <div className="bg-slate-50 p-4 rounded-lg text-sm">
+                  <div className="bg-stone-50 p-4 rounded-lg text-sm">
                     <p>
                       <strong>Alldent</strong>
                     </p>
@@ -205,6 +205,129 @@ export default function PrivacyPolicyPage() {
                     </li>
                     <li>Regularne tworzenie kopii zapasowych</li>
                   </ul>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Monitor className="w-5 h-5 text-primary" />
+                    Pliki cookie i technologie śledzenia
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div>
+                    <h4 className="font-semibold mb-3">
+                      Niezbędne (ładowane zawsze)
+                    </h4>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="border-b text-left">
+                            <th className="pb-2 pr-4 font-semibold">Narzędzie</th>
+                            <th className="pb-2 pr-4 font-semibold">Cel</th>
+                            <th className="pb-2 pr-4 font-semibold">Dane</th>
+                            <th className="pb-2 pr-4 font-semibold">Retencja</th>
+                            <th className="pb-2 font-semibold">Podstawa prawna</th>
+                          </tr>
+                        </thead>
+                        <tbody className="text-muted-foreground">
+                          <tr className="border-b">
+                            <td className="py-2 pr-4">Pliki cookie strony</td>
+                            <td className="py-2 pr-4">
+                              Zapamiętanie wyboru cookie consent
+                            </td>
+                            <td className="py-2 pr-4">
+                              Poziom zgody w localStorage
+                            </td>
+                            <td className="py-2 pr-4">
+                              Do usunięcia danych przeglądarki
+                            </td>
+                            <td className="py-2">
+                              Art. 173 ust. 3 Prawa telekomunikacyjnego
+                              (cookie niezbędne)
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="py-2 pr-4">Sentry</td>
+                            <td className="py-2 pr-4">
+                              Monitoring błędów i stabilności strony
+                            </td>
+                            <td className="py-2 pr-4">
+                              Adres IP, przeglądarka, URL błędu
+                            </td>
+                            <td className="py-2 pr-4">90 dni</td>
+                            <td className="py-2">
+                              Uzasadniony interes (art. 6 ust. 1 lit. f RODO)
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-3">
+                      Opcjonalne (wymagają zgody)
+                    </h4>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="border-b text-left">
+                            <th className="pb-2 pr-4 font-semibold">Narzędzie</th>
+                            <th className="pb-2 pr-4 font-semibold">Cel</th>
+                            <th className="pb-2 pr-4 font-semibold">Dane</th>
+                            <th className="pb-2 pr-4 font-semibold">Retencja</th>
+                            <th className="pb-2 font-semibold">Podstawa prawna</th>
+                          </tr>
+                        </thead>
+                        <tbody className="text-muted-foreground">
+                          <tr className="border-b">
+                            <td className="py-2 pr-4">Vercel Analytics</td>
+                            <td className="py-2 pr-4">
+                              Analiza ruchu na stronie
+                            </td>
+                            <td className="py-2 pr-4">
+                              Odsłony, typ urządzenia, kraj, przeglądarka
+                            </td>
+                            <td className="py-2 pr-4">30 dni</td>
+                            <td className="py-2">
+                              Zgoda (art. 6 ust. 1 lit. a RODO)
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="py-2 pr-4">Google Maps</td>
+                            <td className="py-2 pr-4">
+                              Wyświetlanie mapy z lokalizacją gabinetu
+                            </td>
+                            <td className="py-2 pr-4">
+                              Adres IP, dane połączenia (szczegóły w
+                              polityce prywatności Google)
+                            </td>
+                            <td className="py-2 pr-4">
+                              Zgodnie z polityką Google
+                            </td>
+                            <td className="py-2">
+                              Zgoda (art. 6 ust. 1 lit. a RODO)
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3 text-sm text-muted-foreground">
+                    <p>
+                      Swoją zgodę na opcjonalne cookies możesz zmienić w dowolnym
+                      momencie, usuwając dane strony w ustawieniach przeglądarki.
+                      Przy kolejnej wizycie banner pojawi się ponownie.
+                    </p>
+                    <p>
+                      Sentry (Functional Software, Inc., USA) i Vercel Inc. (USA)
+                      przetwarzają dane na podstawie EU-US Data Privacy Framework.
+                      Google Ireland Ltd. przetwarza dane Google Maps.
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
 

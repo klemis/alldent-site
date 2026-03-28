@@ -12,6 +12,8 @@ import { Separator } from "@/components/ui/separator";
 import { PriceInfo } from "@/components/price-info";
 import { serviceCategories } from "@/lib/data/services";
 import { Calendar, CheckCircle, ArrowLeft, Phone } from "lucide-react";
+import { FadeInOnScroll, HoverScale } from "@/components/motion";
+import { JsonLd, breadcrumbSchema, medicalServiceSchema } from "@/components/structured-data";
 
 export const metadata: Metadata = {
   title: "Usługi stomatologiczne - Alldent Częstochowa",
@@ -23,8 +25,15 @@ export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main id="main-content">
+        <JsonLd data={breadcrumbSchema([
+          { name: "Strona główna", href: "/" },
+          { name: "Usługi", href: "/uslugi" },
+        ])} />
+        {Object.values(serviceCategories).flatMap(cat => cat.services).map(service => (
+          <JsonLd key={service.id} data={medicalServiceSchema(service)} />
+        ))}
         {/* Header */}
-        <section className="bg-gradient-to-br from-blue-50 to-teal-50 py-12 md:py-16">
+        <section className="bg-gradient-to-br from-amber-50/40 to-teal-50/60 py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="max-w-3xl mx-auto text-center space-y-4">
@@ -52,63 +61,66 @@ export default function ServicesPage() {
         </section>
 
         {/* Services by Category */}
-        <section className="py-12 md:py-20">
+        <section className="py-12 md:py-16">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto space-y-16">
               {Object.entries(serviceCategories).map(
                 ([categoryKey, category]) => (
                   <div key={categoryKey} className="space-y-8">
-                    <div className="text-center space-y-2">
-                      <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
-                        {category.name}
-                      </h2>
-                      <p className="text-muted-foreground max-w-2xl mx-auto">
-                        {category.description}
-                      </p>
-                    </div>
+                    <FadeInOnScroll>
+                      <div className="text-center space-y-2">
+                        <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
+                          {category.name}
+                        </h2>
+                        <p className="text-muted-foreground max-w-2xl mx-auto">
+                          {category.description}
+                        </p>
+                      </div>
+                    </FadeInOnScroll>
 
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                       {category.services.map((service) => (
-                        <Card
-                          key={service.id}
-                          className="hover:shadow-lg transition-shadow h-full"
-                        >
-                          <CardHeader>
-                            <div className="flex items-start gap-3">
-                              <div className="p-2 bg-primary/10 rounded-lg flex-shrink-0">
-                                <service.icon className="w-6 h-6 text-primary" />
+                        <HoverScale key={service.id}>
+                          <Card
+                            className="hover:shadow-lg transition-shadow h-full"
+                          >
+                            <CardHeader>
+                              <div className="flex items-start gap-3">
+                                <div className="p-2 bg-primary/10 rounded-lg flex-shrink-0">
+                                  <service.icon className="w-6 h-6 text-primary" />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <CardTitle className="text-lg leading-tight">
+                                    {service.name}
+                                  </CardTitle>
+                                </div>
                               </div>
-                              <div className="flex-1 min-w-0">
-                                <CardTitle className="text-lg leading-tight">
-                                  {service.name}
-                                </CardTitle>
+                            </CardHeader>
+
+                            <CardContent className="space-y-4">
+                              <CardDescription className="text-base">
+                                {service.description}
+                              </CardDescription>
+
+                              <div className="space-y-3">
+                                <h4 className="font-semibold text-sm">
+                                  Korzyści:
+                                </h4>
+                                <ul className="space-y-2">
+                                  {service.benefits.map((benefit, index) => (
+                                    <li
+                                      key={index}
+                                      className="flex items-start gap-2 text-sm"
+                                    >
+                                      <CheckCircle className="w-4 h-4 text-accent-foreground flex-shrink-0 mt-0.5" />
+                                      <span>{benefit}</span>
+                                    </li>
+                                  ))}
+                                </ul>
                               </div>
-                            </div>
-                          </CardHeader>
-
-                          <CardContent className="space-y-4">
-                            <CardDescription className="text-base">
-                              {service.description}
-                            </CardDescription>
-
-                            <div className="space-y-3">
-                              <h4 className="font-semibold text-sm">
-                                Korzyści:
-                              </h4>
-                              <ul className="space-y-2">
-                                {service.benefits.map((benefit, index) => (
-                                  <li
-                                    key={index}
-                                    className="flex items-start gap-2 text-sm"
-                                  >
-                                    <CheckCircle className="w-4 h-4 text-accent-foreground flex-shrink-0 mt-0.5" />
-                                    <span>{benefit}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </CardContent>
-                        </Card>
+                            </CardContent>
+                          </Card>
+                        </HoverScale>
                       ))}
                     </div>
 
