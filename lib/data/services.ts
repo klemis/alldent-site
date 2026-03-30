@@ -9,25 +9,54 @@ import {
   Smile,
   Zap,
   Syringe,
+  ScanLine,
+  HeartPulse,
+  Palette,
+  Layers,
 } from "lucide-react";
 import { Service } from "@/lib/types";
 
 export const services: Service[] = [
-  // Preventive Care
+  // === Profilaktyka ===
   {
     id: "general-checkup",
     name: "Badanie ogólne",
     description:
       "Kompleksowe badanie stomatologiczne z oceną stanu zdrowia jamy ustnej i planem leczenia",
     benefits: [
-      "Wczesne wykrycie problemów",
-      "Profesjonalna ocena stanu uzębienia",
-      "Indywidualny plan leczenia",
-      "Porady dotyczące higieny",
+      "Konsultacja i indywidualny plan leczenia",
+      "Wczesne wykrycie próchnicy",
+      "Szczegółowa ocena stanu uzębienia",
     ],
     icon: Shield,
-    featured: false,
   },
+  {
+    id: "cleaning",
+    name: "Higienizacja zębów",
+    description:
+      "Profesjonalne czyszczenie zębów przy użyciu najnowocześniejszego sprzętu GBT (Guided Biofilm Therapy) - innowacyjnej metody usuwania biofilmu bakteryjnego i kamienia nazębnego",
+    benefits: [
+      "Najnowocześniejszy sprzęt GBT",
+      "Usunięcie kamienia i płytki bakteryjnej",
+      "Polerowanie zębów",
+      "Instruktaż higieny i edukacja",
+    ],
+    icon: Sparkles,
+  },
+  {
+    id: "digital-diagnostics",
+    name: "Diagnostyka cyfrowa",
+    description:
+      "Nowoczesna diagnostyka obrazowa z wykorzystaniem najnowszych technologii cyfrowych",
+    benefits: [
+      "Kontrolne zdjęcia pantomograficzne",
+      "CBCT",
+      "Badanie kamerą wewnątrzustną i laserem diagnostycznym",
+    ],
+    icon: ScanLine,
+  },
+
+  // === Stomatologia specjalistyczna ===
   {
     id: "orthodontics",
     name: "Ortodoncja",
@@ -40,36 +69,81 @@ export const services: Service[] = [
       "Leczenie dzieci i dorosłych",
     ],
     icon: Smile,
-    featured: true,
   },
   {
-    id: "cleaning",
-    name: "Higiena stomatologiczna",
+    id: "periodontology",
+    name: "Periodontologia",
     description:
-      "Profesjonalne czyszczenie zębów przy użyciu najnowocześniejszego sprzętu GBT (Guided Biofilm Therapy) - innowacyjnej metody usuwania biofilmu bakteryjnego i kamienia nazębnego",
+      "Diagnostyka i leczenie chorób przyzębia — od gingivitis po zaawansowaną periodontitis",
     benefits: [
-      "Najnowocześniejszy sprzęt GBT",
-      "Usunięcie kamienia i płytki bakteryjnej",
-      "Polerowanie zębów",
-      "Instruktaż higieny",
+      "Leczenie chorób przyzębia",
+      "Wzmocnienie i stabilizacja zębów",
+      "Zmniejszenie ryzyka chorób ogólnoustrojowych",
+      "Redukcja nadwrażliwości szyjek zębowych",
     ],
-    icon: Sparkles,
-    featured: true,
+    icon: HeartPulse,
+  },
+  {
+    id: "pediatric",
+    name: "Stomatologia dziecięca",
+    description:
+      "Specjalistyczna opieka stomatologiczna dla dzieci w przyjaznej atmosferze",
+    benefits: [
+      "Wizyty adaptacyjne",
+      "Indywidualne podejście",
+      "Profilaktyka próchnicy",
+    ],
+    icon: UserCheck,
+  },
+  {
+    id: "oral-surgery",
+    name: "Chirurgia stomatologiczna",
+    description:
+      "Nowoczesne zabiegi chirurgiczne w obrębie jamy ustnej z zastosowaniem najnowszych metod",
+    benefits: [
+      "Usuwanie zębów",
+      "Podcinanie wędzidełek",
+      "Minimalna inwazyjność",
+    ],
+    icon: Stethoscope,
+  },
+  {
+    id: "laser-therapy",
+    name: "Laseroterapia",
+    description:
+      "Nowoczesna terapia laserowa w leczeniu i wspomaganiu gojenia",
+    benefits: [
+      "Przyspieszenie gojenia po zabiegach",
+      "Modelowanie linii dziąseł",
+      "Minimalna inwazyjność",
+    ],
+    icon: Zap,
+  },
+  {
+    id: "root-canal",
+    name: "Leczenie kanałowe",
+    description:
+      "Endodoncja pod mikroskopem - precyzyjne leczenie zakażonych kanałów korzeniowych i zmian okołowierzchołkowych",
+    benefits: [
+      "Leczenie pod mikroskopem",
+      "Leczenie zmian okołowierzchołkowych",
+      "Eliminacja bólu",
+    ],
+    icon: Heart,
   },
 
-  // Cosmetic Treatments
+  // === Stomatologia estetyczna ===
   {
-    id: "teeth-whitening",
-    name: "Wybielanie zębów",
-    description: "Profesjonalne wybielanie zębów metodą nakładkową lub lampą",
+    id: "bonding",
+    name: "Licówki kompozytowe (Bonding)",
+    description: "Odbudowa ubytków zębów materiałem kompozytowym",
     benefits: [
-      "Zęby jaśniejsze o 2-8 tonów",
-      "Bezpieczna metoda",
-      "Długotrwały efekt",
-      "Naturalny wygląd",
+      "Przywrócenie kształtu",
+      "Dopasowanie koloru",
+      "Jeden zabieg",
+      "Oszczędność tkanek",
     ],
-    icon: Sparkles,
-    featured: true,
+    icon: Wrench,
   },
   {
     id: "veneers",
@@ -82,23 +156,46 @@ export const services: Service[] = [
       "Minimalna inwazyjność",
     ],
     icon: Crown,
-    featured: true,
   },
   {
-    id: "bonding",
-    name: "Rekonstrukcja kompozytowa (Bonding)",
-    description: "Odbudowa ubytków zębów materiałem kompozytowym",
+    id: "teeth-whitening",
+    name: "Wybielanie zębów",
+    description: "Profesjonalne wybielanie zębów metodą nakładkową lub lampą",
     benefits: [
-      "Przywrócenie kształtu",
-      "Dopasowanie koloru",
-      "Jeden zabieg",
-      "Oszczędność tkanek",
+      "Zęby jaśniejsze o 2-8 tonów",
+      "Bezpieczna metoda",
+      "Długotrwały efekt",
+      "Naturalny wygląd",
     ],
-    icon: Wrench,
-    featured: false,
+    icon: Sparkles,
+  },
+  {
+    id: "discoloration-treatment",
+    name: "Leczenie przebarwień zębów",
+    description:
+      "Diagnostyka i leczenie przebarwień zębów pochodzenia wewnętrznego i zewnętrznego — od profesjonalnego czyszczenia po mikroabrazję i wybielanie wewnętrzne",
+    benefits: [
+      "Indywidualna diagnostyka przyczyn przebarwień",
+      "Skuteczne metody dopasowane do rodzaju przebarwienia",
+      "Przywrócenie naturalnego koloru zębów",
+      "Długotrwały efekt estetyczny",
+    ],
+    icon: Palette,
   },
 
-  // Restorative Care
+  // === Stomatologia odtwórcza ===
+  {
+    id: "crowns",
+    name: "Protetyka",
+    description:
+      "Kompleksowa odbudowa braków zębowych za pomocą koron, mostów i protez dopasowanych do indywidualnych potrzeb",
+    benefits: [
+      "Przywrócenie funkcji i estetyki",
+      "Odbudowa startych zębów i wysokości zwarcia",
+      "Odbudowa zębów po leczeniu kanałowym",
+    ],
+    icon: Crown,
+  },
   {
     id: "dental-implants",
     name: "Implanty stomatologiczne",
@@ -110,93 +207,19 @@ export const services: Service[] = [
       "Naturalny wygląd",
     ],
     icon: Wrench,
-    featured: true,
   },
   {
-    id: "root-canal",
-    name: "Leczenie kanałowe",
+    id: "composite-restorations",
+    name: "Odbudowy kompozytowe",
     description:
-      "Endodoncja pod mikroskopem - precyzyjne leczenie zakażonych kanałów korzeniowych i zmian okołowierzchołkowych",
+      "Estetyczna odbudowa uszkodzonych i zniszczonych zębów wysokiej jakości materiałami kompozytowymi z precyzyjnym dopasowaniem koloru i kształtu",
     benefits: [
-      "Leczenie pod mikroskopem",
-      "Leczenie zmian okołowierzchołkowych",
-      "Zachowanie zęba",
-      "Eliminacja bólu",
+      "Precyzyjne dopasowanie koloru do naturalnych zębów",
+      "Odbudowa ubytków i złamań",
+      "Zachowanie maksimum własnych tkanek zęba",
+      "Natychmiastowy efekt w jednej wizycie",
     ],
-    icon: Heart,
-    featured: false,
-  },
-  {
-    id: "crowns",
-    name: "Protetyka",
-    description:
-      "Kompleksowa odbudowa protetyczna: korony, mosty, uzupełnienia protetyczne i protezy dostosowane do indywidualnych potrzeb",
-    benefits: [
-      "Korony i mosty ceramiczne",
-      "Uzupełnienia protetyczne",
-      "Protezy dopasowane indywidualnie",
-      "Przywrócenie funkcji i estetyki",
-    ],
-    icon: Crown,
-    featured: false,
-  },
-
-  // Specialized Care
-  {
-    id: "pediatric",
-    name: "Stomatologia dziecięca",
-    description:
-      "Specjalistyczna opieka stomatologiczna dla dzieci w przyjaznej atmosferze",
-    benefits: [
-      "Łagodne podejście",
-      "Nauka higieny",
-      "Profilaktyka próchnicy",
-      "Pozytywne skojarzenia",
-    ],
-    icon: UserCheck,
-    featured: true,
-  },
-  {
-    id: "oral-surgery",
-    name: "Chirurgia stomatologiczna",
-    description:
-      "Nowoczesne zabiegi chirurgiczne w obrębie jamy ustnej z zastosowaniem najnowszych metod",
-    benefits: [
-      "Usuwanie zębów",
-      "Podcinanie wędzidełek",
-      "Zabiegi periodontologiczne",
-      "Minimalna inwazyjność",
-    ],
-    icon: Stethoscope,
-    featured: false,
-  },
-  {
-    id: "laser-therapy",
-    name: "Laseroterapia",
-    description:
-      "Nowoczesna terapia laserowa: laser diodowy i biostymulacyjny w leczeniu i wspomaganiu gojenia",
-    benefits: [
-      "Laser diodowy",
-      "Laser biostymulacyjny",
-      "Przyspieszenie gojenia",
-      "Minimalna inwazyjność",
-    ],
-    icon: Zap,
-    featured: false,
-  },
-  {
-    id: "flow-injection",
-    name: "Flow injection",
-    description:
-      "Innowacyjna metoda odbudowy zębów przy użyciu płynnego materiału kompozytowego zapewniającego doskonałą adaptację i estetykę",
-    benefits: [
-      "Doskonała adaptacja materiału",
-      "Wysoka estetyka wypełnień",
-      "Minimalna inwazyjność",
-      "Długotrwały rezultat",
-    ],
-    icon: Syringe,
-    featured: false,
+    icon: Layers,
   },
   {
     id: "implant-prosthetics",
@@ -210,7 +233,19 @@ export const services: Service[] = [
       "Trwałe i stabilne rozwiązanie",
     ],
     icon: Wrench,
-    featured: false,
+  },
+  {
+    id: "flow-injection",
+    name: "Flow injection",
+    description:
+      "Innowacyjna metoda odbudowy zębów przy użyciu płynnego materiału kompozytowego zapewniającego doskonałą adaptację i estetykę",
+    benefits: [
+      "Doskonała adaptacja materiału",
+      "Wysoka estetyka wypełnień",
+      "Minimalna inwazyjność",
+      "Długotrwały rezultat",
+    ],
+    icon: Syringe,
   },
   {
     id: "conservative-dentistry",
@@ -224,41 +259,59 @@ export const services: Service[] = [
       "Zachowanie naturalnych zębów",
     ],
     icon: Shield,
-    featured: false,
   },
 ];
 
 export const serviceCategories = {
   preventive: {
-    name: "Stomatologia zachowawcza",
+    name: "Profilaktyka",
+    anchor: "profilaktyka",
     description: "Profilaktyka i podstawowa opieka stomatologiczna",
     services: services.filter((s) =>
-      ["general-checkup", "cleaning"].includes(s.id),
-    ),
-  },
-  cosmetic: {
-    name: "Stomatologia estetyczna",
-    description: "Zabiegi poprawiające wygląd uśmiechu",
-    services: services.filter((s) =>
-      ["teeth-whitening", "veneers", "bonding"].includes(s.id),
-    ),
-  },
-  restorative: {
-    name: "Stomatologia odtwórcza",
-    description: "Odbudowa i zastępowanie utraconych zębów",
-    services: services.filter((s) =>
-      ["dental-implants", "root-canal", "crowns"].includes(s.id),
+      ["general-checkup", "cleaning", "digital-diagnostics"].includes(s.id),
     ),
   },
   specialized: {
     name: "Stomatologia specjalistyczna",
+    anchor: "specjalistyczna",
     description: "Specjalistyczna opieka dla różnych grup pacjentów",
     services: services.filter((s) =>
-      ["orthodontics", "pediatric", "oral-surgery", "laser-therapy"].includes(
-        s.id,
-      ),
+      [
+        "orthodontics",
+        "periodontology",
+        "pediatric",
+        "oral-surgery",
+        "laser-therapy",
+        "root-canal",
+      ].includes(s.id),
+    ),
+  },
+  cosmetic: {
+    name: "Stomatologia estetyczna",
+    anchor: "estetyczna",
+    description: "Zabiegi poprawiające wygląd uśmiechu",
+    services: services.filter((s) =>
+      [
+        "bonding",
+        "veneers",
+        "teeth-whitening",
+        "discoloration-treatment",
+      ].includes(s.id),
+    ),
+  },
+  restorative: {
+    name: "Stomatologia odtwórcza",
+    anchor: "odtworcza",
+    description: "Odbudowa i zastępowanie utraconych zębów",
+    services: services.filter((s) =>
+      [
+        "crowns",
+        "dental-implants",
+        "composite-restorations",
+        "implant-prosthetics",
+        "flow-injection",
+        "conservative-dentistry",
+      ].includes(s.id),
     ),
   },
 };
-
-export const featuredServices = services.filter((service) => service.featured);

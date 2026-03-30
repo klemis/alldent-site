@@ -9,7 +9,6 @@ export interface Service {
   description: string;
   benefits: string[];
   icon: LucideIcon;
-  featured: boolean;
 }
 
 /**

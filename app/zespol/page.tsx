@@ -1,12 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { teamMembers } from "@/lib/data/team";
@@ -16,8 +10,8 @@ import {
   Phone,
   GraduationCap,
   Award,
-  Languages,
   Heart,
+  Users,
 } from "lucide-react";
 import { FadeInOnScroll } from "@/components/motion";
 import { JsonLd, breadcrumbSchema, personSchema } from "@/components/structured-data";
@@ -87,103 +81,68 @@ export default function TeamPage() {
           </div>
         </section>
 
+        {/* Team Photo */}
+        <section className="py-8 md:py-12">
+          <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
+            <div className="max-w-5xl mx-auto">
+              <div className="aspect-[21/9] bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl flex items-center justify-center border-2 border-dashed border-slate-300">
+                <div className="text-center space-y-2">
+                  <Users className="w-12 h-12 text-slate-400 mx-auto" />
+                  <p className="text-slate-500 font-medium">Zdjęcie zespołu</p>
+                  <p className="text-sm text-slate-400">/images/team/zespol.jpg</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Team Members */}
         <section className="py-12 md:py-16">
-          <div className="w-full px-6 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
+          <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
-              <div className="grid gap-8 lg:gap-12">
+              <div className="grid gap-6 md:grid-cols-2">
                 {teamMembers.map((member, index) => (
                   <FadeInOnScroll key={index} delay={index * 0.1}>
                     <Card className="overflow-hidden">
-                      <div className="grid md:grid-cols-3 gap-6 md:gap-8 p-4 md:p-6">
+                      <div className="flex gap-4 p-4">
                         {/* Photo */}
-                        <div className="md:col-span-1">
-                          <div className="aspect-[3/4] bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg flex items-center justify-center">
-                            <Avatar className="w-32 h-32">
-                              <AvatarFallback className="text-2xl font-semibold bg-primary text-primary-foreground">
-                                {member.name
-                                  .split(" ")
-                                  .map((n) => n[0])
-                                  .join("")}
-                              </AvatarFallback>
-                            </Avatar>
-                          </div>
+                        <div className="flex-shrink-0">
+                          <Avatar className="w-20 h-20">
+                            <AvatarFallback className="text-lg font-semibold bg-primary text-primary-foreground">
+                              {member.name
+                                .split(" ")
+                                .map((n) => n[0])
+                                .join("")}
+                            </AvatarFallback>
+                          </Avatar>
                         </div>
 
                         {/* Content */}
-                        <div className="md:col-span-2 space-y-4">
-                          <CardHeader className="p-0">
-                            <CardTitle className="text-2xl">
+                        <div className="flex-1 min-w-0 space-y-2">
+                          <div>
+                            <h3 className="font-semibold text-lg leading-tight">
                               {member.name}
-                            </CardTitle>
-                            <CardDescription className="text-lg font-medium text-primary">
+                            </h3>
+                            <p className="text-sm font-medium text-primary">
                               {member.title}
-                            </CardDescription>
-                          </CardHeader>
-
-                          <CardContent className="p-0 space-y-6">
-                            {/* Qualifications */}
-                            <div className="flex items-start gap-3">
-                              <GraduationCap className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                              <div>
-                                <h3 className="font-semibold text-sm">
-                                  Wykształcenie
-                                </h3>
-                                <p className="text-sm text-muted-foreground">
-                                  {member.qualifications}
-                                </p>
-                              </div>
-                            </div>
-
-                            {/* Bio */}
-                            <p className="text-muted-foreground leading-relaxed">
-                              {member.bio}
                             </p>
+                          </div>
 
-                            {/* Specialties */}
-                            <div className="space-y-2">
-                              <h3 className="font-semibold text-sm">
-                                Specjalizacje
-                              </h3>
-                              <div className="flex flex-wrap gap-2">
-                                {member.specialties.map((specialty, idx) => (
-                                  <Badge
-                                    key={idx}
-                                    variant="secondary"
-                                    className="text-xs"
-                                  >
-                                    {specialty}
-                                  </Badge>
-                                ))}
-                              </div>
-                            </div>
+                          <p className="text-sm text-muted-foreground line-clamp-3">
+                            {member.bio}
+                          </p>
 
-                            {/* Experience & Languages */}
-                            <div className="flex flex-wrap gap-6 pt-2">
-                              {member.experience && (
-                                <div className="flex items-center gap-2">
-                                  <Award className="w-4 h-4 text-accent-foreground" />
-                                  <span className="text-sm">
-                                    <span className="font-medium">
-                                      Doświadczenie:
-                                    </span>{" "}
-                                    {member.experience}
-                                  </span>
-                                </div>
-                              )}
-
-                              {member.languages &&
-                                member.languages.length > 0 && (
-                                  <div className="flex items-center gap-2">
-                                    <Languages className="w-4 h-4 text-primary" />
-                                    <span className="text-sm">
-                                      <span className="font-medium">Języki:</span>{" "}
-                                      {member.languages.join(", ")}
-                                    </span>
-                                  </div>
-                                )}
-                            </div>
-                          </CardContent>
+                          <div className="flex flex-wrap gap-1.5">
+                            {member.specialties.map((specialty, idx) => (
+                              <Badge
+                                key={idx}
+                                variant="secondary"
+                                className="text-xs"
+                              >
+                                {specialty}
+                              </Badge>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     </Card>
