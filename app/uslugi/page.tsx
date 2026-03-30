@@ -9,7 +9,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { PriceInfo } from "@/components/price-info";
 import { serviceCategories } from "@/lib/data/services";
 import { Calendar, CheckCircle, ArrowLeft, Phone } from "lucide-react";
 import { FadeInOnScroll, HoverScale } from "@/components/motion";
@@ -66,7 +65,7 @@ export default function ServicesPage() {
             <div className="max-w-7xl mx-auto space-y-16">
               {Object.entries(serviceCategories).map(
                 ([categoryKey, category]) => (
-                  <div key={categoryKey} className="space-y-8">
+                  <div key={categoryKey} id={category.anchor} className="space-y-8 scroll-mt-24">
                     <FadeInOnScroll>
                       <div className="text-center space-y-2">
                         <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">
@@ -179,8 +178,6 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Price Information */}
-        <PriceInfo />
       </main>
     </div>
   );
