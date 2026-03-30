@@ -10,7 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { featuredServices } from "@/lib/data/services";
+import { serviceCategories } from "@/lib/data/services";
 import {
   Calendar,
   Phone,
@@ -21,6 +21,9 @@ import {
   CheckCircle,
   Users,
   Award,
+  Stethoscope,
+  Sparkles,
+  Wrench,
 } from "lucide-react";
 import { FadeInOnScroll, HoverScale } from "@/components/motion";
 import { ZnanyLekarzWidget } from "@/components/znanylekarz-widget";
@@ -157,14 +160,14 @@ export default function Home() {
           </button>
         </section>
 
-        {/* Featured Services */}
+        {/* Service Categories */}
         <section id="featured-services" className="py-16 md:py-24">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-7xl mx-auto">
               <FadeInOnScroll>
                 <div className="text-center space-y-4 mb-12">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                    Nasze główne usługi
+                    Czym się zajmujemy
                   </h2>
                   <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                     Kompleksowa opieka stomatologiczna dla całej rodziny - od
@@ -173,39 +176,53 @@ export default function Home() {
                 </div>
               </FadeInOnScroll>
 
-              <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3">
-                {featuredServices.map((service) => (
-                  <HoverScale key={service.id}>
-                    <Card className="hover:shadow-lg transition-shadow h-full">
-                      <CardHeader>
-                        <div className="flex items-center gap-3">
-                          <div className="p-2 bg-primary/10 rounded-lg">
-                            <service.icon className="w-6 h-6 text-primary" />
+              <div className="grid gap-6 grid-cols-1 sm:grid-cols-2">
+                {[
+                  {
+                    name: "Profilaktyka",
+                    icon: Shield,
+                    subtitle: "Badania, higienizacja, diagnostyka cyfrowa",
+                    href: "/uslugi#profilaktyka",
+                  },
+                  {
+                    name: "Stomatologia specjalistyczna",
+                    icon: Stethoscope,
+                    subtitle: "Ortodoncja, periodontologia, chirurgia",
+                    href: "/uslugi#specjalistyczna",
+                  },
+                  {
+                    name: "Stomatologia estetyczna",
+                    icon: Sparkles,
+                    subtitle: "Licówki, wybielanie, przebarwienia",
+                    href: "/uslugi#estetyczna",
+                  },
+                  {
+                    name: "Stomatologia odtwórcza",
+                    icon: Wrench,
+                    subtitle: "Protetyka, implanty, odbudowy",
+                    href: "/uslugi#odtworcza",
+                  },
+                ].map((category) => (
+                  <HoverScale key={category.name}>
+                    <Link href={category.href}>
+                      <Card className="hover:shadow-lg transition-shadow h-full cursor-pointer">
+                        <CardHeader>
+                          <div className="flex items-center gap-3">
+                            <div className="p-2 bg-primary/10 rounded-lg">
+                              <category.icon className="w-6 h-6 text-primary" />
+                            </div>
+                            <div>
+                              <CardTitle className="text-lg">
+                                {category.name}
+                              </CardTitle>
+                              <CardDescription className="text-sm">
+                                {category.subtitle}
+                              </CardDescription>
+                            </div>
                           </div>
-                          <div>
-                            <CardTitle className="text-lg">
-                              {service.name}
-                            </CardTitle>
-                          </div>
-                        </div>
-                      </CardHeader>
-                      <CardContent>
-                        <CardDescription className="text-base mb-4">
-                          {service.description}
-                        </CardDescription>
-                        <ul className="space-y-1">
-                          {service.benefits.slice(0, 3).map((benefit, index) => (
-                            <li
-                              key={index}
-                              className="flex items-center gap-2 text-sm"
-                            >
-                              <CheckCircle className="w-4 h-4 text-accent-foreground flex-shrink-0" />
-                              {benefit}
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                    </Card>
+                        </CardHeader>
+                      </Card>
+                    </Link>
                   </HoverScale>
                 ))}
               </div>
@@ -451,11 +468,11 @@ export default function Home() {
                       <div>
                         <h3 className="font-semibold">Godziny otwarcia</h3>
                         <div className="text-muted-foreground space-y-1">
-                          <p>Poniedziałek: 8:00 - 19:00</p>
-                          <p>Wtorek: 12:00 - 19:00</p>
-                          <p>Środa: 12:00 - 19:00</p>
-                          <p>Czwartek: 8:00 - 19:00</p>
-                          <p>Piątek: 8:00 - 15:00</p>
+                          <p>Poniedziałek: 10:00 - 19:00</p>
+                          <p>Wtorek: 11:00 - 19:00</p>
+                          <p>Środa: 9:00 - 19:00</p>
+                          <p>Czwartek: 8:00 - 18:00</p>
+                          <p>Piątek: 9:00 - 15:00</p>
                         </div>
                       </div>
                     </div>
