@@ -12,7 +12,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { PriceInfo } from "@/components/price-info";
 import { FadeInOnScroll } from "@/components/motion";
 import { serviceCategories } from "@/lib/data/services";
 import { ArrowLeft, Calendar, Phone, Info } from "lucide-react";
@@ -41,6 +40,10 @@ const servicePricing: Record<string, string> = {
   "flow-injection": "od 400 zł",
   "implant-prosthetics": "od 5000 zł",
   "conservative-dentistry": "od 200 zł",
+  "digital-diagnostics": "od --- zł",
+  "periodontology": "od --- zł",
+  "discoloration-treatment": "od --- zł",
+  "composite-restorations": "od --- zł",
 };
 
 export default function PricingPage() {
@@ -70,9 +73,8 @@ export default function PricingPage() {
                   Cennik usług
                 </h1>
                 <p className="text-lg text-muted-foreground">
-                  Przejrzyste ceny naszych usług stomatologicznych. Podane ceny
-                  są cenami orientacyjnymi - dokładna kwota ustalana jest po
-                  konsultacji.
+                  Podane ceny są cenami orientacyjnymi - dokładna kwota
+                  ustalana jest po konsultacji.
                 </p>
 
                 <div className="flex items-center justify-center gap-2 p-4 bg-blue-100 rounded-lg">
@@ -194,8 +196,6 @@ export default function PricingPage() {
           </div>
         </section>
 
-        {/* Price Information */}
-        <PriceInfo />
       </main>
     </div>
   );
