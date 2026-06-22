@@ -17,7 +17,7 @@ export const organizationSchema = {
   logo: `${SITE_URL}/images/logo/logo.png`,
   image: `${SITE_URL}/images/office/zabki4.png`,
   description:
-    "Nowoczesny gabinet stomatologiczny w Częstochowie. Kompleksowa opieka stomatologiczna dla całej rodziny.",
+    "Nowoczesne centrum stomatologiczne w Częstochowie. Kompleksowa opieka stomatologiczna dla całej rodziny.",
   telephone: "+48663333787",
   email: "alldent@onet.eu",
   address: {

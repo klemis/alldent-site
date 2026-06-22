@@ -19,7 +19,7 @@ import { ConditionalGoogleMap } from "@/components/conditional-google-map";
 import { JsonLd, breadcrumbSchema } from "@/components/structured-data";
 
 export const metadata: Metadata = {
-  title: "Kontakt - Alldent Gabinet Stomatologiczny Częstochowa",
+  title: "Kontakt - Alldent Centrum Stomatologiczne Częstochowa",
   description:
     "Skontaktuj się z Alldent w Częstochowie. Adres, telefon, godziny otwarcia. Umów wizytę online lub telefonicznie.",
 };
@@ -77,12 +77,12 @@ export default function ContactPage() {
                         <CardHeader className="pb-3">
                           <CardTitle className="flex items-center gap-3 text-lg">
                             <MapPin className="w-5 h-5 text-primary" />
-                            Adres gabinetu
+                            Adres centrum
                           </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-2">
                           <p className="font-medium">
-                            Alldent - Gabinet Stomatologiczny
+                            Alldent - Centrum Stomatologiczne
                           </p>
                           <p className="text-muted-foreground">
                             ul. Sabinowska 8

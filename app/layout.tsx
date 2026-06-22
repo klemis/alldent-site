@@ -23,11 +23,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://alldent-stomatologia.pl"),
   title: {
-    default: "Alldent - Gabinet Stomatologiczny w Częstochowie",
+    default: "Alldent - Centrum Stomatologiczne w Częstochowie",
     template: "%s | Alldent Częstochowa",
   },
   description:
-    "Nowoczesny gabinet stomatologiczny w Częstochowie. Oferujemy kompleksową opiekę stomatologiczną: profilaktykę, leczenie, implantologię i stomatologię estetyczną.",
+    "Nowoczesne centrum stomatologiczne w Częstochowie. Oferujemy kompleksową opiekę stomatologiczną: profilaktykę, leczenie, implantologię i stomatologię estetyczną.",
   keywords: [
     "dentysta Częstochowa",
     "gabinet stomatologiczny",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "stomatolog dziecięcy Częstochowa",
   ],
   openGraph: {
-    title: "Alldent - Gabinet Stomatologiczny w Częstochowie",
+    title: "Alldent - Centrum Stomatologiczne w Częstochowie",
     description: "Profesjonalna opieka stomatologiczna w sercu Częstochowy",
     type: "website",
     locale: "pl_PL",

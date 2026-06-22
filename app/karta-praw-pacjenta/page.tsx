@@ -6,7 +6,7 @@ import { ArrowLeft, FileText, Shield, Heart, Info } from "lucide-react";
 export const metadata = {
   title: "Karta Praw Pacjenta - Alldent Częstochowa",
   description:
-    "Karta praw pacjenta w gabinecie stomatologicznym Alldent w Częstochowie. Poznaj swoje prawa podczas leczenia stomatologicznego.",
+    "Karta praw pacjenta w Centrum Stomatologicznym Alldent w Częstochowie. Poznaj swoje prawa podczas leczenia stomatologicznego.",
 };
 
 export default function PatientRightsPage() {
@@ -36,7 +36,7 @@ export default function PatientRightsPage() {
                 </div>
 
                 <p className="text-lg text-muted-foreground">
-                  W gabinecie Alldent szanujemy prawa pacjentów i dokładamy
+                  W Centrum Stomatologicznym Alldent szanujemy prawa pacjentów i dokładamy
                   wszelkich starań, aby zapewnić najwyższą jakość opieki
                   stomatologicznej.
                 </p>
@@ -180,7 +180,7 @@ export default function PatientRightsPage() {
               <div className="text-center pt-6">
                 <p className="text-sm text-muted-foreground mb-4">
                   W przypadku pytań dotyczących praw pacjenta, prosimy o
-                  kontakt z naszym gabinetem.
+                  kontakt z naszym Centrum Stomatologicznym.
                 </p>
                 <Button asChild>
                   <Link href="/kontakt">Skontaktuj się z nami</Link>

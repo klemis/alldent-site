@@ -60,7 +60,7 @@ export default function Home() {
           <div className="absolute inset-0">
             <Image
               src="/images/office/zabki4.png"
-              alt="Nowoczesny gabinet stomatologiczny Alldent"
+              alt="Nowoczesne centrum stomatologiczne Alldent"
               fill
               className="object-cover object-bottom"
               priority
@@ -83,7 +83,7 @@ export default function Home() {
                     </span>
                   </h1>
                   <p className="text-lg md:text-xl lg:text-2xl font-medium [text-shadow:_1px_1px_8px_rgb(0_0_0_/_70%)]">
-                    Nowoczesny gabinet stomatologiczny w sercu Częstochowy.
+                    Nowoczesne centrum stomatologiczne w sercu Częstochowy.
                     Oferujemy kompleksową opiekę dla całej rodziny w przyjaznej
                     atmosferze.
                   </p>
@@ -339,7 +339,7 @@ export default function Home() {
               <FadeInOnScroll>
                 <div className="text-center space-y-4 mb-12">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                    Dlaczego Alldent?
+                    Dlaczego Centrum Stomatologiczne Alldent?
                   </h2>
                 </div>
               </FadeInOnScroll>

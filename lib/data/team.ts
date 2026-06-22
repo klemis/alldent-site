@@ -3,7 +3,7 @@ import { TeamMember } from "@/lib/types";
 export const teamMembers: TeamMember[] = [
   {
     name: "Dr Anna Kowalska",
-    title: "Lekarz dentysta, właścicielka gabinetu",
+    title: "Lekarz dentysta, właścicielka centrum",
     qualifications: "Absolwentka Warszawskiego Uniwersytetu Medycznego",
     bio: "Ponad 30 lat doświadczenia w stomatologii zachowawczej i estetycznej. Specjalizuje się w leczeniu kanałowym oraz rekonstrukcjach estetycznych. Regularnie uczestniczy w kursach doskonalących, aby oferować pacjentom najnowocześniejsze metody leczenia.",
     image: "/images/team/dr-anna-kowalska.jpg",
