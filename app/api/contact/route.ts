@@ -98,7 +98,7 @@ export async function POST(request: Request) {
     }
 
     await getResend().emails.send({
-      from: "Formularz Alldent <onboarding@resend.dev>",
+      from: "Formularz Alldent <noreply@alldent-stomatologia.pl>",
       to: "alldent@onet.eu",
       subject: `Nowa wiadomość: ${body.subject}`,
       html: buildEmailHtml(body),
