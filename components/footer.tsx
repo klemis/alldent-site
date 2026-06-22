@@ -23,7 +23,7 @@ export function Footer() {
                 />
               </Link>
               <p className="text-slate-300 text-sm">
-                Nowoczesny gabinet stomatologiczny w Częstochowie. Kompleksowa
+                Nowoczesne centrum stomatologiczne w Częstochowie. Kompleksowa
                 opieka dla całej rodziny w przyjaznej atmosferze.
               </p>
 

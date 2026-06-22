@@ -58,8 +58,8 @@ export default function PrivacyPolicyPage() {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <p>
-                    Administratorem danych osobowych jest gabinet
-                    stomatologiczny Alldent:
+                    Administratorem danych osobowych jest centrum
+                    stomatologiczne Alldent:
                   </p>
                   <div className="bg-stone-50 p-4 rounded-lg text-sm">
                     <p>
@@ -298,7 +298,7 @@ export default function PrivacyPolicyPage() {
                           <tr>
                             <td className="py-2 pr-4">Google Maps</td>
                             <td className="py-2 pr-4">
-                              Wyświetlanie mapy z lokalizacją gabinetu
+                              Wyświetlanie mapy z lokalizacją centrum
                             </td>
                             <td className="py-2 pr-4">
                               Adres IP, dane połączenia (szczegóły w

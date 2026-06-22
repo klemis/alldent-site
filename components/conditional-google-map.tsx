@@ -40,9 +40,9 @@ export function ConditionalGoogleMap({
       allowFullScreen
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
-      title="Interaktywna mapa pokazująca lokalizację gabinetu Alldent przy ulicy Sabinowskiej 8 w Częstochowie"
+      title="Interaktywna mapa pokazująca lokalizację centrum Alldent przy ulicy Sabinowskiej 8 w Częstochowie"
       className={`w-full h-full rounded-lg ${className ?? ""}`}
-      aria-label="Mapa z lokalizacją gabinetu stomatologicznego Alldent"
+      aria-label="Mapa z lokalizacją centrum stomatologicznego Alldent"
     />
   );
 }

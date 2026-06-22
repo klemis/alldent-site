@@ -198,7 +198,7 @@ export default function ChildProtectionPage() {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <p className="text-muted-foreground">
-                    Personel gabinetu jest przeszkolony w zakresie rozpoznawania
+                    Personel centrum jest przeszkolony w zakresie rozpoznawania
                     sygnałów krzywdzenia dzieci:
                   </p>
                   <ul className="list-disc list-inside space-y-2 text-muted-foreground">

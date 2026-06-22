@@ -8,11 +8,11 @@ import { getAllPosts } from "@/lib/blog";
 import { JsonLd, breadcrumbSchema } from "@/components/structured-data";
 
 export const metadata: Metadata = {
-  title: "Blog - Alldent Gabinet Stomatologiczny Częstochowa",
+  title: "Blog - Alldent Centrum Stomatologiczne Częstochowa",
   description:
-    "Porady stomatologiczne, artykuły o zdrowiu jamy ustnej i nowości z gabinetu Alldent w Częstochowie.",
+    "Porady stomatologiczne, artykuły o zdrowiu jamy ustnej i nowości z centrum stomatologicznego Alldent w Częstochowie.",
   openGraph: {
-    title: "Blog - Alldent Gabinet Stomatologiczny",
+    title: "Blog - Alldent Centrum Stomatologiczne",
     description:
       "Porady stomatologiczne i artykuły o zdrowiu jamy ustnej.",
     type: "website",
@@ -49,7 +49,7 @@ export default function BlogPage() {
                 </h1>
                 <p className="text-lg text-muted-foreground">
                   Porady stomatologiczne, artykuły o zdrowiu jamy ustnej i
-                  nowości z naszego gabinetu.
+                  nowości z naszego centrum.
                 </p>
               </div>
             </div>

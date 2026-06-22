@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -11,7 +12,6 @@ import {
   GraduationCap,
   Award,
   Heart,
-  Users,
 } from "lucide-react";
 import { FadeInOnScroll } from "@/components/motion";
 import { JsonLd, breadcrumbSchema, personSchema } from "@/components/structured-data";
@@ -85,13 +85,15 @@ export default function TeamPage() {
         <section className="py-8 md:py-12">
           <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16">
             <div className="max-w-5xl mx-auto">
-              <div className="aspect-[21/9] bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl flex items-center justify-center border-2 border-dashed border-slate-300">
-                <div className="text-center space-y-2">
-                  <Users className="w-12 h-12 text-slate-400 mx-auto" />
-                  <p className="text-slate-500 font-medium">Zdjęcie zespołu</p>
-                  <p className="text-sm text-slate-400">/images/team/zespol.jpg</p>
-                </div>
-              </div>
+              <Image
+                src="/images/team/zespol.jpg"
+                alt="Zespół Centrum Stomatologicznego Alldent w Częstochowie"
+                width={1600}
+                height={1066}
+                className="w-full h-auto rounded-xl shadow-md"
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                priority
+              />
             </div>
           </div>
         </section>

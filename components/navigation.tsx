@@ -41,7 +41,7 @@ export function Navigation() {
           <Link href="/" className="flex items-center space-x-3">
             <Image
               src="/images/logo/logo.png"
-              alt="Logo Alldent - nowoczesny napis gabinetu stomatologicznego z graficznym elementem zęba"
+              alt="Logo Alldent - nowoczesny napis centrum stomatologicznego z graficznym elementem zęba"
               width={160}
               height={40}
               className="h-8 w-auto object-contain"
@@ -49,7 +49,7 @@ export function Navigation() {
             />
             <div className="hidden sm:block">
               <p className="text-xs text-muted-foreground">
-                Gabinet Stomatologiczny
+                Centrum Stomatologiczne
               </p>
             </div>
           </Link>
@@ -89,7 +89,7 @@ export function Navigation() {
             <Button variant="outline" size="icon" asChild className="h-11 w-11">
               <a
                 href="tel:+48663333787"
-                aria-label="Zadzwoń do gabinet - +48 663 333 787"
+                aria-label="Zadzwoń do gabinetu - +48 663 333 787"
               >
                 <Phone className="w-4 h-4" />
               </a>

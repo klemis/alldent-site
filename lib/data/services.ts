@@ -8,7 +8,6 @@ import {
   UserCheck,
   Smile,
   Zap,
-  Syringe,
   ScanLine,
   HeartPulse,
   Palette,
@@ -31,6 +30,18 @@ export const services: Service[] = [
     icon: Shield,
   },
   {
+    id: "digital-diagnostics",
+    name: "Diagnostyka cyfrowa",
+    description:
+      "Nowoczesna diagnostyka obrazowa z wykorzystaniem najnowszych technologii cyfrowych",
+    benefits: [
+      "Kontrolne zdjęcia pantomograficzne",
+      "CBCT",
+      "Badanie kamerą wewnątrzustną i laserem diagnostycznym",
+    ],
+    icon: ScanLine,
+  },
+  {
     id: "cleaning",
     name: "Higienizacja zębów",
     description:
@@ -42,18 +53,6 @@ export const services: Service[] = [
       "Instruktaż higieny i edukacja",
     ],
     icon: Sparkles,
-  },
-  {
-    id: "digital-diagnostics",
-    name: "Diagnostyka cyfrowa",
-    description:
-      "Nowoczesna diagnostyka obrazowa z wykorzystaniem najnowszych technologii cyfrowych",
-    benefits: [
-      "Kontrolne zdjęcia pantomograficzne",
-      "CBCT",
-      "Badanie kamerą wewnątrzustną i laserem diagnostycznym",
-    ],
-    icon: ScanLine,
   },
 
   // === Stomatologia specjalistyczna ===
@@ -101,11 +100,24 @@ export const services: Service[] = [
     description:
       "Nowoczesne zabiegi chirurgiczne w obrębie jamy ustnej z zastosowaniem najnowszych metod",
     benefits: [
-      "Usuwanie zębów",
-      "Podcinanie wędzidełek",
-      "Minimalna inwazyjność",
+      "Małoinwazyjne usuwanie zębów",
+      "Przygotowanie kości pod implanty",
+      "Podcięcie wędzidełek metodą miofrenuloplastyki oraz laserowo",
     ],
     icon: Stethoscope,
+  },
+  {
+    id: "conservative-dentistry",
+    name: "Stomatologia zachowawcza",
+    description:
+      "Kompleksowa opieka zachowawcza - leczenie próchnicy, odbudowy zębów i profilaktyka chorób jamy ustnej",
+    benefits: [
+      "Leczenie próchnicy",
+      "Wypełnienia kompozytowe",
+      "Profilaktyka chorób jamy ustnej",
+      "Zachowanie naturalnych zębów",
+    ],
+    icon: Shield,
   },
   {
     id: "laser-therapy",
@@ -173,7 +185,7 @@ export const services: Service[] = [
     id: "discoloration-treatment",
     name: "Leczenie przebarwień zębów",
     description:
-      "Diagnostyka i leczenie przebarwień zębów pochodzenia wewnętrznego i zewnętrznego — od profesjonalnego czyszczenia po mikroabrazję i wybielanie wewnętrzne",
+      "Diagnostyka i leczenie przebarwień zębów pochodzenia wewnętrznego i zewnętrznego — od profesjonalnego czyszczenia po infiltracje ICON",
     benefits: [
       "Indywidualna diagnostyka przyczyn przebarwień",
       "Skuteczne metody dopasowane do rodzaju przebarwienia",
@@ -195,18 +207,6 @@ export const services: Service[] = [
       "Odbudowa zębów po leczeniu kanałowym",
     ],
     icon: Crown,
-  },
-  {
-    id: "dental-implants",
-    name: "Implanty stomatologiczne",
-    description: "Trwałe zastąpienie utraconych zębów implantami tytanowymi",
-    benefits: [
-      "Trwałe rozwiązanie",
-      "Zachowanie kości",
-      "Komfort użytkowania",
-      "Naturalny wygląd",
-    ],
-    icon: Wrench,
   },
   {
     id: "composite-restorations",
@@ -234,32 +234,6 @@ export const services: Service[] = [
     ],
     icon: Wrench,
   },
-  {
-    id: "flow-injection",
-    name: "Flow injection",
-    description:
-      "Innowacyjna metoda odbudowy zębów przy użyciu płynnego materiału kompozytowego zapewniającego doskonałą adaptację i estetykę",
-    benefits: [
-      "Doskonała adaptacja materiału",
-      "Wysoka estetyka wypełnień",
-      "Minimalna inwazyjność",
-      "Długotrwały rezultat",
-    ],
-    icon: Syringe,
-  },
-  {
-    id: "conservative-dentistry",
-    name: "Stomatologia zachowawcza",
-    description:
-      "Kompleksowa opieka zachowawcza - leczenie próchnicy, odbudowy zębów i profilaktyka chorób jamy ustnej",
-    benefits: [
-      "Leczenie próchnicy",
-      "Wypełnienia kompozytowe",
-      "Profilaktyka chorób jamy ustnej",
-      "Zachowanie naturalnych zębów",
-    ],
-    icon: Shield,
-  },
 ];
 
 export const serviceCategories = {
@@ -268,7 +242,7 @@ export const serviceCategories = {
     anchor: "profilaktyka",
     description: "Profilaktyka i podstawowa opieka stomatologiczna",
     services: services.filter((s) =>
-      ["general-checkup", "cleaning", "digital-diagnostics"].includes(s.id),
+      ["general-checkup", "digital-diagnostics", "cleaning"].includes(s.id),
     ),
   },
   specialized: {
@@ -281,6 +255,7 @@ export const serviceCategories = {
         "periodontology",
         "pediatric",
         "oral-surgery",
+        "conservative-dentistry",
         "laser-therapy",
         "root-canal",
       ].includes(s.id),
@@ -304,14 +279,9 @@ export const serviceCategories = {
     anchor: "odtworcza",
     description: "Odbudowa i zastępowanie utraconych zębów",
     services: services.filter((s) =>
-      [
-        "crowns",
-        "dental-implants",
-        "composite-restorations",
-        "implant-prosthetics",
-        "flow-injection",
-        "conservative-dentistry",
-      ].includes(s.id),
+      ["crowns", "composite-restorations", "implant-prosthetics"].includes(
+        s.id,
+      ),
     ),
   },
 };
