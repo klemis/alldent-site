@@ -89,7 +89,7 @@ export function Navigation() {
             <Button variant="outline" size="icon" asChild className="h-11 w-11">
               <a
                 href="tel:+48663333787"
-                aria-label="Zadzwoń do gabinet - +48 663 333 787"
+                aria-label="Zadzwoń do gabinetu - +48 663 333 787"
               >
                 <Phone className="w-4 h-4" />
               </a>
