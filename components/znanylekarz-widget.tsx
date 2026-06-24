@@ -24,7 +24,7 @@ const WIDGET_CONFIGS = {
   "rtg-calendar": {
     scriptSrc: "//platform.docplanner.com/js/widget.js",
     scriptId: "zl-widget-s",
-    html: `<a id="zl-url" class="zl-url" href="http://www.znanylekarz.pl/all-dent-rtg/diagnostyk/czestochowa" rel="nofollow" data-zlw-doctor="all-dent-rtg" data-zlw-type="big_with_calendar" data-zlw-opinion="false" data-zlw-hide-branding="true" data-zlw-saas-only="false" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Umów wizytę</a>`,
+    html: `<a class="zl-url" href="http://www.znanylekarz.pl/all-dent-rtg/diagnostyk/czestochowa" rel="nofollow" data-zlw-doctor="all-dent-rtg" data-zlw-type="big_with_calendar" data-zlw-opinion="false" data-zlw-hide-branding="true" data-zlw-saas-only="false" data-zlw-a11y-title="Widget umówienia wizyty lekarskiej">Umów wizytę</a>`,
   },
 } as const
 
