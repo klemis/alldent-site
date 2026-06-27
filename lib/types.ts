@@ -17,9 +17,9 @@ export interface Service {
 export interface TeamMember {
   name: string;
   title: string;
-  qualifications: string;
-  bio: string;
-  image: string;
+  qualifications?: string;
+  bio?: string;
+  image?: string;
   specialties: string[];
   experience?: string;
   languages?: string[];

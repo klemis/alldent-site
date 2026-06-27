@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { teamMembers } from "@/lib/data/team";
 import {
   ArrowLeft,
@@ -109,7 +109,14 @@ export default function TeamPage() {
                       <div className="flex gap-4 p-4">
                         {/* Photo */}
                         <div className="flex-shrink-0">
-                          <Avatar className="w-20 h-20">
+                          <Avatar className="w-24 h-24">
+                            {member.image && (
+                              <AvatarImage
+                                src={member.image}
+                                alt={`${member.name} - ${member.title}`}
+                                className="object-cover object-top"
+                              />
+                            )}
                             <AvatarFallback className="text-lg font-semibold bg-primary text-primary-foreground">
                               {member.name
                                 .split(" ")
@@ -130,21 +137,26 @@ export default function TeamPage() {
                             </p>
                           </div>
 
-                          <p className="text-sm text-muted-foreground line-clamp-3">
-                            {member.bio}
-                          </p>
+                          {/* Opisy (bio) zostaną dodane później */}
+                          {member.bio && (
+                            <p className="text-sm text-muted-foreground line-clamp-3">
+                              {member.bio}
+                            </p>
+                          )}
 
-                          <div className="flex flex-wrap gap-1.5">
-                            {member.specialties.map((specialty, idx) => (
-                              <Badge
-                                key={idx}
-                                variant="secondary"
-                                className="text-xs"
-                              >
-                                {specialty}
-                              </Badge>
-                            ))}
-                          </div>
+                          {member.specialties.length > 0 && (
+                            <div className="flex flex-wrap gap-1.5">
+                              {member.specialties.map((specialty, idx) => (
+                                <Badge
+                                  key={idx}
+                                  variant="secondary"
+                                  className="text-xs"
+                                >
+                                  {specialty}
+                                </Badge>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       </div>
                     </Card>

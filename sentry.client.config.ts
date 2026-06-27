@@ -20,7 +20,9 @@ Sentry.init({
         e.stacktrace?.frames?.some(
           (f) =>
             f.filename?.includes("znanylekarz.pl") ||
-            f.filename?.includes("docplanner.com")
+            f.filename?.includes("docplanner.com") ||
+            // Sentry normalizes the vendor script to app:///js/widget.js
+            /(^|\/)js\/widget\.js$/.test(f.filename ?? "")
         )
       )
     ) {
