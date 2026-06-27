@@ -13,7 +13,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { FadeInOnScroll } from "@/components/motion";
-import { serviceCategories } from "@/lib/data/services";
+import { priceList } from "@/lib/data/pricing";
 import { ArrowLeft, Calendar, Phone, Info } from "lucide-react";
 import { JsonLd, breadcrumbSchema } from "@/components/structured-data";
 
@@ -21,27 +21,6 @@ export const metadata: Metadata = {
   title: "Cennik - Alldent Częstochowa",
   description:
     "Cennik usług stomatologicznych w gabinecie Alldent w Częstochowie. Przejrzyste ceny zabiegów dentystycznych.",
-};
-
-// Pricing data mapped to services
-const servicePricing: Record<string, string> = {
-  "general-checkup": "od 120 zł",
-  cleaning: "od 180 zł",
-  "teeth-whitening": "od 800 zł",
-  veneers: "od 1200 zł/ząb",
-  bonding: "od 300 zł",
-  "root-canal": "od 600 zł",
-  crowns: "od 1000 zł",
-  pediatric: "od 150 zł",
-  "oral-surgery": "od 400 zł",
-  orthodontics: "od 3000 zł",
-  "laser-therapy": "od 200 zł",
-  "implant-prosthetics": "od 5000 zł",
-  "conservative-dentistry": "od 200 zł",
-  "digital-diagnostics": "od --- zł",
-  "periodontology": "od --- zł",
-  "discoloration-treatment": "od --- zł",
-  "composite-restorations": "od --- zł",
 };
 
 export default function PricingPage() {
@@ -105,44 +84,49 @@ export default function PricingPage() {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {Object.entries(serviceCategories).map(
-                        ([categoryKey, category]) => (
-                          <React.Fragment key={categoryKey}>
-                            {/* Category Header Row */}
-                            <TableRow className="bg-gradient-to-r from-primary/10 to-primary/5 hover:from-primary/10 hover:to-primary/5">
-                              <TableCell
-                                colSpan={2}
-                                className="font-bold text-base py-4 px-6 text-primary"
-                              >
-                                {category.name}
+                      {priceList.map((category) => (
+                        <React.Fragment key={category.anchor}>
+                          {/* Category Header Row */}
+                          <TableRow
+                            id={category.anchor}
+                            className="scroll-mt-24 bg-gradient-to-r from-primary/10 to-primary/5 hover:from-primary/10 hover:to-primary/5"
+                          >
+                            <TableCell
+                              colSpan={2}
+                              className="font-bold text-base py-4 px-6 text-primary"
+                            >
+                              {category.name}
+                            </TableCell>
+                          </TableRow>
+
+                          {/* Service Rows */}
+                          {category.items.map((item) => (
+                            <TableRow
+                              key={`${category.anchor}-${item.name}`}
+                              className="hover:bg-muted/50 transition-colors"
+                            >
+                              <TableCell className="py-4 px-6">
+                                <div className="font-medium text-base">
+                                  {item.name}
+                                </div>
+                              </TableCell>
+                              <TableCell className="text-right py-4 px-6 align-top">
+                                <Badge
+                                  variant="secondary"
+                                  className="text-sm font-semibold px-3 py-1.5 whitespace-nowrap"
+                                >
+                                  {item.price}
+                                </Badge>
+                                {item.note && (
+                                  <div className="mt-1 text-xs text-muted-foreground">
+                                    {item.note}
+                                  </div>
+                                )}
                               </TableCell>
                             </TableRow>
-
-                            {/* Service Rows */}
-                            {category.services.map((service) => (
-                              <TableRow
-                                key={service.id}
-                                className="hover:bg-muted/50 transition-colors"
-                              >
-                                <TableCell className="py-4 px-6">
-                                  <div className="font-medium text-base">
-                                    {service.name}
-                                  </div>
-                                </TableCell>
-                                <TableCell className="text-right py-4 px-6">
-                                  <Badge
-                                    variant="secondary"
-                                    className="text-sm font-semibold px-3 py-1.5"
-                                  >
-                                    {servicePricing[service.id] ||
-                                      "Cena do ustalenia"}
-                                  </Badge>
-                                </TableCell>
-                              </TableRow>
-                            ))}
-                          </React.Fragment>
-                        ),
-                      )}
+                          ))}
+                        </React.Fragment>
+                      ))}
                     </TableBody>
                   </Table>
                 </Card>
