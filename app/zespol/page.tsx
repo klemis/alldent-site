@@ -114,7 +114,7 @@ export default function TeamPage() {
                               <AvatarImage
                                 src={member.image}
                                 alt={`${member.name} - ${member.title}`}
-                                className="object-cover"
+                                className="object-cover object-top"
                               />
                             )}
                             <AvatarFallback className="text-lg font-semibold bg-primary text-primary-foreground">
