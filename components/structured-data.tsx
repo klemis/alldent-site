@@ -115,8 +115,8 @@ export function medicalServiceSchema(service: {
 export function personSchema(member: {
   name: string;
   title: string;
-  qualifications: string;
-  bio: string;
+  qualifications?: string;
+  bio?: string;
   specialties: string[];
   image?: string;
 }) {

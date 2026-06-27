@@ -1,66 +1,116 @@
 import { TeamMember } from "@/lib/types";
 
+// UWAGA: opisy (bio) oraz kwalifikacje większości osób są tymczasowo
+// zakomentowane / pominięte — zostaną uzupełnione później.
+// Tagi (specialties) zostawione tylko tam, gdzie wynikają wprost ze stanowiska.
+
 export const teamMembers: TeamMember[] = [
+  // --- Lekarze ---
   {
-    name: "Dr Anna Kowalska",
-    title: "Lekarz dentysta, właścicielka centrum",
-    qualifications: "Absolwentka Warszawskiego Uniwersytetu Medycznego",
-    bio: "Ponad 30 lat doświadczenia w stomatologii zachowawczej i estetycznej. Specjalizuje się w leczeniu kanałowym oraz rekonstrukcjach estetycznych. Regularnie uczestniczy w kursach doskonalących, aby oferować pacjentom najnowocześniejsze metody leczenia.",
-    image: "/images/team/dr-anna-kowalska.jpg",
-    specialties: [
-      "Stomatologia zachowawcza",
-      "Leczenie kanałowe",
-      "Stomatologia estetyczna",
-      "Rekonstrukcje kompozytowe",
-    ],
-    experience: "30+ lat",
-    languages: ["Polski", "Angielski"],
+    name: "Anna Lemisz",
+    title: "Ortodonta, właścicielka centrum",
+    image: "/images/team/anna-lemisz.jpg",
+    specialties: ["Ortodoncja"],
+    // qualifications: "",
+    // bio: "",
   },
   {
-    name: "Dr Michał Nowak",
-    title: "Lekarz dentysta, chirurg stomatologiczny",
-    qualifications:
-      "Specjalista chirurgii stomatologicznej, Uniwersytet Śląski",
-    bio: "Doktor z wieloletnim doświadczeniem w chirurgii stomatologicznej i implantologii. Wykonuje zabiegi implantologiczne oraz chirurgię okresową. Znany z delikatnego podejścia do pacjentów i bezbolesnych zabiegów.",
-    image: "/images/team/dr-michal-nowak.jpg",
-    specialties: [
-      "Chirurgia stomatologiczna",
-      "Implantologia",
-      "Usuwanie zębów",
-      "Chirurgia periodontalna",
-    ],
-    experience: "12+ lat",
-    languages: ["Polski", "Niemiecki"],
+    name: "Olga Lemisz",
+    title: "Lekarz dentysta",
+    image: "/images/team/olga-lemisz.jpg",
+    specialties: ["Stomatologia ogólna"],
+    // qualifications: "",
+    // bio: "",
   },
   {
-    name: "Dr Katarzyna Wiśniewska",
-    title: "Lekarz dentysta, specjalista stomatologii dziecięcej",
-    qualifications:
-      "Specjalizacja w stomatologii dziecięcej, Uniwersytet Jagielloński",
-    bio: "Pasjonatka pracy z dziećmi, która potrafi stworzyć przyjazną atmosferę podczas wizyt. Specjalizuje się w leczeniu zębów mlecznych oraz profilaktyce próchnicy u najmłodszych pacjentów.",
-    image: "/images/team/dr-katarzyna-wisniewska.jpg",
-    specialties: [
-      "Stomatologia dziecięca",
-      "Profilaktyka próchnicy",
-      "Leczenie zębów mlecznych",
-      "Edukacja higieniczna dzieci",
-    ],
-    experience: "8+ lat",
-    languages: ["Polski", "Angielski"],
+    name: "Daria Kciuk",
+    title: "Lekarz dentysta",
+    image: "/images/team/daria-kciuk.jpg",
+    specialties: ["Stomatologia ogólna"],
+    // qualifications: "",
+    // bio: "",
   },
   {
-    name: "Aleksandra Mazur",
+    name: "Patrycja Gołdon",
+    title: "Endodonta",
+    // brak zdjęcia — zostanie dodane później
+    specialties: ["Endodoncja"],
+    // qualifications: "",
+    // bio: "",
+  },
+  {
+    name: "Beata Jeziorska",
+    title: "Ortodonta",
+    // brak zdjęcia — zostanie dodane później
+    specialties: ["Ortodoncja"],
+    // qualifications: "",
+    // bio: "",
+  },
+  {
+    name: "Marcin Jarmołowicz",
+    title: "Lekarz dentysta",
+    // brak zdjęcia — zostanie dodane później
+    specialties: ["Stomatologia ogólna"],
+    // qualifications: "",
+    // bio: "",
+  },
+  {
+    name: "Jan Bzdęga",
+    title: "Periodontolog",
+    image: "/images/team/jan-bzdega.jpg",
+    specialties: ["Periodontologia"],
+    // qualifications: "",
+    // bio: "",
+  },
+  // --- Higienistki ---
+  {
+    name: "Anna Zalewska",
     title: "Higienistka stomatologiczna",
-    qualifications: "Certyfikowana higienistka stomatologiczna",
-    bio: "Doświadczona higienistka, która dba o kompleksową profilaktykę stomatologiczną naszych pacjentów. Prowadzi profesjonalne czyszczenie zębów oraz edukuje pacjentów w zakresie prawidłowej higieny jamy ustnej.",
-    image: "/images/team/aleksandra-mazur.jpg",
-    specialties: [
-      "Higiena stomatologiczna",
-      "Usuwanie kamienia nazębnego",
-      "Fluoryzacja",
-      "Instruktaż higieny",
-    ],
-    experience: "6+ lat",
-    languages: ["Polski"],
+    image: "/images/team/anna-zalewska.jpg",
+    specialties: ["Higiena stomatologiczna"],
+    // qualifications: "",
+    // bio: "",
+  },
+  {
+    name: "Magdalena Banach",
+    title: "Higienistka stomatologiczna",
+    image: "/images/team/magdalena-banach.jpg",
+    specialties: ["Higiena stomatologiczna"],
+    // qualifications: "",
+    // bio: "",
+  },
+  {
+    name: "Elżbieta Stolarska",
+    title: "Higienistka stomatologiczna",
+    // brak zdjęcia — zostanie dodane później
+    specialties: ["Higiena stomatologiczna"],
+    // qualifications: "",
+    // bio: "",
+  },
+  // --- Asystentki ---
+  {
+    name: "Magdalena Mrozińska",
+    title: "Asystentka stomatologiczna",
+    image: "/images/team/magdalena-mrozinska.jpg",
+    specialties: [],
+    // qualifications: "",
+    // bio: "",
+  },
+  {
+    name: "Marta Trenda",
+    title: "Asystentka stomatologiczna",
+    image: "/images/team/marta-trenda.jpg",
+    specialties: [],
+    // qualifications: "",
+    // bio: "",
+  },
+  // --- Rejestracja ---
+  {
+    name: "Klaudia Nabiałkowska",
+    title: "Rejestracja",
+    image: "/images/team/klaudia-nabialkowska.jpg",
+    specialties: [],
+    // qualifications: "",
+    // bio: "",
   },
 ];
